@@ -1,0 +1,54 @@
+version: "2.0"
+rules:
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+- rule: Fetch the CPI link
+  steps:
+  - or:
+    - intent: Learn
+    - intent: information_seek
+  - action: action_CPI_link
+  - action: utter_anything_else
+- rule: thanking
+  steps:
+  - intent: thank
+  - action: utter_thanks
+  - action: utter_anything_else
+- rule: Activating Customer Type Form
+  steps:
+  - intent: onboard_new_customer
+  - action: utter_activating_onboarding
+  - action: customer_type_form
+  - active_loop: customer_type_form
+- rule: Activating Enterprise Form
+  condition:
+  - slot_was_set:
+    - customer_type: enterprise
+  steps:
+  - action: enterprise_form
+  - active_loop: enterprise_form
+- rule: Submitting Customer type form
+  condition:
+  - active_loop: customer_type_form
+  steps:
+  - action: customer_type_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  wait_for_user_input: false
+- rule: Submitting Enterprise form
+  condition:
+  - active_loop: enterprise_form
+  steps:
+  - action: enterprise_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_submit_onboarding
+  - action: utter_submit

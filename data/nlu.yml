@@ -1,0 +1,1174 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - how is it going
+    - Hello
+    - Good Morning
+    - goog mrninfg
+    - mrning
+    - morning
+    - godmorning
+    - goofmorning
+    - hilo
+    - hlo
+    - helllooooo
+    - Hellooooooooooooooooo
+    - Hlooooooooooooooooo
+    - Good Evening
+    - God Evning
+    - God Evnig
+    - Morning
+    - Mrning
+    - Moring
+    - helloooooo
+    - helooo
+    - sup bro
+    - god mrning
+    - Hej!
+    - Good MOrning
+    - how is it going?
+    - hola
+    - Bonjour
+    - Hola
+    - Zdravstvuyte
+    - Nǐn [hǎo](connection)
+    - Ciao
+    - Halo
+    - Asalam u ale kum
+    - asalam u ale kum
+    - Salve
+    - hello how are you
+    - asslam u alaikum
+    - how are you
+    - how are you?\
+    - HI
+    - salam u aleakum
+    - salam brother
+    - salam jani
+    - hi]
+    - PLEASE
+    - Good afternoon
+    - szia
+    - Hi there
+    - there
+    - HEllo
+    - hell
+    - How are you doing
+    - Hey
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - see ya
+    - take care
+    - Allah hafiz
+    - khuda hafiz
+    - Have a good day.
+    - Bye
+    - GOOD BYE
+    - stop
+    - BYE
+    - Thank you. Bye.
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - hallo
+    - Yes
+    - OKAY
+    - Yes sure
+    - sure
+    - why not
+    - okay
+    - that would be great
+    - yes okay
+    - ok no problem
+    - no worries
+    - I would definitely appreciate that
+    - please!
+    - that would be really nice
+    - cool
+    - thats cool
+    - perfect
+    - great
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - not reallly
+    - nothing
+    - NO
+    - NOT GOOD
+    - No
+    - no please
+    - do not
+    - dont please
+    - No No
+    - Nothing
+    - no thanks, I am good.
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - I am happy
+    - I am feeling happy
+    - I am feeling very good day
+    - I am feeling good [today](time)
+    - i am fine
+    - i am doing great
+    - I am doing great
+    - fine
+    - goof
+    - good
+    - I am fine
+    - mood_great
+    - I am feeling happy [today](time)
+    - i am feeling happy
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - I am feeling sad
+    - i am not feeling good
+    - i am feeling sick
+    - i am not feeling well
+    - I am feeling sad [today](time)
+    - I am tired
+    - mood_unhappy
+    - i am feeling sad
+    - feeling sad
+    - i am feeling sad [today](time)
+- intent: unhappy_path
+  examples: |
+    - I don't have my agreement number right now
+    - Can I proceed without an agreement number?
+    - This is not a good experience
+    - Your system is not user-friendly
+    - I am unable to proceed with the registration
+    - I'm not sure which branch we belong to
+    - what if i dont provide?
+    - sorry I can not give you this
+    - I am not aware about the parent organization
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - Who are you?
+    - i want to know your name
+    - who are you?
+    - what is the name of the company you are working for
+    - Hello what is your name
+    - I want to sleep
+    - Can I talk to a human assistant
+    - who developed you
+    - who is your owner
+    - [Enterprise](customer_type) name is [Yettel](enterprise_name)
+- intent: Troubleshoot
+  examples: |
+    - Why [portal](attribute) [slow](toggle)
+    - why [error messages](page)
+    - Why [NW connectivity](connection) [enabled](toggle) is [disabled](toggle) and
+    - Why [NW connectivity](connection) [[enabled](toggle)](toggle) is [[enabled](toggle)](toggle)
+    - Why is [portal](page) slow?
+    - Why is the [portal](page) so [slow](toggle)?
+    - Why does [portal](page) [slow](toggle)?
+    - Why is my [portal](page) [slow](toggle)?
+    - What are [error messages](page)?
+    - Why are [error messages](page) displayed?
+    - Why are there [error messages](page)?
+    - What is the reason for [error messages](page)?
+    - Why do [error messages](page) appear?
+    - What is the reason behind [error messages](page)?
+    - What is the cause of [error messages](page)?
+    - Why do I get [error messages](page)?
+    - Why do [error messages](page) show up?
+    - Why is [NW connectivity](connection) [disabled](toggle) and vice versa?
+    - Why is [NW connectivity](connection) [disabled](toggle)?
+    - Why is [NW](connection) connectivity [enabled](toggle) [disabled](toggle)?
+    - Why is [NW connectivity](connection) [enabled](toggle)?
+    - Why [NW connectivity](connection) [[enabled](toggle)](toggle) is [[enabled](toggle)](toggle)?
+    - Is [NW connectivity](connection) [enabled](toggle)?
+    - Why is [NW connectivity](connection) [enabled](toggle)? Why?
+    - I can't see [connectivity lock](connection)
+    - I can't see [network connectivity](connection)
+    - I can't see [network](connection) [in-session](option)
+    - I can't see [view](attribute)
+    - I can't see [counters](widget)
+    - I can't see [column](attribute)
+    - I can't see [row](attribute)
+    - I can't see [subscription](inventory)
+    - I can't see [custom fields](widget)
+    - I can't see [summary counter](widget)
+    - I can't see [settings](option)
+    - I can't see [sim](inventory)
+    - I can't see [filter](widget)
+    - I can't see [action](widget)
+    - I can't see [imsi](identifier)
+    - I can't see [msisdn](identifier)
+    - I can't see [imei](identifier)
+    - I can't see [iccid](identifier)
+    - I can't see [portal](page)
+    - I can't see [state](option)
+    - I can't see [announcement](page)
+    - I can't see [euicc](inventory)
+    - I can't see [plan](option)
+    - I can't see [billing state](option)
+    - I need to troublelshoot. Can I reconnect my [device](other)?
+    - why the [portal](page) is not working?
+- intent: information_seek
+  examples: |
+    - What does [lock](connection) mean?
+    - What does [network connectivity](connection) mean?
+    - What is [network connectivity](connection) [enabled](toggle)?
+    - What is [network connectivity](connection) [disabled](toggle)?
+    - What does [in-session](option) mean?
+    - What is [billing state](option) xx?
+    - What are [custom fields](widget)?
+    - What are [summary counters](widget)?
+    - What can I do in this [page](page)?
+    - What are the different types of [SIMs](inventory)?
+    - Tell me about [filters](widget)
+    - Tell me about [counters](widget)
+    - Tell me about [table](attribute)
+    - Tell me about each [action](widget)
+    - What is [IMSI](identifier)
+    - What is [MSISDN](identifier)
+    - What is [IMEI](identifier)
+    - What is [ICCID](identifier)
+    - what is [announcements](page)
+    - What is [connectivity lock](connection)?
+    - What is this [lock](connection)/pad[lock](connection)?
+    - There is a [lock](connection)/pad[lock](connection) in Connectivity [lock](connection)
+    - I see a [lock](connection), why?
+    - How much would it cost to order [SIM](inventory)?
+    - Why should I select more than 1 [row](attribute)?
+    - Will the [portal](page) remember my selection if I apply a [filter](widget)?
+    - What does [locking](connection) mean?
+    - What does ["lock"](connection) mean?
+    - What is a [lock](connection)?
+    - What is [network connectivity](connection)?
+    - What does [connectivity](connection) mean?
+    - What do you mean by [network connectivity](connection)?
+    - What's [network connectivity](connection)?
+    - What is the meaning of [network connectivity](connection)?
+    - How is [network connectivity](connection) [enabled](toggle)?
+    - What is [network connectivity](connection) [enabled](toggle) for?
+    - Is [network connectivity](connection) [enabled](toggle)?
+    - Why is [network connectivity](connection) [enabled](toggle)?
+    - What are the benefits of [network connectivity](connection)?
+    - Why is [network connectivity](connection) [disabled](toggle)?
+    - How is [network connectivity](connection) [disabled](toggle)?
+    - Is [network connectivity](connection) [disabled](toggle)?
+    - What's [network connectivity](connection) [disabled](toggle)?
+    - What is a [network connectivity](connection) [disabled](toggle)?
+    - What does [in session](option) mean?
+    - What is [in session](option)?
+    - What does an [in-session](option) mean?
+    - What does ["in session"](option) mean?
+    - What does [insession](option) mean?
+    - What is [in session](option) mean?
+    - What is a [custom field](widget)?
+    - What are [custom fields](widget) and why?
+    - What's a [custom field](widget)?
+    - What is [summary counter](widget)?
+    - What do [summary counters](widget) stand for?
+    - What's a [summary counter](widget)?
+    - What should I do on this [page](page)?
+    - What do I do on this [page](page)?
+    - What can I do with this [page](page)?
+    - What can I do from this [page](page)?
+    - What is the best thing to do on this [page](page)?
+    - What are different types of [SIMs](inventory)?
+    - What are the different types of [SIM cards](inventory)?
+    - What are [SIMs](inventory)?
+    - What are the different kinds of [SIMs](inventory)?
+    - What is a [SIM](inventory)?
+    - What are [filters](widget)?
+    - What [filters](widget) do you use?
+    - What do you think about [filters](widget)?
+    - What is [filtering](widget)?
+    - Can you tell me about [filters](widget)?
+    - Tell me about [filters](widget).
+    - What is [filter](widget)?
+    - What do you think of [filters](widget)?
+    - What are [counters](widget)?
+    - What do you think about [counters](widget)?
+    - What is a [counter](widget)?
+    - How do [counters](widget) work?
+    - What do you think of [counters](widget)?
+    - What should I know about [counters](widget)?
+    - Can you tell me about [counters](widget)?
+    - What do you mean by [counters](widget)?
+    - What is [table](attribute)?
+    - Tell me about [table](page)?
+    - What do you mean by [table](attribute)?
+    - What do you think about [table](attribute)?
+    - What are [tables](attribute)?
+    - Tell me about each [action](widget).
+    - Tell me about every [action](widget).
+    - Tell me about each [action](widget) and why?
+    - What is [IMSI](identifier)?
+    - What does [IMSI](identifier) stand for?
+    - What is the acronym [IMSI](identifier)?
+    - What is an [IMSI](identifier)?
+    - What [IMSI](identifier) stands for?
+    - What is [MSISDN](identifier)?
+    - What does [MSISDN](identifier) stand for?
+    - What's [MSISDN](identifier)?
+    - What is [MSISDN](identifier)? What does it mean?
+    - What is the purpose of [MSISDN](identifier)?
+    - What is [IMEI](identifier)?
+    - What is an [IMEI](identifier)?
+    - What does [IMEI](identifier) stand for?
+    - What is [IMEI](identifier)? What does it mean?
+    - What does the [IMEI](identifier) stand for?
+    - What is [IMEI](identifier) and why?
+    - What is the [ICCID](identifier)?
+    - What is an [ICCID](identifier)?
+    - What is the acronym [ICCID](identifier)?
+    - What does the [ICCID](identifier) stand for?
+    - What is the acronym for [ICCID](identifier)?
+    - What is [sim](inventory)?
+    - What is a [state change](option)?
+    - What are [announcements](page)?
+    - What does [announcements](page) mean?
+    - What is [announcements](page) about?
+    - What is the meaning of [announcements](page)?
+    - What is the [euicc](inventory) order?
+    - [Euicc order](inventory)?
+    - [Euicc order](inventory).
+    - [euicc](inventory) order?
+    - What is a [connectivity lock](connection)?
+    - What does [connectivity lock](connection) mean?
+    - What's a [connectivity lock](connection)?
+    - What is a [lock](connection)/pad[lock](connection)?
+    - What is a [padlock](connection)?
+    - What is a [lock](connection) pad[lock](connection)?
+    - What is a [lockpadlock](connection)?
+    - What is the [lock](connection)/pad[lock](connection) in Connectivity [lock](connection)
+    - Where is there a [lock](connection)/pad[lock](connection) in Connectivity [lock](connection)
+    - Why is there a [lock](connection)/pad[lock](connection) in Connectivity [lock](connection)
+    - Is there a [lock](connection)/pad[lock](connection) in [Connectivity Lock](connection)
+    - Why do I see a [lock](connection)?
+    - I saw a [lock](connection), why?
+    - Why do you see a [lock](connection)?
+    - I see a [lock](connection) why?
+    - Why did I see a [lock](connection)?
+    - I see a [lock](connection) and why?
+    - How much does it cost to order a [SIM card](inventory)?
+    - How much does it cost to get a [SIM card](inventory)?
+    - How much does it cost to get a [SIM](inventory)?
+    - How much would it cost to order a [SIM](inventory)?
+    - How much does it cost to buy a [SIM](inventory)?
+    - What is the difference between [rows](attribute)?
+    - What is the difference between [rows](attribute), which one should I choose?
+    - Why should I select more than [one row](attribute)?
+    - Why do I have to select more than 1 [row](attribute)?
+    - Why should I choose more than 1 [row](attribute)?
+    - Why do I have to select more than one [row](attribute)?
+    - Why do I need to select more than one [row](attribute)?
+    - Will the [portal](page) remember my selection when I apply a [filter](widget)?
+    - Will the [portal](page) remember your selection if I apply a [filter](widget)?
+    - Who can see my [notes](other)?
+    - How often will the [table](attribute) refresh?
+    - Can I upload a [filter](widget) from my laptop?
+    - Can I manage my [filters](widget)?
+    - What is target [subscription](inventory) package?
+    - Can I reactivate terminated [subscriptions](inventory)?
+    - How are [filters](widget) working?
+    - Can I see the any real-time [data](other)?
+    - What does it mean when reassigning [MSISDN](identifier)?
+    - Can you show me example [keywords](other)?
+    - What are the [search](widget) rules?
+    - Do [filters](widget) apply to all pages?
+    - Can I change the [fixed IP](other)?
+    - What can I do in [subscription](inventory) inventory?
+    - What does [batch](other) mean?
+    - Does [sorting](attribute) have impact on whole inventory?
+    - What is a [batch](other) file?
+    - Can I export the [data](other) from the [table](attribute) as I customized it
+    - Can I save my [filters](widget)?
+    - Does the [table](attribute) refresh automatically?
+    - What is [CSV](other)?
+    - Can I save my [filtering](widget) for next time?
+    - What if I make an action to selected [subscriptions](inventory) and some of their
+    - What is a [trigger](page)?
+    - Can I share my [filterings](widget)?
+    - Does [search](widget) crieteria apply to all pages?
+    - What happens when reconnecting a [device](other)?
+    - What happens if I remove a [filter](widget)?
+    - What are [subscription](inventory) notes?
+    - what is [filter](widget)
+    - What does Number scheme mean
+    - How is the weather [today/](time)
+    - What are [subscriptions](inventory)?
+    - what are [subscriptions](inventory)?
+    - what is [subscription](inventory)?
+    - WHAT
+    - what is [filter](widget) ?
+    - Can I have the information on [subscriptions](inventory) please.
+    - what are [labels](other)?
+    - what is a [state/](option)
+    - Could you please tell me what is the [filter](widget)
+    - what is [filter](widget) in [iota portal](page)
+    - Puk code
+    - ok then tell me what is [trigger](page)
+    - ok then i want to know about [subscription](inventory)
+    - great now tell me what is [subscription](inventory)
+    - what is the [weather](other)?
+    - what about its [sim status]{"entity": "inventory", "value": "SIM_STATUS"}
+    - what is [msisdn](identifier)
+- intent: fetch
+  examples: |
+    - List [billing states](option) please
+    - What are the [billing states](option)?
+    - What are some [billing states](option)?
+    - What [billing states](option) do you want to list?
+    - How do I list [billing states](option)?
+    - What [billing states](option) do you have?
+    - fetch the [traffic](inventory) generated last 30 [days](time).
+    - What is the [traffic](inventory) generated in last 30 [days](time)?
+    - How do I fetch [traffic](inventory) generated last 30 [days](time)?
+    - How can I fetch [traffic](inventory) generated last 30 [days](time)?
+    - How do I get [traffic](inventory) generated last 30 [days](time)?
+    - How can I get [traffic](inventory) generated last 30 [days](time)?
+    - fetch the [subscription](inventory) created in last 30 [days](time).
+    - How do I fetch the [subscription](inventory) created in last 30 [days](time)?
+    - How can I fetch the [subscription](inventory) created in last 30 [days](time)?
+    - How do I fetch [subscription](inventory) created in last 30 [days](time)?
+    - How do I fetch [subscriptions](inventory) created in last 30 [days](time)?
+    - How can I fetch my [subscription](inventory) created in last 30 [days](time)?
+    - Show me the [subscription](inventory) with the largest [traffic](inventory).
+    - Show me the [subscription](inventory) with largest [traffic](inventory).
+    - Show me the [subscription](inventory) with the biggest [traffic](inventory).
+    - show me the [subscriber](inventory) with the largest [traffic](inventory).
+    - Bring me [location](location) with largest [traffic](inventory).
+    - Where can I get the most [traffic](inventory)?
+    - What is the best [location](location) for [traffic](inventory)?
+    - What is the best [location](location) with the most [traffic](inventory)?
+    - Bring me [location](location) with the largest [traffic](inventory).
+    - Show me the [report](stat).
+    - Can you show me the [report](stat)?
+    - Give me the [report](stat).
+    - What is the [report](stat)?
+    - Could you show me the [report](stat)?
+    - How do I generate [invoices](stat)?
+    - How can I generate [invoices](stat)?
+    - How do you generate [invoices](stat)?
+    - How should I generate [invoices](stat)?
+    - How do I generate an [invoice](stat)?
+    - How does one generate [invoices](stat)?
+    - How do I get [usage data](stat)?
+    - Can you give me [usage data](stat)?
+    - What is the [usage data](stat)?
+    - How can I get [usage data](stat)?
+    - Where can I get [usage data](stat)?
+    - Do you have [usage data](stat)?
+    - I want to fetch [sim](inventory) [data](other)
+    - Can I have the [chat history](stat) please
+    - What is the PUK code of my IMSI [100975100000042](IMSI_number)?
+    - IMSI [200975101200045](IMSI_number)
+    - please fetch details of [104975200048050](IMSI_number)
+    - what is the status of [106575270048054](IMSI_number)
+    - fetch puk2 of my [imsi](identifier) [111111111111111](IMSI_number)
+    - fetch puk2 of my [imsi](identifier) [100975100000042](IMSI_number)
+    - fetch puk2 of [imsi](identifier) [100975100000042](IMSI_number)
+    - fetch my imsi [100975100000042](IMSI_number)
+    - please fetch [100975100000042](IMSI_number)
+    - Please fetch details of [100975100000042](IMSI_number)
+    - Please fetch details of my [IMSI](identifier) [100975100000042](IMSI_number)
+    - Fetch the puk code number [10002122](IMSI_number)
+    - Please fetch [installation_date](subscription_attributes) of the IMSI 100975100000042.
+    - Please fetch [SIM_SUBSCRIPTION_STATE](subscription_attributes) of the IMSI 100975100000042.
+    - Please show [SIM_STATUS](subscription_attributes) of the IMSI 100975100000042.
+    - Please show [PUK1](subscription_attributes) of the IMSI 100975100000042.
+    - Please fetch [PIN1](subscription_attributes) of the IMSI 100975100000042.
+    - please fetch details of my [imsi](identifier)
+    - please fetch [PUK1](subscription_attributes) of [100975100000042](IMSI_number)
+    - [100975100000042](IMSI_number)
+    - please fetch detail of my [imsi](identifier)
+    - please fetch [MSISDN](identifier) of [100975100000042](IMSI_number)
+    - fetch [10001232](IMSI_number)
+    - fetch me [PUK1](subscription_attributes) of [100975100000042](IMSI_number)
+    - fetch me details of [100975100000042](IMSI_number)
+    - fetch me [imsi](identifier)
+    - show me the details of [imsi](identifier)
+    - fetch me the details of [imsi](identifier)
+    - fetch me the details of [100975100000042](IMSI_number) [imsi](identifier)
+    - fetch me the detail of [imsi](identifier)
+    - fecth me the details of [imsi](identifier) [100975100000042](IMSI_number)
+    - fetch the [sim_status](subscription_attributes) of imsi [100975100000059](IMSI_number)
+    - ok now fetch the details of [imsi](identifier) [100975100000059](IMSI_number)
+    - fetch me [sim_status](subscription_attributes)
+    - let me know the [puk1](subscription_attributes) of the imsi
+    - what is the [sim_status](subscription_attributes) of the imsi
+    - fetch me the details of the [imsi](identifier)
+    - what is the [puk1](subscription_attributes) of the imsi
+    - fetch me the details of the [imsi](identifier) [100975100000042](IMSI_number)
+    - what is the detail of the [imsi](identifier)
+    - what is [puk1](subscription_attributes) of the imsi [100975100000042](IMSI_number)
+    - what is [puk1](subscription_attributes) of the imsi
+    - fetch me the details of [imsi](identifier) [100975100000042](IMSI_number)
+    - [sim_status](subscription_attributes) of imsi
+    - show me the [installation date](subscription_attributes) of imsi
+    - find the [sim state](subscription_attributes) from subscription database
+    - what is the [sim status](subscription_attributes) of [imsi](identifier)
+    - fetch the[ sim state](subscription_attributes) of subscription with [imsi](identifier) [100975100000097](IMSI_number)
+    - What is the [pin](subscription_attributes) number of [imsi](identifier)
+    - show me the [puk](subscription_attributes) code of [imsi](identifier)
+    - show me its [sim status]{"entity": "inventory", "value": "SIM_STATUS"}
+    - what is the its [installation date]{"entity": "subscription_attributes", "value": "INSTALLATION_DATE"}
+    - show me the [sim](subscription_attributes)  [state](subscription_attributes) of the [imsi](identifier)'
+    - show me the [installation date]{"entity": "subscription_attributes", "value": "INSTALLATION_DATE"} of the imsi
+    - what is the [installation date]{"entity": "subscription_attributes", "value": "INSTALLATION_DATE"} of imsi
+    - what is [sim](inventory) status
+    - show me the [sim](inventory) status of imsi
+    - fetch the [installation date]{"entity": "subscription_attributes", "value": "INSTALLATION_DATE"} of imsi
+    - fetch the details of [imsi](identifier) [100975100000097](IMSI_number)
+    - show me [data](other) of [inventory](inventory) when the [msisdn](inventory_attribute) is [55511100033](msisdn)
+    - fetch the inventory with [msisdn](inventory_attribute) number = [55511100033](msisdn)
+    - show all [plans](inventory_attribute) in the [inventory](inventory) whose [billing state]{"entity": "inventory_attribute", "value": "billing_state"} is [Inactive](billing_state) and [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock"} is [Locked](connectivity_lock)
+    - what are the [plans](inventory_attribute) in the [inventory](inventory) whose [billing state]{"entity": "inventory_attribute", "value": "billing_state"} is [Inactive](billing_state) and [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock"} is [Unlocked](connectivity_lock)
+    - show all [plans](inventory_attribute) in the [inventory](inventory) whose [billing state]{"entity": "inventory_attribute", "value": "billing_state"} is [active](billing_state) and [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock"} is [locked](connectivity_lock)
+    - show all [plans](inventory_attribute) in the [inventory](inventory) whose [billing state]{"entity": "inventory_attribute", "value": "billing_state"} is [inactive](billing_state) and [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock"} is [unlocked](connectivity_lock)
+    - Please fetch the inventory with [msisdn](inventory_attribute) number [1234567890](msisdn)
+    - Can you retrieve the inventory associated with [msisdn](inventory_attribute) [55522200044](msisdn)?
+    - Get me the inventory for [msisdn](inventory_attribute) [8887776665](msisdn)
+    - Which [plans]{"entity": "inventory_attribute", "value": "plan_name"} in the [inventory](inventory) have [active](billing_state) [billing state]{"entity": "inventory_attribute", "value": "billing_state"} and [unlocked](connectivity_lock) [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock"}?
+    - List all the [package names]{"entity": "inventory_attribute", "value": "plan_name"} in the [inventory](inventory) where [billing state]{"entity": "inventory_attribute", "value": "billing_state"} is [inactive](billing_state) and [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock"} is [locked](connectivity_lock)
+    - Can you provide me a list of [packages]{"entity": "inventory_attribute", "value": "plan_name"} in the [inventory](inventory) with [active](billing_state) [billing state]{"entity": "inventory_attribute", "value": "billing_state"}, [connected]{"entity": "in_session", "value": "yes"} [in session]{"entity": "inventory_attribute", "value": "in_session"}, and [downward](data_trend)
+    - What are the [10 gb](monthly_data) [packages]{"entity": "inventory_attribute", "value": "plan_name"} available
+    - List every [growing]{"entity": "data_trend", "value": "upward"} [data trend]{"entity": "inventory_attribute", "value": "data_trend"} for [msisdn](inventory_attribute) number [12345678901](msisdn)
+    - please provide all [packages]{"entity": "inventory_attribute", "value": "plan_name"} in the [inventory](inventory) which has [10 G]{"entity": "monthly_data", "value": "10 gb"}B[ data per mont]{"entity": "inventory_attribute", "value": "monthly_data"}h
+    - fetch all the plan names in the [inventory](inventory) for [10 gb](monthly_data) [packages][{"entity": "inventory_attribute", "value": "plan_name"}, {"entity": "inventory_attribute", "value": "plan_name"}]
+    - show all [locked](connectivity_lock) [plans]{"entity": "inventory_attribute", "value": "plan_name"} in the [inventory](inventory)
+- intent: Learn
+  examples: |
+    - How can I customize my [view](attribute)?
+    - Can I customize my [view](attribute)?
+    - Can I hide the [custom counters](widget)?
+    - How can I select which [columns](attribute) to [display](attribute)?
+    - Can I somehow see more [rows](attribute) in one [view](attribute)?
+    - How can I see which [subscriptions](inventory) have had [traffic](inventory) [today](time)?
+    - How can I see if a [subscription](inventory) is misbehaving?
+    - How can I define [custom fields](widget)?
+    - How can I use [custom fields](widget)?
+    - How can I define [summary counters](widget)?
+    - How can I use [summary counters](widget)?
+    - Can I save my [settings](option)?
+    - Can I save my [view](attribute)?
+    - Order [sim](inventory)
+    - '[state](option) change where??'
+    - logout
+    - '[euicc](inventory) order'
+    - how to select more than [10000 imsi](inventory)
+    - How can I apply a [filter](widget)?
+    - How can I add/create a [filter](widget)?
+    - How can I add/apply/create [filters](widget)?
+    - How to add/apply/create a [filter](widget)?
+    - How to add/apply/create [filters](widget)?
+    - I want to add/apply/create a [filter](widget)
+    - I want to add/apply/create [filters](widget)
+    - Can I select [disabled](toggle) [rows](attribute) as well?
+    - How can I change the [Plan](option) name?
+    - How can I [disable](toggle) [network connectivity](connection)?
+    - How can [network connectivity](connection) be [disabled](toggle)?
+    - How do I [disable](toggle) [network connectivity](connection)?
+    - How do I customize my [view](attribute)?
+    - How can I customize a [view](attribute)?
+    - How can I personalize my [view](attribute)?
+    - How do I customize a [view](attribute)?
+    - How do I customize my [views](attribute)?
+    - How do I personalize my [view](attribute)?
+    - How do I hide [custom counters](widget)?
+    - How do I hide my [custom counters](widget)?
+    - How do I hide the [custom counters](widget)?
+    - How can I hide the [custom counters](widget)?
+    - How do I select which [columns](attribute) to [display](page)?
+    - How can I select which [columns](attribute) to [display](page)?
+    - How do I choose which [columns](attribute) to [display](page)?
+    - How do I select the [columns](attribute) I want to [display](page)?
+    - How can I select the [columns](attribute) to [display](page)?
+    - Can I see more [rows](attribute) in one [view](attribute)?
+    - Can I see more [rows](attribute) in a single [view](attribute)?
+    - Can I see more [rows](attribute) in a [view](attribute)?
+    - How do I see more [rows](attribute) in one [view](attribute)?
+    - Can I see multiple [rows](attribute) in one [view](attribute)?
+    - Can I see [rows](attribute) in one [view](attribute)?
+    - How can I see how many [subscriptions](inventory) have had [traffic](inventory)
+    - How do I know which [subscriptions](inventory) have had [traffic](inventory) [today](time)?
+    - How can I know which [subscriptions](inventory) have had [traffic](inventory)
+    - How can I see what [subscriptions](inventory) have had [traffic](inventory) [today](time)?
+    - How can I see which [subscription](inventory) has had [traffic](inventory) [today](time)?
+    - How can I see if a [subscription](inventory) is [misbehaving](toggle)?
+    - How can I see if my [subscription](inventory) is [misbehaving](toggle)?
+    - How do I know if my [subscription](inventory) is [misbehaving](toggle)?
+    - How do I check if a [subscription](inventory) is [misbehaving](toggle)?
+    - How can I check if a [subscription](inventory) is [misbehaving](toggle)?
+    - How do I define [custom fields](widget)?
+    - How do I create [custom fields](widget)?
+    - How do I define [custom field](widget)?
+    - What are some ways to define [custom fields](widget)?
+    - How do we define [custom fields](widget)?
+    - How can I create [custom fields](widget)?
+    - What is the best way to use [custom fields](widget)?
+    - Can I use [custom fields](widget)?
+    - How do I add [custom fields](widget)?
+    - How can I add [custom fields](widget)?
+    - How do I define [summary counters](widget)?
+    - How do you define [summary counters](widget)?
+    - How do I define [summary counter](widget)?
+    - How do I define a [summary counter](widget)?
+    - How do I create [summary counters](widget)?
+    - How do I use [summary counters](widget)?
+    - How do you use [summary counters](widget)?
+    - How can I use [summary counter](widget)?
+    - How can you use [summary counters](widget)?
+    - How do I save my [settings](option)?
+    - How can I save my [settings](option)?
+    - What is the best way to save [settings](option)?
+    - How do you save your [settings](option)?
+    - How do I [save](toggle) [settings](option) on my computer?
+    - How can I save my [view](attribute)?
+    - Can I save a [view](attribute)?
+    - How can I save a [view](attribute)?
+    - How can I save my [views](attribute)?
+    - What is the best way to save a [view](attribute)?
+    - Order [sim](inventory)?
+    - Order [sim](inventory)!
+    - How do you order [sim](inventory)?
+    - How do I order [sim](inventory)?
+    - Where is a [state change](option) happening?
+    - What is [state](option) change?
+    - Where is [state change](option)?
+    - How do I logout?
+    - How do I log out?
+    - What is the best way to logout?
+    - What should I do to logout?
+    - Logout!
+    - How do I log out of my account?
+    - How can I logout?
+    - How do I select more than 10000 [imsi](identifier)?
+    - How do you select more than 10000 [imsi](identifier)?
+    - How do I select 10000 [imsi](identifier)?
+    - How can I get more than 10000 [imsi](identifier)?
+    - How do I select more than 10000 [imsi cards](identifier)?
+    - How do I apply a [filter](widget)?
+    - How can I apply [filter](widget)?
+    - What is the best way to apply [filter](widget)?
+    - How do I create a [filter](widget)?
+    - How do I create [filter](widget)?
+    - How do I add/create a [filter](widget)?
+    - How can I add a [filter](widget)?
+    - How do I add/apply [filters](widget)?
+    - How do I apply [filters](widget)?
+    - How do I create [filters](widget)?
+    - How do you add [filters](widget)?
+    - What is the best way to add [filters](widget)?
+    - How do I add [filters](widget)?
+    - How can I add [filters](widget)?
+    - I want to add/apply/create a [filter](widget).
+    - How do I add/apply/create a [filter](widget)?
+    - How can I add/apply/create [filter](widget)?
+    - I want to add/apply/create [filter](widget)?
+    - How do I add/apply/create [filters](widget)?
+    - I want to add/apply/create [filters](widget)?
+    - I want to add/apply/create [filter](widget).
+    - Can I select [disabled](toggle) [rows](attribute)?
+    - How can I select [disabled](toggle) [rows](attribute)?
+    - Is it possible to select [disabled](toggle) [rows](attribute)?
+    - How can I select [disabled](toggle) [rows](attribute) as well?
+    - How do I change my [plan](option) name?
+    - How can I change my [plan](option) name?
+    - How do I change the name of my [plan](option)?
+    - How can I export the data [table](attribute) into Excel?
+    - How can I [search](widget) with batch?
+    - How can I create a business automation [rule](other)?
+    - How can I import my own [batch](other) file from the laptop?
+    - How can I change the [state](option)?
+    - How can I see how the [subscriptions](inventory) are doing?
+    - How can I export the filtered [data](other) into Excel?
+    - How can I make the [columns](attribute) that are relevant for me visible? lists
+    - How can I find [subscriptions](inventory) with no data for last 2 [months](time)?
+    - How can I edit [IMEI](identifier)?
+    - How many table [rows](attribute) can be exported into Excel?
+    - How can I edit the [labels](other)?
+    - How can I change [fixed IP](other)?
+    - How can I change the owner of the [subscriptions](inventory)?
+    - How can I hide the [columns](attribute) I don't need? lists
+    - How can I [search](widget) with a batch file?
+    - How can I [sort](attribute)? Lists
+    - How can I change the [subscription](inventory) package?
+    - How to change the region of my [subscriptions](inventory)?
+    - How can I know which [subscriptions](inventory) are behaving badly?
+    - How can I reassign [MSISDN](identifier)?
+    - How can I use [search](widget)?
+    - How can I change the order of the [columns](attribute)? lists
+    - Can I find [subscriptions](inventory) based on my notes?
+    - How can I find [subscription](inventory)?
+    - How can I learn something/
+    - what are [column](attribute)?
+    - how are [column](attribute)?
+    - how to get [subscription](inventory)?
+    - can you help me ?
+    - How are [labels](other) designed?
+    - how to edit [labels](other)?
+    - How can i check my [subscriptions](inventory)?
+    - how is the [state/](option)
+    - How to change the [state](option)?
+    - how to change [subscription state](inventory)?
+    - How to check my [subscriptions](inventory)?
+    - how to change  [state](option) of [subscription](inventory)?
+    - How to edit [labels](other)?
+    - How i can find all of my [subscriptions](inventory)?
+    - How i can find my [subscriptions](inventory)?
+    - edit my [labels](other)
+    - How to edit my [labels](other)?
+    - How to edit [label](other)?
+    - how want to edit [labels](other)?
+    - how to change [state](option) of [subscriptions](inventory)?
+    - How to change [subscriptions](inventory)?
+    - how to change [subscription](inventory)?
+    - how to change [subscriptions](inventory)?
+    - how to get my [subscriptions](inventory)?
+    - how to get my [subscription](inventory)?
+    - How to get my [subscriptions](inventory)?
+    - How to edit [labels](other)
+    - how to modify [subscription](inventory)?
+    - How to change [subscription](inventory)?
+    - how can i change my [subscription](inventory)
+    - how i can change my [subscription](inventory)
+    - now tell me how i can change my [subsctriptions](inventory)
+    - how about its [sim status]{"entity": "inventory", "value": "SIM_STATUS"}
+    - how to change [subscription](inventory) [state](option)
+- intent: information_Comparison
+  examples: |
+    - What is the difference between [network connectivity](connection) and [billing
+    - What is the difference between the [rows](attribute), which one should I choose?
+    - What is the difference between [billing states](option) and [network states](option)?
+    - What is the difference between [network](option) and [billing states](option)?
+    - What is the difference between [billing](option) and [network states](option)?
+    - What's the difference between [billing states](option) and [network states](option)?
+    - What is the difference between [billing](option) and [network](option)?
+    - What's the difference between [network](option) and [billing states](option)?
+    - What is the difference between [sim](inventory) and [euicc](inventory)?
+    - What's the difference between [sim](inventory) and [euicc](inventory)?
+    - What are the differences between [sim](inventory) and [euicc](inventory)?
+    - What is the difference between [network connectivity](connection) and [connectivity
+    - Can you please tell me difference between [network connectivity](connection) and
+    - What is the difference between [imei](identifier) and [msisdn](identifier)?
+    - How can I compare [imei](identifier) and [msisdn](identifier)?
+    - Can you compare [imei](identifier) and [msisdn](identifier)?
+    - What is the comparison between [imei](identifier) and [msisdn](identifier)?
+    - What is the difference between [msisdn](identifier) and [imei](identifier)?
+    - What are [summary counters](widget) and [column filters](widget)?
+    - What are the differences between [summary counters](widget) and [column filters](widget)?
+    - How do you differentiate between [summary counters](widget) and [column filters](widget)?
+    - How do I differentiate between [summary counters](widget) and [column filters](widget)?
+    - What is the difference between [column filter](widget) and [summary counter](widget)?
+    - What is [billing state](option) [active](toggle) and in[active](toggle)?
+    - Is [billing state](option) [active](toggle) or in[active](toggle)?
+    - What are the [billing states](option) [active](toggle) and in[active](toggle)?
+    - What is the [billing state](option) [in[active](toggle)](toggle) and [active](toggle)?
+    - What is the difference between [billing state](option) [active](toggle) and in[active](toggle)?
+    - How do I distinguish between [billing state](option) [active](toggle) and in[active](toggle)?
+    - How do you distinguish between [billing state](option) [active](toggle) and in[active](toggle)?
+    - What is the difference between [in[active](toggle)](toggle) and [active](toggle)
+    - How can I distinguish between [billing state](option) [active](toggle) and in[active](toggle)?
+    - What is the difference between [network connectivity](connection) [enabled](toggle)
+    - How can I differentiate between [network connectivity](connection) [enabled](toggle)
+    - Is [network connectivity](connection) [enabled](toggle) or [disabled](toggle)?
+    - Can you differentiate between [network connectivity](connection) [enabled](toggle)
+    - How do I differentiate between [network connectivity](connection) [enabled](toggle)
+    - Can we distinguish between [network connectivity](connection) [enabled](toggle)
+- intent: bot_name
+  examples: |
+    - What is your name
+    - what is your name ?
+    - tell me your name please
+    - Hey what is your name ?
+    - tell me your name please?
+    - what is your name?
+    - who is your creator?
+    - What is your name?
+    - Hello what is your name ?
+    - what is your name
+    - Hey what is your name
+    - whats ur name
+    - what is your name/
+    - what are your name?
+- intent: describe_bot
+  examples: |
+    - Hey what do you do?
+    - Hello what can you do
+    - describe yourself please
+    - what are the functionalities of the [chatbot](chatbot)
+    - Hey what can you do?
+    - Hey, please tell me about yourself.
+    - what do you do bro
+    - tell me some of your use cases
+    - what else can you do
+    - what can you do for me?
+    - How can you help me ?
+    - what else can you do?
+    - great what can you do for me
+    - what can you do for me
+    - great now tell me what can you do?
+    - what can you do?
+    - what do you do
+    - yes sure but what can you do for me. I would like to know about it?
+- intent: ask_joke
+  examples: |
+    - Tell me a joke !
+    - tell me a joke
+    - Tell me a joke
+    - tell me another joke
+    - TELL ME A JOKE
+    - Tell me a joke please
+    - tell me joke
+    - ok tell me a joke now
+- intent: bot_where
+  examples: |
+    - where are you from?
+    - where are you from
+- intent: ask_bot_question
+  examples: |
+    - ask me any question
+    - ask me a question
+    - Ask me any question
+- intent: thank
+  examples: |
+    - Thank you.
+    - Thank you so much
+    - Thanks
+    - Thank you so much.
+    - I am really happy you helped me.
+    - you saved my time
+    - You are awesome
+    - I appreciate this
+    - Thanks alot
+    - ok thanks
+- intent: news_fetch
+  examples: |
+    - Hey whats up [today](time)
+    - Hey whats the news [today](time)
+    - Whats up?
+    - Hello tell me the [newss](news)
+    - Whats up in the [world](news) ?
+    - Tell me some [bbc news](news)
+    - Hey tell me the [news](news)?
+    - whats up
+    - Hey tell me what the [news](news)?
+    - Hey tell me the news
+    - Hello tell me some [news](news).
+    - tell me some [news](news)
+    - tell me latest [news](news)
+    - whats going on in the [world](news)?
+    - news
+    - show some news
+    - fetch me news
+    - please fetch some [news](news) from [bbc](news)
+    - Whats the feed [today](time)?
+    - Tell me the [news](news)
+    - Hey What is interesting today?
+- intent: data_enter
+  examples: |
+    - [imsi](identifier) [100975100000042](IMSI_number)
+    - [imsi](identifier)[imsi](identifier) [105675100450782](IMSI_number)[105675100450782](IMSI_number)
+- intent: weather_info
+  examples: |
+    - what is the [weather](other) [today](time)?
+- intent: bot_age
+  examples: |
+    - how old are you
+- intent: onboard_new_customer
+  examples: |
+    - I want to onboard a new [customer](customer_type)
+    - I need to add a new [customer](customer_type) to the [portal](portal)
+    - Can you help me onboard a new [enterprise](customer_type) to the[ IoT service portal](portal)?
+    - I want to onboard new enterprise into the [portal](page)
+    - I want to onboard the customer
+    - Hello, I want to onboard the new customer to this [portal](page)
+    - I want to onboard the new customer to this [portal](page)
+    - Hello, I want to onboard the new customer in the [service portal](portal)
+    - I want to [onboard](subscription_attributes) new enterprise
+    - I want to onboard new customer
+    - Hello I want to [onboard](subscription_attributes) new enterprise
+    - onboard new customer
+    - Hey I want to onboard a new customer
+    - add new [enterprise](customer_type)
+    - Hey I want to onboard new [enterprise](customer_type) named [Suzuki](enterprise_name). The agreement number is [54383859294353](enterprise_agreement_number) and the parent organization of it is [china telecom mongolia branch]{"entity": "parent_organization", "value": "china_telecom_mongolia_branch"} .
+    - Onboard [Enterprise]{"entity": "customer_type", "value": "enterprise"} : enterprise name : [Jazz](enterprise_name), agreement number: [23465343212345](enterprise_agreement_numnber), parent organization: [china telekom]{"entity": "parent_organization", "value": "china_telecom_mongolia_branch"}
+    - Hey i want to add an [enterprise](customer_type) as a customer in the [service portal](page) ? could you please help me in this regard.
+    - onboard my new [enterprise](customer_type)
+    - hey I want to onboard new [enterprise](customer_type) named as [Aeris Communications](enterprise_name)
+    - please onboard my [enterprise](customer_type)
+
+- intent: enterprise_name
+  examples: |
+    - The [enterprise](customer_type) we're onboarding is [Yettel](enterprise_name).
+    - [Ericsson](enterprise_name) has expressed interest in partnering with us.
+    - The [company](customer_type) we're working with is [Telenor](enterprise_name).
+    - [Orange](enterprise_name) is the [telecom](customer_type) we're onboarding next.
+    - We've secured [Vodafone](enterprise_name) as our newest customer.
+    - The [enterprise](customer_type) we're bringing on is [AT&T](enterprise_name).
+    - [Verizon](enterprise_name) is the [company](customer_type) we're partnering with next.
+    - We're excited to welcome [Nokia](enterprise_name) as our newest customer.
+    - [Telefonica](enterprise_name) has signed on as a partner with us.
+    - The [Enterprise](customer_type) name is [Ericsson](enterprise_name)
+    - [Yettel](enterprise_name)
+    - [Telenor](enterprise_name)
+    - [Telecom](enterprise_name)
+    - [AT&T](enterprise_name)
+    - [Verizon](enterprise_name)
+    - [T-Mobile](enterprise_name)
+    - [Vodafone](enterprise_name)
+    - [Orange](enterprise_name)
+    - [BT](enterprise_name)
+    - [Telefonica](enterprise_name)
+    - [Nokia](enterprise_name)
+    - [Ericsson](enterprise_name)
+    - [Huawei](enterprise_name)
+    - [Deutsche Telekom](enterprise_name)
+    - [Telekom](enterprise_name)
+    - [China Mobile](enterprise_name)
+    - [SoftBank](enterprise_name)
+    - [NTT DoCoMo](enterprise_name)
+    - [KT Corp](enterprise_name)
+    - [SK Telecom](enterprise_name)
+    - [Singtel](enterprise_name)
+    - [Telstra](enterprise_name)
+    - [Swisscom](enterprise_name)
+    - [KPN](enterprise_name)
+    - [EE](enterprise_name)
+    - [Three](enterprise_name)
+    - [O2](enterprise_name)
+    - [Turkcell](enterprise_name)
+    - [MTS](enterprise_name)
+    - [AIS](enterprise_name)
+    - [Indosat Ooredoo](enterprise_name)
+    - [Telkomsel](enterprise_name)
+    - [XL Axiata](enterprise_name)
+    - [STC](enterprise_name)
+    - [Mobily](enterprise_name)
+    - [Zain](enterprise_name)
+    - [Etisalat](enterprise_name)
+    - [Du](enterprise_name)
+    - [Ooredoo](enterprise_name)
+    - [Vodafone](enterprise_name) Hungary
+    - [china telecom]{"entity": "parent_organization", "value": "china_telecom_mongolia_branch"}
+    - [vodafone](enterprise_name)
+- intent: customer_enterprise
+  examples: |
+    - customer type is [enterprise](customer_type)
+    - the customer type is [enterprise](customer_type)
+    - [enterprise](customer_type)
+    - I want to onboard new [enterprise](customer_type)
+    - I want to onboard [enterprise](customer_type) in the service portal
+- intent: customer_advanced_reseller
+  examples: |
+    - the customer type is [advanced reseller](customer_type)
+- intent: parent_organization_china_telecom_mongolia_branch
+  examples: |
+    - parent organization is [china telecom mongolia branch](parent_organization)
+    - enter_parent_organization
+    - [china telecom mongolia branch](parent_organization)
+    - [china_telecom_mongolia_branch](parent_organization)
+    - [china telecom mongolia branch]{"entity": "parent_organization", "value": "china_telecom_mongolia_branch"}
+    - parent_organization_china_telecom_mongolia_branch
+    - [china telecom]{"entity": "parent_organization", "value": "china_telecom_mongolia_branch"}
+    - [china telecom mongolia branch]{"entity": "parent_organization", "value": "china_telecom_mongolia_branch"}
+    - its [china telecom mongolia branch]{"entity": "parent_organization", "value": "china_telecom_mongolia_branch"}
+- intent: enterprise_agreement_number_enter
+  examples: |
+    - enterprise agreement number is [12345678910203](enterprise_agreement_number)
+    - enterprise agreement number is [22233344455566](enterprise_agreement_number)
+    - [22233344455566](enterprise_agreement_number)
+    - [12345678912345](enterprise_agreement_number)
+    - sorry I donot have the enterprise agreement number at this moment, can i proceed without it now?
+    - Sorry I dont know what is agreement number in this case?
+    - [12345568527419](enterprise_agreement_number)
+    - [14785236974158](enterprise_agreement_number)
+    - where to find the agreement number?
+    - Ok thanks, here is my agreement number [123453](enterprise_agreement_number)
+    - agreement number is [14852369852147](enterprise_agreement_number)
+- intent: troubleshooting_time
+  examples: |
+    - when it will be fine ?
+- synonym: SIM_STATUS
+  examples: |
+    - sim status
+    - status of sim
+- synonym: INSTALLATION_DATE
+  examples: |
+    - installation date
+    - installation data
+    - installation time
+- synonym: billing_state
+  examples: |
+    - billing state
+    - state of billing
+    - billing
+    - billing status
+- synonym: connectivity_lock
+  examples: |
+    - connectivity lock
+    - lock of connectivity
+    - connectivty-lock
+- synonym: plan_name
+  examples: |
+    - plans
+    - package names
+    - packages
+    - plan name
+    - plan
+    - name of plan
+    - name of the plan
+    - subscription of plan
+- synonym: yes
+  examples: |
+    - connected
+- synonym: in_session
+  examples: |
+    - in session
+    - inside session
+    - on session
+    - in-session
+    - session
+- synonym: upward
+  examples: |
+    - growing
+- synonym: data_trend
+  examples: |
+    - data trend
+- synonym: 10 gb
+  examples: |
+    - 10 G
+- synonym: monthly_data
+  examples: |
+    - data per mont
+    - data per mont
+    - monthly data
+    - month data
+    - data
+    - data per month
+- synonym: china_telecom_mongolia_branch
+  examples: |
+    - china telecom mongolia branch
+    - china telekom
+    - ChinaTelecomMongoliaBranch
+    - ChinaTelecom
+    - ChinaTelekom
+    - china telecom
+    - telekom ch
+    - china telecom mongolia
+    - china telekom branch mongolia
+    - china telecom branch mongolia
+    - telecom china
+    - telekom china
+    - telecom mongolia
+    - cn telecom
+    - ch telecom
+    - cn telekom
+    - ch telekom
+    - cn telecom mongolia
+    - ch telecom mongolia
+    - telecom cn
+    - telecom ch
+    - telekom cn
+    - telecom mongolia cn
+    - telecom mongolia ch
+- synonym: enterprise
+  examples: |
+    - Enterprise
+- synonym: network_connectivity
+  examples: |
+    - network connectivity
+    - network connection
+    - netcon
+    - network-connectivity
+    - connectivity of network
+    - connection of network
+- synonym: advanced_reseller
+  examples: |
+    - reseller
+    - advanced reseller
+    - advance reseller
+- synonym: SIM_SUBSCRIPTION_STATE
+  examples: |
+    - sim subscription state
+    - sim state
+    - subscription state
+- synonym: PIN1
+  examples: |
+    - pin
+    - pin 1
+    - pin1
+- synonym: PUK1
+  examples: |
+    - puk
+    - puk1
+    - puk 1
+- regex: IMSI_number
+  examples: |
+    - \d[0-9]{15}
+- regex: enterprise_agreement_number
+  examples: |
+    - \d[0-9]{14}

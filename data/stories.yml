@@ -1,0 +1,485 @@
+version: "2.0"
+stories:
+- story: happy path
+  steps:
+  - action: utter_introduction
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - action: utter_anything_else
+- story: sad path 1
+  steps:
+  - action: utter_introduction
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_anything_else
+- story: sad path 2
+  steps:
+  - action: utter_introduction
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+- story: cpi links fetching
+  steps:
+  - action: utter_introduction
+  - intent: greet
+  - action: utter_greet
+  - intent: Learn
+    entities:
+    - attribute: column
+  - action: action_CPI_link
+  - action: utter_anything_else
+  - intent: information_seek
+    entities:
+    - inventory: subscription
+  - action: action_CPI_link
+  - action: utter_anything_else
+  - intent: greet
+  - action: utter_greet
+- story: telling the bot name
+  steps:
+  - action: utter_introduction
+  - intent: bot_name
+  - action: utter_bot_name
+  - action: utter_help_need
+- story: describing bot
+  steps:
+  - action: utter_introduction
+  - intent: describe_bot
+  - action: utter_describe_bot
+  - action: utter_help_need
+- story: Tell a Joke
+  steps:
+  - action: utter_introduction
+  - intent: ask_joke
+  - action: utter_joke
+  - action: utter_anything_else
+- story: Describe Bot
+  steps:
+  - action: utter_introduction
+  - intent: describe_bot
+  - action: utter_describe_bot
+  - action: utter_help_need
+- story: Bot Name
+  steps:
+  - intent: bot_name
+  - action: utter_bot_name
+  - action: utter_help_need
+- story: Story from Conversation ID cde5ed8fa9904ba297792fe0d4851d18
+  steps:
+  - intent: bot_where
+  - action: utter_bot_where
+  - action: utter_help_need
+- story: Story from Conversation ID e1c35161132c41c1be15673c22fca97e
+  steps:
+  - intent: ask_bot_question
+  - action: utter_ask_bot_question
+- story: fetching bbc news
+  steps:
+  - intent: news_fetch
+    entities:
+    - time: today
+  - action: utter_greet
+  - action: action_news_fetch
+  - action: utter_anything_else
+- story: greet and fetch news
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: news_fetch
+    entities:
+    - news: news
+  - action: action_news_fetch
+  - action: utter_anything_else
+- story: Story from Conversation ID 6b875146202649a187322378c3cf8bc4
+  steps:
+  - intent: describe_bot
+  - action: utter_describe_bot
+  - action: utter_help_need
+  - intent: deny
+  - action: utter_goodbye
+- story: Story from Conversation ID f0a318db099440c3a9eb36d4f263d2ac
+  steps:
+  - intent: news_fetch
+    entities:
+    - time: today
+  - action: utter_greet
+  - action: action_news_fetch
+  - action: utter_anything_else
+  - intent: thank
+  - action: utter_thanks
+  - action: utter_anything_else
+- story: fecth IMSI details with imsi number
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fetch
+    entities:
+    - IMSI_number: ''
+  - slot_was_set:
+    - IMSI_number: anyvalue
+  - action: action_IMSI_Stats
+- story: fecth IMSI details without imsi number
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fetch
+    entities:
+    - identifier: imsi
+  - action: utter_ask_IMSI
+  - intent: data_enter
+    entities:
+    - IMSI_number: ''
+  - slot_was_set:
+    - IMSI_number: anyvalue
+  - action: action_IMSI_Stats
+- story: fecth IMSI details using old imsi number
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fetch
+    entities:
+    - identifier: imsi
+  - slot_was_set:
+    - IMSI_number: anyvalue
+  - action: action_IMSI_Stats
+- story: Story from Conversation ID 7689d1166415429da479b12c45e2b0da
+  steps:
+  - intent: fetch
+    entities:
+    - identifier: imsi
+  - action: utter_ask_IMSI
+  - intent: fetch
+    entities:
+    - IMSI_number: '100975100000042'
+  - slot_was_set:
+    - IMSI_number: '100975100000042'
+  - action: action_IMSI_Stats
+  - intent: fetch
+    entities:
+    - subscription_attributes: sim_status
+  - action: action_IMSI_Stats
+  - intent: fetch
+    entities:
+    - subscription_attributes: puk1
+  - action: action_IMSI_Stats
+  - intent: fetch
+    entities:
+    - subscription_attributes: sim_status
+  - action: action_IMSI_Stats
+
+- story: Onboarding - happy path
+  steps:
+  - intent: onboard_new_customer
+  - action: utter_activating_onboarding
+  - action: customer_type_form
+  - active_loop: customer_type_form
+  - slot_was_set:
+    - requested_slot: customer_type
+  - slot_was_set:
+    - customer_type: enterprise
+  - slot_was_set:
+    - customer_type: enterprise
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: enterprise_form
+  - active_loop: enterprise_form
+  - slot_was_set:
+    - customer_type: enterprise
+  - slot_was_set:
+    - requested_slot: enterprise_name
+  - slot_was_set:
+    - enterprise_name: Vodafone
+  - slot_was_set:
+    - enterprise_name: Vodafone
+  - slot_was_set:
+    - requested_slot: enterprise_agreement_number
+  - slot_was_set:
+    - enterprise_agreement_number: '12345678912345'
+  - slot_was_set:
+    - enterprise_agreement_number: '12345678912345'
+  - slot_was_set:
+    - requested_slot: parent_organization
+  - slot_was_set:
+    - parent_organization: china_telecom_mongolia_branch
+  - slot_was_set:
+    - parent_organization: ChinaTelecomMongoliabranch
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit_onboarding
+  - action: utter_submit
+
+- story: fetching inventory
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fetch
+    entities:
+    - other: data
+    - inventory: inventory
+    - inventory_attribute: msisdn
+    - msisdn: '55511100033'
+  - slot_was_set:
+    - msisdn: '55511100033'
+  - action: action_fetch_inventory
+
+- story: fetching_inventory2
+  steps:
+  - intent: fetch
+    entities:
+    - inventory_attribute: msisdn
+    - msisdn: '55511100033'
+  - slot_was_set:
+    - msisdn: '55511100033'
+  - action: action_fetch_inventory
+- story: fetching_inventory3
+  steps:
+  - intent: fetch
+    entities:
+    - inventory_attribute: msisdn
+    - msisdn: '55511100033'
+  - slot_was_set:
+    - msisdn: '55511100033'
+  - action: action_fetch_inventory
+
+- story: fetching_inventory3
+  steps:
+  - intent: fetch
+    entities:
+    - option: plans
+    - inventory: inventory
+    - inventory_attribute: billing_state
+    - billing_state: Inactive
+    - inventory_attribute: connectivity_lock
+    - connectivity_lock: Unlocked
+  - action: action_fetch_inventory
+
+- story: fetching_inventory4
+  steps:
+  - intent: fetch
+    entities:
+    - subscription_attribute: plans
+    - inventory: inventory
+    - inventory_attribute: billing_state
+    - billing_state: inactive
+    - inventory_attribute: connectivity_lock
+    - connectivity_lock: unlocked
+  - action: action_fetch_inventory
+  - intent: fetch
+    entities:
+    - inventory_attribute: plans
+    - inventory: inventory
+    - inventory_attribute: billing_state
+    - billing_state: inactive
+    - inventory_attribute: connectivity_lock
+    - connectivity_lock: unlocked
+  - action: action_fetch_inventory
+
+- story: fetching_inventory5
+  steps:
+  - intent: fetch
+    entities:
+    - inventory_attribute: plans
+    - inventory: inventory
+    - inventory_attribute: billing_state
+    - billing_state: inactive
+    - inventory_attribute: connectivity_lock
+    - connectivity_lock: unlocked
+  - action: action_fetch_inventory
+
+- story: fetchingInventory6
+  steps:
+  - intent: fetch
+    entities:
+    - inventory_attribute: plan_name
+    - inventory: inventory
+    - monthly_data: 10 gb
+    - inventory_attribute: monthly_data
+  - action: action_fetch_inventory
+
+- story: troubleshooting1
+  steps:
+  - intent: Troubleshoot
+    entities:
+    - page: portal
+  - action: utter_maintenance
+  - intent: troubleshooting_time
+  - action: utter_troubleshooting_time
+  - action: utter_anything_else
+  - intent: describe_bot
+  - action: utter_describe_bot
+  - action: utter_help_need
+  - intent: deny
+  - action: utter_goodbye
+
+- story: troubleshooting2
+  steps:
+  - intent: Troubleshoot
+  - or:
+    - entities:
+      - page: portal
+    - entities:
+      - connection: network_connectivity
+    - entities:
+      - other: device
+  - action: utter_maintenance
+  - intent: troubleshooting_time
+  - action: utter_troubleshooting_time
+  - action: utter_anything_else
+  - intent: describe_bot
+  - action: utter_describe_bot
+  - action: utter_help_need
+  - intent: affirm
+  - action: utter_help_need
+  - intent: news_fetch
+  - action: action_news_fetch
+  - intent: thank
+  - action: utter_thanks
+  - action: utter_anything_else
+
+- story: troubleshooting3
+  steps:
+  - intent: Troubleshoot
+  - entities:
+    - page: portal
+  - action: utter_maintenance
+  - intent: thank
+  - action: utter_thanks
+  - action: utter_anything_else
+  - intent: deny
+  - action: utter_goodbye
+- story: interactive_story_1
+  steps:
+  - intent: onboard_new_customer
+    entities:
+    - customer_type: enterprise
+    - page: service portal
+  - action: utter_activating_onboarding
+  - action: customer_type_form
+  - active_loop: customer_type_form
+  - slot_was_set:
+    - customer_type: enterprise
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: enterprise_form
+  - active_loop: enterprise_form
+  - slot_was_set:
+    - customer_type: enterprise
+  - slot_was_set:
+    - requested_slot: enterprise_name
+  - slot_was_set:
+    - enterprise_name: Vodafone
+  - slot_was_set:
+    - enterprise_name: Vodafone
+  - slot_was_set:
+    - requested_slot: enterprise_agreement_number
+  - slot_was_set:
+    - enterprise_agreement_number: '12345568527419'
+  - slot_was_set:
+    - enterprise_agreement_number: '12345568527419'
+  - slot_was_set:
+    - requested_slot: parent_organization
+  - intent: parent_organization_china_telecom_mongolia_branch
+  - action: enterprise_form
+  - slot_was_set:
+    - requested_slot: parent_organization
+  - slot_was_set:
+    - parent_organization: china_telecom_mongolia_branch
+  - slot_was_set:
+    - parent_organization: ChinaTelecomMongoliabranch
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit_onboarding
+  - action: utter_submit
+  - intent: greet
+  - action: utter_greet
+  - intent: fetch
+    entities:
+    - inventory_attribute: plan_name
+    - inventory: inventory
+    - monthly_data: 10 gb
+    - inventory_attribute: plan_name
+  - action: action_fetch_inventory
+  - intent: fetch
+    entities:
+    - connectivity_lock: locked
+    - inventory_attribute: plan_name
+    - inventory: inventory
+  - slot_was_set:
+    - connectivity_lock: locked
+  - action: action_fetch_inventory
+  
+
+- story: onboarding -unhappy path1
+  steps:
+  - intent: onboard_new_customer
+    entities:
+    - customer_type: enterprise
+    - enterprise_name: Aeris Communications
+  - action: utter_activating_onboarding
+  - action: customer_type_form
+  - active_loop: customer_type_form
+  - slot_was_set:
+    - customer_type: enterprise
+  - slot_was_set:
+    - enterprise_name: Aeris Communications
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: enterprise_form
+  - active_loop: enterprise_form
+  - slot_was_set:
+    - enterprise_name: Aeris Communications
+  - slot_was_set:
+    - customer_type: enterprise
+  - slot_was_set:
+    - requested_slot: enterprise_agreement_number
+  - intent: enterprise_agreement_number_enter
+  - action: utter_need_enterprise_agreement_number
+  - action: enterprise_form
+  - slot_was_set:
+    - requested_slot: enterprise_agreement_number
+  - intent: enterprise_agreement_number_enter
+    entities:
+    - enterprise_agreement_number: '123453'
+  - action: utter_invalid_agreement_number
+  - action: enterprise_form
+  - slot_was_set:
+    - requested_slot: enterprise_agreement_number
+  - slot_was_set:
+    - requested_slot: enterprise_agreement_number
+  - slot_was_set:
+    - enterprise_agreement_number: '14852369852147'
+  - slot_was_set:
+    - enterprise_agreement_number: '14852369852147'
+  - slot_was_set:
+    - requested_slot: parent_organization
+  - intent: unhappy_path
+  - action: utter_invalid_enterprise_parent_organization
+  - action: enterprise_form
+  - slot_was_set:
+    - requested_slot: parent_organization
+  - slot_was_set:
+    - requested_slot: parent_organization
+  - slot_was_set:
+    - parent_organization: china_telecom_mongolia_branch
+  - slot_was_set:
+    - parent_organization: ChinaTelecomMongoliabranch
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit_onboarding
+  - action: utter_submit
