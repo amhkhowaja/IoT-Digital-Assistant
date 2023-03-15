@@ -1,0 +1,22 @@
+{
+  "sim status": "SIM_STATUS",
+  "installation date": "INSTALLATION_DATE",
+  "status of sim": "SIM_STATUS",
+  "reseller": "advanced_reseller",
+  "advanced reseller": "advanced_reseller",
+  "advance reseller": "advanced_reseller",
+  "china telecom": "china_telecom_mongolia_branch",
+  "china telecom mongolia": "china_telecom_mongolia_branch",
+  "china telecom mongolia branch": "china_telecom_mongolia_branch",
+  "telecom china": "china_telecom_mongolia_branch",
+  "telekom china": "china_telecom_mongolia_branch",
+  "telecom mongolia": "china_telecom_mongolia_branch",
+  "installation data": "INSTALLATION_DATE",
+  "installation time": "INSTALLATION_DATE",
+  "sim subscription state": "SIM_SUBSCRIPTION_STATE",
+  "sim state": "SIM_SUBSCRIPTION_STATE",
+  "pin": "PIN1",
+  "puk": "PUK1",
+  "puk1": "PUK1",
+  "puk 1": "PUK1"
+}

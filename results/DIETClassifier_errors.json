@@ -1,0 +1,449 @@
+[
+  {
+    "text": "Hello, I want to onboard the new customer in the service portal",
+    "entities": [
+      {
+        "start": 49,
+        "end": 63,
+        "value": "service portal",
+        "entity": "portal"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "page",
+        "start": 57,
+        "end": 63,
+        "confidence_entity": 0.3171467185020447,
+        "value": "portal",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Hey tell me the news",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "news",
+        "start": 16,
+        "end": 20,
+        "confidence_entity": 0.713386058807373,
+        "value": "news",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What's the difference between network and billing states?",
+    "entities": [
+      {
+        "start": 30,
+        "end": 37,
+        "value": "network",
+        "entity": "option"
+      },
+      {
+        "start": 42,
+        "end": 56,
+        "value": "billing states",
+        "entity": "option"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "connection",
+        "start": 30,
+        "end": 37,
+        "confidence_entity": 0.4415121078491211,
+        "value": "network",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "option",
+        "start": 42,
+        "end": 56,
+        "confidence_entity": 0.8261812925338745,
+        "value": "billing states",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I can't see network in-session",
+    "entities": [
+      {
+        "start": 12,
+        "end": 19,
+        "value": "network",
+        "entity": "connection"
+      },
+      {
+        "start": 20,
+        "end": 30,
+        "value": "in-session",
+        "entity": "option"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "connection",
+        "start": 12,
+        "end": 19,
+        "confidence_entity": 0.7885643243789673,
+        "value": "network",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "option",
+        "start": 22,
+        "end": 30,
+        "confidence_entity": 0.6916125416755676,
+        "value": "-session",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Why is NW connectivity enabled disabled?",
+    "entities": [
+      {
+        "start": 7,
+        "end": 9,
+        "value": "NW",
+        "entity": "connection"
+      },
+      {
+        "start": 23,
+        "end": 30,
+        "value": "enabled",
+        "entity": "toggle"
+      },
+      {
+        "start": 31,
+        "end": 39,
+        "value": "disabled",
+        "entity": "toggle"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "connection",
+        "start": 7,
+        "end": 22,
+        "confidence_entity": 0.7747399806976318,
+        "value": "NW connectivity",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "toggle",
+        "start": 23,
+        "end": 30,
+        "confidence_entity": 0.9934539794921875,
+        "value": "enabled",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "toggle",
+        "start": 31,
+        "end": 39,
+        "confidence_entity": 0.9990099668502808,
+        "value": "disabled",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "fetch the sim state of subscription with imsi 100975100000097",
+    "entities": [
+      {
+        "start": 9,
+        "end": 19,
+        "value": " sim state",
+        "entity": "subscription_attributes"
+      },
+      {
+        "start": 41,
+        "end": 45,
+        "value": "imsi",
+        "entity": "identifier"
+      },
+      {
+        "start": 46,
+        "end": 61,
+        "value": "100975100000097",
+        "entity": "IMSI_number"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "inventory",
+        "start": 10,
+        "end": 13,
+        "confidence_entity": 0.2757374346256256,
+        "value": "sim",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "identifier",
+        "start": 41,
+        "end": 45,
+        "confidence_entity": 0.9978729486465454,
+        "value": "imsi",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "IMSI_number",
+        "start": 46,
+        "end": 61,
+        "confidence_entity": 0.9988102912902832,
+        "value": "100975100000097",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "How can I export the data table into Excel?",
+    "entities": [
+      {
+        "start": 26,
+        "end": 31,
+        "value": "table",
+        "entity": "attribute"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "other",
+        "start": 21,
+        "end": 25,
+        "confidence_entity": 0.47117286920547485,
+        "value": "monthly_data",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "attribute",
+        "start": 26,
+        "end": 31,
+        "confidence_entity": 0.7757800817489624,
+        "value": "table",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "How can I see if a subscription is misbehaving?",
+    "entities": [
+      {
+        "start": 19,
+        "end": 31,
+        "value": "subscription",
+        "entity": "inventory"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "inventory",
+        "start": 19,
+        "end": 31,
+        "confidence_entity": 0.9973752498626709,
+        "value": "subscription",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "toggle",
+        "start": 35,
+        "end": 46,
+        "confidence_entity": 0.9571184515953064,
+        "value": "misbehaving",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What is state change?",
+    "entities": [
+      {
+        "start": 8,
+        "end": 13,
+        "value": "state",
+        "entity": "option"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "option",
+        "start": 8,
+        "end": 20,
+        "confidence_entity": 0.47667643427848816,
+        "value": "state change",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Where is there a lock/padlock in Connectivity lock",
+    "entities": [
+      {
+        "start": 17,
+        "end": 21,
+        "value": "lock",
+        "entity": "connection"
+      },
+      {
+        "start": 25,
+        "end": 29,
+        "value": "lock",
+        "entity": "connection"
+      },
+      {
+        "start": 46,
+        "end": 50,
+        "value": "lock",
+        "entity": "connection"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "connection",
+        "start": 17,
+        "end": 21,
+        "confidence_entity": 0.9163913726806641,
+        "value": "lock",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "connection",
+        "start": 46,
+        "end": 50,
+        "confidence_entity": 0.8741604685783386,
+        "value": "lock",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Can I see the any real-time data?",
+    "entities": [
+      {
+        "start": 28,
+        "end": 32,
+        "value": "data",
+        "entity": "other"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "stat",
+        "start": 28,
+        "end": 32,
+        "confidence_entity": 0.4707240164279938,
+        "value": "monthly_data",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Why is there a lock/padlock in Connectivity lock",
+    "entities": [
+      {
+        "start": 15,
+        "end": 19,
+        "value": "lock",
+        "entity": "connection"
+      },
+      {
+        "start": 23,
+        "end": 27,
+        "value": "lock",
+        "entity": "connection"
+      },
+      {
+        "start": 44,
+        "end": 48,
+        "value": "lock",
+        "entity": "connection"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "connection",
+        "start": 15,
+        "end": 19,
+        "confidence_entity": 0.9164479970932007,
+        "value": "lock",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "connection",
+        "start": 44,
+        "end": 48,
+        "confidence_entity": 0.8692992925643921,
+        "value": "lock",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What is a lock/padlock?",
+    "entities": [
+      {
+        "start": 10,
+        "end": 14,
+        "value": "lock",
+        "entity": "connection"
+      },
+      {
+        "start": 18,
+        "end": 22,
+        "value": "lock",
+        "entity": "connection"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "connection",
+        "start": 10,
+        "end": 14,
+        "confidence_entity": 0.9021602272987366,
+        "value": "lock",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What does \"lock\" mean?",
+    "entities": [
+      {
+        "start": 10,
+        "end": 16,
+        "value": "\"lock\"",
+        "entity": "connection"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "option",
+        "start": 10,
+        "end": 11,
+        "confidence_entity": 0.4494664967060089,
+        "value": "\"",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "connection",
+        "start": 11,
+        "end": 16,
+        "confidence_entity": 0.3590690493583679,
+        "value": "lock\"",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

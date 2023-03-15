@@ -1,0 +1,9 @@
+{
+  "rule_only_slots": [
+    "customer_type"
+  ],
+  "rule_only_loops": [
+    "enterprise_form",
+    "customer_type_form"
+  ]
+}

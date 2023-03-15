@@ -1,0 +1,18 @@
+[
+  {
+    "text": "How can you help me ?",
+    "intent": "describe_bot",
+    "intent_prediction": {
+      "name": "Learn",
+      "confidence": 0.9228463768959045
+    }
+  },
+  {
+    "text": "great",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5028411746025085
+    }
+  }
+]

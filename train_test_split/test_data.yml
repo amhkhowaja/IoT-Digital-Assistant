@@ -1,0 +1,380 @@
+version: "3.1"
+nlu:
+- intent: weather_info
+  examples: |
+    - what is the [weather](other) [today](time)?
+- intent: bot_age
+  examples: |
+    - how old are you
+- intent: customer_advanced_reseller
+  examples: |
+    - the customer type is [advanced reseller](customer_type)
+- intent: troubleshooting_time
+  examples: |
+    - when it will be fine ?
+- intent: bot_where
+  examples: |
+    - where are you from?
+- intent: data_enter
+  examples: |
+    - [imsi](identifier) [100975100000042](IMSI_number)
+- intent: ask_bot_question
+  examples: |
+    - ask me a question
+- intent: customer_enterprise
+  examples: |
+    - the customer type is [enterprise](customer_type)
+- intent: ask_joke
+  examples: |
+    - Tell me a joke
+- intent: parent_organization_china_telecom_mongolia_branch
+  examples: |
+    - [china telecom mongolia branch](parent_organization)
+- intent: unhappy_path
+  examples: |
+    - I'm not sure which branch we belong to
+- intent: thank
+  examples: |
+    - I appreciate this
+- intent: enterprise_agreement_number_enter
+  examples: |
+    - [22233344455566](enterprise_agreement_number)
+- intent: bot_challenge
+  examples: |
+    - who are you?
+    - who is your owner
+    - am I talking to a bot?
+- intent: bot_name
+  examples: |
+    - whats ur name
+    - Hey what is your name ?
+- intent: deny
+  examples: |
+    - n
+    - not really
+    - no way
+    - no thanks, I am good.
+- intent: describe_bot
+  examples: |
+    - great now tell me what can you do?
+    - How can you help me ?
+    - what do you do
+    - Hey what do you do?
+- intent: onboard_new_customer
+  examples: |
+    - I want to onboard the customer
+    - Hello, I want to onboard the new customer in the [service portal](portal)
+    - Hello, I want to onboard the new customer to this [portal](page)
+- intent: goodbye
+  examples: |
+    - Thank you. Bye.
+    - bye
+    - bye bye
+    - cee you later
+- intent: news_fetch
+  examples: |
+    - Whats up?
+    - Hey tell me the news
+    - Hey tell me the [news](news)?
+    - tell me latest [news](news)
+    - Hey tell me what the [news](news)?
+- intent: affirm
+  examples: |
+    - ok no problem
+    - of course
+    - hallo
+    - great
+- intent: mood_unhappy
+  examples: |
+    - i am not feeling good
+    - I am sad
+    - extremly sad
+    - not very good
+    - I am tired
+- intent: mood_great
+  examples: |
+    - amazing
+    - I am happy
+    - feeling like a king
+    - so perfect
+    - good
+    - I am fine
+- intent: information_Comparison
+  examples: |
+    - How do I differentiate between [summary counters](widget) and [column filters](widget)?
+    - How can I compare [imei](identifier) and [msisdn](identifier)?
+    - What is the difference between the [rows](attribute), which one should I choose?
+    - Can you please tell me difference between [network connectivity](connection) and
+    - What is the difference between [billing](option) and [network states](option)?
+    - What's the difference between [network](option) and [billing states](option)?
+    - What are [summary counters](widget) and [column filters](widget)?
+- intent: Troubleshoot
+  examples: |
+    - Why [NW connectivity](connection) [enabled](toggle) is [disabled](toggle) and
+    - I can't see [euicc](inventory)
+    - I can't see [announcement](page)
+    - I can't see [iccid](identifier)
+    - I need to troublelshoot. Can I reconnect my [device](other)?
+    - Why are [error messages](page) displayed?
+    - I can't see [column](attribute)
+    - I can't see [network](connection) [in-session](option)
+    - I can't see [filter](widget)
+    - Why is [NW](connection) connectivity [enabled](toggle) [disabled](toggle)?
+- intent: enterprise_name
+  examples: |
+    - [Etisalat](enterprise_name)
+    - We've secured [Vodafone](enterprise_name) as our newest customer.
+    - [Singtel](enterprise_name)
+    - [Vodafone](enterprise_name)
+    - [AIS](enterprise_name)
+    - [Telkomsel](enterprise_name)
+    - [SK Telecom](enterprise_name)
+    - [XL Axiata](enterprise_name)
+    - [Mobily](enterprise_name)
+    - The [Enterprise](customer_type) name is [Ericsson](enterprise_name)
+    - [Swisscom](enterprise_name)
+- intent: greet
+  examples: |
+    - hi]
+    - God Evnig
+    - good morning
+    - Good afternoon
+    - Halo
+    - sup bro
+    - hello
+    - Hi there
+    - morning
+    - good afternoon
+    - moin
+    - How are you doing
+    - Hej!
+- intent: fetch
+  examples: |
+    - What is the [usage data](stat)?
+    - List every [growing]{"entity": "data_trend", "value": "upward"} [data trend]{"entity": "inventory_attribute", "value": "data_trend"} for [msisdn](inventory_attribute) number [12345678901](msisdn)
+    - show me its [sim status]{"entity": "inventory", "value": "SIM_STATUS"}
+    - ok now fetch the details of [imsi](identifier) [100975100000059](IMSI_number)
+    - Show me the [subscription](inventory) with the largest [traffic](inventory).
+    - what is [puk1](subscription_attributes) of the imsi
+    - let me know the [puk1](subscription_attributes) of the imsi
+    - What is the [report](stat)?
+    - [sim_status](subscription_attributes) of imsi
+    - Please fetch details of [100975100000042](IMSI_number)
+    - Can you retrieve the inventory associated with [msisdn](inventory_attribute) [55522200044](msisdn)?
+    - What is the PUK code of my IMSI [100975100000042](IMSI_number)?
+    - fetch the[ sim state](subscription_attributes) of subscription with [imsi](identifier) [100975100000097](IMSI_number)
+    - what is the status of [106575270048054](IMSI_number)
+    - Where can I get [usage data](stat)?
+    - show all [locked](connectivity_lock) [plans]{"entity": "inventory_attribute", "value": "plan_name"} in the [inventory](inventory)
+    - show me the [puk](subscription_attributes) code of [imsi](identifier)
+    - Please show [PUK1](subscription_attributes) of the IMSI 100975100000042.
+    - How can I fetch [traffic](inventory) generated last 30 [days](time)?
+    - What are some [billing states](option)?
+    - Can you give me [usage data](stat)?
+    - fetch the [installation date]{"entity": "subscription_attributes", "value": "INSTALLATION_DATE"} of imsi
+    - Please fetch the inventory with [msisdn](inventory_attribute) number [1234567890](msisdn)
+    - fetch [10001232](IMSI_number)
+    - How do I fetch the [subscription](inventory) created in last 30 [days](time)?
+- intent: Learn
+  examples: |
+    - How to edit [labels](other)?
+    - How can I [disable](toggle) [network connectivity](connection)?
+    - How do I create [filters](widget)?
+    - How can I add [custom fields](widget)?
+    - How can I add/apply/create [filters](widget)?
+    - How can I export the data [table](attribute) into Excel?
+    - How do I know which [subscriptions](inventory) have had [traffic](inventory) [today](time)?
+    - How can I see if a [subscription](inventory) is misbehaving?
+    - How to change [subscription](inventory)?
+    - How do I add/create a [filter](widget)?
+    - How do I change the name of my [plan](option)?
+    - How do I create a [filter](widget)?
+    - How can I see if my [subscription](inventory) is [misbehaving](toggle)?
+    - Can I select [disabled](toggle) [rows](attribute)?
+    - How do I create [custom fields](widget)?
+    - What is the best way to save [settings](option)?
+    - How can I change my [plan](option) name?
+    - How do I change my [plan](option) name?
+    - How can I know which [subscriptions](inventory) have had [traffic](inventory)
+    - How can I see if a [subscription](inventory) is [misbehaving](toggle)?
+    - How can I hide the [custom counters](widget)?
+    - What is [state](option) change?
+    - How do I define [custom field](widget)?
+    - Can I select [disabled](toggle) [rows](attribute) as well?
+    - How can I see which [subscriptions](inventory) have had [traffic](inventory) [today](time)?
+    - How do I define [custom fields](widget)?
+    - What is the best way to apply [filter](widget)?
+    - How can I [sort](attribute)? Lists
+    - how to get my [subscriptions](inventory)?
+    - Order [sim](inventory)
+    - Can I somehow see more [rows](attribute) in one [view](attribute)?
+    - How are [labels](other) designed?
+    - how is the [state/](option)
+    - How to add/apply/create [filters](widget)?
+    - How can I personalize my [view](attribute)?
+    - Can I hide the [custom counters](widget)?
+    - how about its [sim status]{"entity": "inventory", "value": "SIM_STATUS"}
+    - How do I log out?
+    - How do I select which [columns](attribute) to [display](page)?
+- intent: information_seek
+  examples: |
+    - Where is there a [lock](connection)/pad[lock](connection) in Connectivity [lock](connection)
+    - Can I see the any real-time [data](other)?
+    - I see a [lock](connection) why?
+    - What are [filters](widget)?
+    - Why is there a [lock](connection)/pad[lock](connection) in Connectivity [lock](connection)
+    - What can I do with this [page](page)?
+    - What is an [IMEI](identifier)?
+    - What is a [network connectivity](connection) [disabled](toggle)?
+    - Can I upload a [filter](widget) from my laptop?
+    - Tell me about each [action](widget).
+    - What is a [lock](connection)/pad[lock](connection)?
+    - What do you think about [table](attribute)?
+    - What is [MSISDN](identifier)? What does it mean?
+    - What are the different types of [SIMs](inventory)?
+    - What is the acronym [ICCID](identifier)?
+    - Can I reactivate terminated [subscriptions](inventory)?
+    - I see a [lock](connection), why?
+    - What is the acronym for [ICCID](identifier)?
+    - Why do I have to select more than one [row](attribute)?
+    - Why is [network connectivity](connection) [enabled](toggle)?
+    - How is [network connectivity](connection) [disabled](toggle)?
+    - What should I know about [counters](widget)?
+    - Can I have the information on [subscriptions](inventory) please.
+    - What does [lock](connection) mean?
+    - What is [ICCID](identifier)
+    - How much would it cost to order a [SIM](inventory)?
+    - What does [IMSI](identifier) stand for?
+    - Does [search](widget) crieteria apply to all pages?
+    - What does [announcements](page) mean?
+    - Is [network connectivity](connection) [disabled](toggle)?
+    - What is a [lock](connection)?
+    - What are [summary counters](widget)?
+    - What is an [ICCID](identifier)?
+    - Could you please tell me what is the [filter](widget)
+    - What's [network connectivity](connection)?
+    - What are the benefits of [network connectivity](connection)?
+    - What does ["lock"](connection) mean?
+    - What is a [connectivity lock](connection)?
+    - What is a [trigger](page)?
+    - What does [network connectivity](connection) mean?
+- synonym: SIM_STATUS
+  examples: |
+    - sim status
+    - status of sim
+- synonym: INSTALLATION_DATE
+  examples: |
+    - installation date
+    - installation data
+    - installation time
+- synonym: billing_state
+  examples: |
+    - billing state
+    - state of billing
+    - billing
+    - billing status
+- synonym: connectivity_lock
+  examples: |
+    - connectivity lock
+    - lock of connectivity
+    - connectivty-lock
+- synonym: plan_name
+  examples: |
+    - plans
+    - package names
+    - packages
+    - plan name
+    - plan
+    - name of plan
+    - name of the plan
+    - subscription of plan
+- synonym: yes
+  examples: |
+    - connected
+- synonym: in_session
+  examples: |
+    - in session
+    - inside session
+    - on session
+    - in-session
+    - session
+- synonym: upward
+  examples: |
+    - growing
+- synonym: data_trend
+  examples: |
+    - data trend
+- synonym: 10 gb
+  examples: |
+    - 10 G
+- synonym: monthly_data
+  examples: |
+    - data per mont
+    - data per mont
+    - monthly data
+    - month data
+    - data
+    - data per month
+- synonym: china_telecom_mongolia_branch
+  examples: |
+    - china telecom mongolia branch
+    - china telekom
+    - china telecom
+    - ChinaTelecomMongoliaBranch
+    - ChinaTelecom
+    - ChinaTelekom
+    - telekom ch
+    - china telecom mongolia
+    - china telekom branch mongolia
+    - china telecom branch mongolia
+    - telecom china
+    - telekom china
+    - telecom mongolia
+    - cn telecom
+    - ch telecom
+    - cn telekom
+    - ch telekom
+    - cn telecom mongolia
+    - ch telecom mongolia
+    - telecom cn
+    - telecom ch
+    - telekom cn
+    - telecom mongolia cn
+    - telecom mongolia ch
+- synonym: enterprise
+  examples: |
+    - Enterprise
+- synonym: network_connectivity
+  examples: |
+    - network connectivity
+    - network connection
+    - netcon
+    - network-connectivity
+    - connectivity of network
+    - connection of network
+- synonym: advanced_reseller
+  examples: |
+    - reseller
+    - advanced reseller
+    - advance reseller
+- synonym: SIM_SUBSCRIPTION_STATE
+  examples: |
+    - sim subscription state
+    - sim state
+    - subscription state
+- synonym: PIN1
+  examples: |
+    - pin
+    - pin 1
+    - pin1
+- synonym: PUK1
+  examples: |
+    - puk
+    - puk1
+    - puk 1
+- regex: IMSI_number
+  examples: |
+    - \d[0-9]{15}
+- regex: enterprise_agreement_number
+  examples: |
+    - \d[0-9]{14}

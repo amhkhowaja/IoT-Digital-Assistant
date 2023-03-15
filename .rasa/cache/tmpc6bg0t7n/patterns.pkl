@@ -1,0 +1,10 @@
+[
+  {
+    "name": "IMSI_number",
+    "pattern": "\\d[0-9]{15}"
+  },
+  {
+    "name": "enterprise_agreement_number",
+    "pattern": "\\d[0-9]{14}"
+  }
+]

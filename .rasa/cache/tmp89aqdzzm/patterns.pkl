@@ -1,0 +1,6 @@
+[
+  {
+    "name": "IMSI_number",
+    "pattern": "\\d[0-9]{15}"
+  }
+]

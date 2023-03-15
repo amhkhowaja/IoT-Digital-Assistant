@@ -1,0 +1,51 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"enterprise_form\"}}]": "utter_submit",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"enterprise_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"thank\"}}]": "utter_thanks",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"thank\"}}, {\"prev_action\": {\"action_name\": \"utter_thanks\"}, \"user\": {\"intent\": \"thank\"}}]": "utter_anything_else",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"thank\"}}, {\"prev_action\": {\"action_name\": \"utter_thanks\"}, \"user\": {\"intent\": \"thank\"}}, {\"prev_action\": {\"action_name\": \"utter_anything_else\"}, \"user\": {\"intent\": \"thank\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "utter_iamabot",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"customer_enterprise\"}}]": "enterprise_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"customer_enterprise\"}}, {\"active_loop\": {\"name\": \"enterprise_form\"}, \"prev_action\": {\"action_name\": \"enterprise_form\"}, \"user\": {\"intent\": \"customer_enterprise\"}}]": "action_listen",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"customer_type_form\"}}]": "utter_submit",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"customer_type_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"information_seek\"}}]": "action_CPI_link",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"information_seek\"}}, {\"prev_action\": {\"action_name\": \"action_CPI_link\"}, \"user\": {\"intent\": \"information_seek\"}}]": "utter_anything_else",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"information_seek\"}}, {\"prev_action\": {\"action_name\": \"action_CPI_link\"}, \"user\": {\"intent\": \"information_seek\"}}, {\"prev_action\": {\"action_name\": \"utter_anything_else\"}, \"user\": {\"intent\": \"information_seek\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"onboard_new_customer\"}}]": "utter_activating_onboarding",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"onboard_new_customer\"}}, {\"prev_action\": {\"action_name\": \"utter_activating_onboarding\"}, \"user\": {\"intent\": \"onboard_new_customer\"}}]": "customer_type_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"onboard_new_customer\"}}, {\"prev_action\": {\"action_name\": \"utter_activating_onboarding\"}, \"user\": {\"intent\": \"onboard_new_customer\"}}, {\"active_loop\": {\"name\": \"customer_type_form\"}, \"prev_action\": {\"action_name\": \"customer_type_form\"}, \"user\": {\"intent\": \"onboard_new_customer\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]": "utter_goodbye",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"goodbye\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"Learn\"}}]": "action_CPI_link",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"Learn\"}}, {\"prev_action\": {\"action_name\": \"action_CPI_link\"}, \"user\": {\"intent\": \"Learn\"}}]": "utter_anything_else",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"Learn\"}}, {\"prev_action\": {\"action_name\": \"action_CPI_link\"}, \"user\": {\"intent\": \"Learn\"}}, {\"prev_action\": {\"action_name\": \"utter_anything_else\"}, \"user\": {\"intent\": \"Learn\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"enterprise_form\"}, \"prev_action\": {\"action_name\": \"enterprise_form\"}, \"user\": {\"intent\": \"customer_enterprise\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"utter_activating_onboarding\"}}, {\"active_loop\": {\"name\": \"customer_type_form\"}, \"prev_action\": {\"action_name\": \"customer_type_form\"}, \"user\": {\"intent\": \"onboard_new_customer\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"utter_activating_onboarding\"}}, {\"active_loop\": {\"name\": \"customer_type_form\"}, \"prev_action\": {\"action_name\": \"customer_type_form\"}, \"slots\": {\"customer_type\": [1.0]}, \"user\": {\"intent\": \"onboard_new_customer\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"enterprise_form\"}, \"prev_action\": {\"action_name\": \"enterprise_form\"}, \"slots\": {\"customer_type\": [1.0]}, \"user\": {\"intent\": \"customer_enterprise\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"enterprise_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit\"}}]",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"customer_type_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit\"}}]",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"customer_type_form\"}}]",
+      "predicting default action with intent session_start",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"enterprise_form\"}}]",
+      "predicting default action with intent restart",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]",
+      "handling active loops and forms - customer_type_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]",
+      "predicting default action with intent back",
+      "handling active loops and forms - enterprise_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"goodbye\"}}]"
+    ]
+  }
+}
