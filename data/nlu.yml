@@ -1,5 +1,31 @@
 version: "3.1"
 nlu:
+- intent: ask_hru
+  examples: |
+    - hey how are you
+    - i am fine and how about you
+    - whats up
+    - how is it going 
+    - i am a bit sad tell me about your self
+    - how are you doing ?
+    - are you ok
+    - are you fine
+    - whats new with you 
+    - what have you been upto since we last talked
+    - what's new ?
+    - how have ypu been
+    - how's everything
+    - hello how are you doing
+    - hi whats up
+    - Are you alright
+    - how are things going 
+    - everything's going well?
+    - how's your day
+    - I am perfect what about you?
+    - cool how about you
+    - szia, hogy vagy
+    - yo koszonom, hogy vagy
+    - 
 - intent: greet
   examples: |
     - hey
@@ -40,7 +66,6 @@ nlu:
     - god mrning
     - Hej!
     - Good MOrning
-    - how is it going?
     - hola
     - Bonjour
     - Hola
@@ -51,23 +76,24 @@ nlu:
     - Asalam u ale kum
     - asalam u ale kum
     - Salve
-    - hello how are you
     - asslam u alaikum
-    - how are you
-    - how are you?\
     - HI
     - salam u aleakum
     - salam brother
     - salam jani
-    - hi]
+    - hi
     - PLEASE
     - Good afternoon
     - szia
+    - sziastok
+    - jo napot
+    - jo reggelt
+    - jo estet
+    - jo napot kivanok
     - Hi there
     - there
     - HEllo
     - hell
-    - How are you doing
     - Hey
 - intent: goodbye
   examples: |

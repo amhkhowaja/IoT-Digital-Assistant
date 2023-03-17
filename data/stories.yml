@@ -8,6 +8,20 @@ stories:
   - intent: mood_great
   - action: utter_happy
   - action: utter_anything_else
+- story: happy path2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_hru
+  - action: utter_ask_hru
+  - action: utter_anything_else
+- story: happy path3
+  steps:
+  - intent: ask_hru
+  - action: utter_ask_hru
+  - intent: mood_great
+  - action: utter_happy
+  - action: utter_anything_else
 - story: sad path 1
   steps:
   - action: utter_introduction
