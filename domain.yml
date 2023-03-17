@@ -3,6 +3,7 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- ask_hru
 - Learn
 - Troubleshoot
 - affirm
@@ -159,6 +160,10 @@ responses:
   utter_happy:
   - text: Great, carry on!
   - text: Excellent! Please continue.
+  utter_ask_hru:
+  - text: I am perfectly fine. I am glad that you asked.
+  - text: I am spectacular. Thanks for asking.
+  - text: I appreciate that you asked. I am fine
   utter_did_that_help:
   - text: Did that help you?
   - text: I hope it was helpful to you?
@@ -248,6 +253,8 @@ responses:
   - text: Sure, Please provide information required for the onboarding.
   utter_invalid_enterprise_parent_organization:
   - text: Sorry, We can not find any parent organization in your text which is in our database. Please rewrite the parent organization name correctly.
+  utter_ask_msisdn:
+  - text: "Enter the MSISDN: "
   utter_submit:
   - text: |-
       "Hurrah! You have successfully onboarded {enterprise_name} enterprise with agreement number {enterprise_agreement_number} and parent organization as {enterprise_parent_organization}"
@@ -260,6 +267,7 @@ actions:
 - utter_onboarding
 - utter_invalid_customer_type
 - utter_invalid_agreement_number
+- utter_ask_msisdn
 - utter_ask_enterprise_details
 - utter_not_enterprise_customer_type
 - utter_activating_onboarding
