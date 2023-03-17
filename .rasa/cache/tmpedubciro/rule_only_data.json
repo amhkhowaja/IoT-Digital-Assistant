@@ -1,7 +1,0 @@
-{
-  "rule_only_slots": [],
-  "rule_only_loops": [
-    "customer_type_form",
-    "enterprise_form"
-  ]
-}
