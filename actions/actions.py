@@ -445,6 +445,12 @@ class ActionUpdateInventory(Action):
 
         #updating the database
         result = inventory.update_one(fetch, {"$set":update})
+        if result.modified_count > 0:
+            dispatcher.utter_message(text="Hurrah. Updated Successfully.")
+        else : 
+            dispatcher.utter_message(text="Unfortunately we cannot update your data" )
+
+        return []
         #      
         # extracted entities and their values as
         # we will need to define the roles for updation
