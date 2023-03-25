@@ -3,7 +3,7 @@ from rasa_sdk import Action, Tracker
 # from rasa.core.actions.form_validation import FormValidationAction
 from rasa_sdk import Tracker
 from rasa_sdk.forms import FormValidationAction
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet, FollowupAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
 import pymongo
@@ -14,6 +14,8 @@ import requests
 import json
 import random
 import re
+import pandas as pd
+import json
 #Actions
 
 class ActionCPIlink(Action):
@@ -403,6 +405,54 @@ class ActionUpdateInventory(Action):
         except:
             dispatcher.utter_message(text="Sorry! we can not build the connection with the database.")
             return []
+        # extracted entities names:
+        extracted_entities =  prediction["entities"]
+        extracted_entities = [entity for entity in extracted_entities if entity in attributes]
+        all_entities = [entity["entity"] for entity in extracted_entities ]
+        #if msisdn number is not given then it can not perform correctly
+        if "msisdn" not in all_entities:
+            dispatcher.utter_message(template="utter_ask_msisdn") 
+            return [SlotSet("requested_slot", "msisdn"), FollowupAction("action_listen")]
+        msisdn_slot = tracker.get_slot("msisdn")
+        try:
+            result = list(inventory.find({"msisdn": msisdn_slot}))[0]
+        except IndexError as e:
+            dispatcher.utter_message(text="Sorry! we cannot find that msisdn \{msisdn\} in our data.")
+            dispatcher.utter_message(template="utter_ask_msisdn")
+            return [SlotSet("requested_slot", "msisdn"), FollowupAction("action_listen")]
+        # nlu: change the [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock", role:"update_attribute"} of [msisdn]{"entity": "inventory_attribute", "value": "msisdn", "role": "fetch_attribute"} [23123123123]{"entity": "msisdn", "value": "23123123123", "role": "fetch_value"} to [locked]{"entity": "connectivity_lock", "value": "locked", "role":"update_value"}
+        # using pandas dataframe for manipulation in the data and to query the data
+        df= pd.read_json(str(json.dumps(extracted_entities)), orient="records")
         
+
+        #queries:
+        update = {}
+        fetch = {}
+        for i, row in df[df["role"]=="update_value"].reset_index().iterrows():
+            update[row["entity"]] = df[df["role"]=="update_value"].iloc[i]["value"] 
+        for i, row in df[df["role"]=="fetch_value"].reset_index().iterrows():
+            fetch[row["entity"]] = df[df["role"]=="fetch_value"].iloc[i]["value"] 
         
+        print("update: "+update, " fetch: "+fetch)
+
+        if "msisdn" in update:
+            dispatcher.utter_message(text="MSISDN cannot be updated. ")
+            return []
+        if "msisdn" not in fetch:
+            dispatcher.utter_message(text="MSISDN is required to update the database: ")
+            return []
+        
+
+        #updating the database
+        result = inventory.update_one(fetch, {"$set":update})
+        #      
+        # extracted entities and their values as
+        # we will need to define the roles for updation
+        # we cannot update the msisdn number
+        # given msisdn number we can update the previous value to a new value of any attribute
+        # user : change the connectivity lock of msisdn 23123123123 to locked 
+        # user : update the monthly package from 10 gb europe plan to 20 gb america plan
+        # user: activate the 55158481515 in the inventory
+        # considering the example as above and format of nlu :
+            # change the [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock", role:"update_attribute"} of [msisdn]{"entity": "inventory_attribute", "value": "msisdn", "role": "fetch_attribute"} [23123123123]{"entity": "msisdn", "value": "23123123123", "role": "fetch_value"} to [locked]{"entity": "connectivity_lock", "value": "locked", "role":"update_value"}
         
