@@ -36,11 +36,12 @@ intents:
 - update_inventory
 - weather_info
 entities:
-- inventory_attribute
+- network_connectivity
 - msisdn:
     roles:
     - fetch_value
     - update_value
+- inventory_attribute
 - enterprise_agreement_number
 - connectivity_lock:
     roles:
@@ -280,6 +281,7 @@ responses:
   utter_submit:
   - text: '"Hurrah! You have successfully onboarded {enterprise_name} enterprise with agreement number {enterprise_agreement_number} and parent organization as {enterprise_parent_organization}"'
 actions:
+- utter_greet
 - action_update_inventory
 - utter_cheer_up
 - utter_iamabot
@@ -299,7 +301,6 @@ actions:
 - utter_anything_else
 - utter_troubleshooting_time
 - action_fetch_inventory
-- utter_greet
 - utter_submit
 - utter_excuse
 - utter_salam

@@ -539,5 +539,58 @@ stories:
   - slot_was_set:
     - connectivity_lock: unlocked
   - action: action_update_inventory
+  - action: utter_anything_else
 
   
+- story: updating plan name - inventory updation
+  steps:
+  - intent: update_inventory
+    entities:
+    - inventory_attribute: plan_name
+    - plan_name: 20 GB
+      role: fetch_value
+    - plan_name: Local 10 GB Test Kit
+      role: update_value
+    - inventory_atttribute: msisdn
+    - msisdn: '12345678901'
+      role: fetch_value
+  - action: action_update_inventory
+  - action: utter_anything_else
+
+- story: msisdn cannot be updated story
+  steps:
+  - intent: update_inventory
+    entities:
+    - inventory_attribute: msisdn
+    - msisdn: '12345678901'
+      role: fetch_value
+    - msisdn: '03116878418'
+      role: update_value
+  - action: action_update_inventory
+  - action: utter_anything_else
+
+- story: msisdn cannot be updated story
+  steps:
+  - intent: update_inventory
+    entities:
+    - billing_state: Active
+      role: update_value
+    - msisdn: '12345678901'
+      role: fetch_value
+    - inventory: inventory
+  - action: action_update_inventory
+  - action: utter_anything_else
+
+- story: enabling the network connectivity
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: update_inventory
+    entities:
+    - network_connectivity: Enabled
+      role: update_value
+    - inventory_attribute: network_connectivity
+    - msisdn: '12345678901'
+      role: fetch_value
+  - action: action_update_inventory
+  - action: utter_anything_else
