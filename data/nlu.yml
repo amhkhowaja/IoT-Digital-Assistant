@@ -27,17 +27,21 @@ nlu:
     - yo koszonom, hogy vagy
 - intent: update_inventory
   examples: |
-    - change the [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock"} of [msisdn](inventory_attribute) [99324771002]{"entity": "msisdn", "role": "fetch_value", "value":"99324771002"} to [locked]{"entity": "connectivity_lock", "role": "update_value", "value":"Locked"}
-    - change the [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock"} of [msisdn](inventory_attribute) [55498766023]{"entity": "msisdn", "role": "fetch_value", "value":"55498766023"} to [unlocked]{"entity": "connectivity_lock", "role": "update_value", "value":"Unlocked"}
-    - make [billing state]{"entity": "inventory_attribute",  "value":"billing_state"} [active]{"entity": "billing_state", "role": "update_value", "value":"Active"} for msisdn number [77788899911]{"entity": "msisdn", "role": "fetch_value", "value":"77788899911"}
-    - update the [monthly package]{"entity": "inventory_attribute",  "value":"monthly_data"} of [msisdn]{"entity": "inventory_attribute",  "value":"msisdn"} [03116878418]{"entity": "msisdn",  "role":"fetch_value"} to [10gb]{"entity": "monthly_data",  "value":"10 GB", "role": "update_value"}
-    - change the [plan name]{"entity": "inventory_attribute",  "value":"plan_name"} of ["77788899911"]{"entity": "msisdn",  "value":"77788899911", "role": "fetch_value"} to ["National 20 GB Test Kit"]{"entity": "plan_name",  "value":"77788899911", "role": "update_value"}
-    - please change the [monthly plan]{"entity": "inventory_attribute",  "value":"monthly_data"} to [10gb]{"entity": "monthly_data",  "value":"10 GB", "role": "update_value"}
-    - make this [number]{"entity": "inventory_attribute",  "value":"msisdn"} [locked]{"entity": "connectivity_lock",  "value":"Locked", "role": "update_value"} [77788899911]{"entity": "msisdn",  "value":"77788899911", "role": "fetch_value"}
-    - make this [cell phone number]{"entity": "inventory_attribute",  "value":"msisdn"} [unlocked]{"entity": "connectivity_lock",  "value":"Unlocked", "role": "update_value"} [77788899911]{"entity": "msisdn",  "value":"77788899911", "role": "fetch_value"}
-    - make the [billing state]{"entity": "inventory_attribute",  "value":"billing_state"} of [77788899911]{"entity": "msisdn",  "value":"77788899911", "role": "fetch_value"} [inactive]{"entity": "billing_state",  "value":"Inactive", "role": "update_value"}
-    - update the [name]{"entity": "inventory_attribute",  "value":"plan_name"} of the plan from ["National 20 GB Test Kit"]{"entity": "plan_name",  "value":"National 20 GB Test Kit", "role":"fetch_value"} to ["Global 2 GB Test Kit"]{"entity": "plan_name",  "value":"Global 2 GB Test Kit", "role": "update_value"} of [03116878418]{"entity": "msisdn",  "value":"03116878418", "role": "fetch_value"}
-    - update the [name]{"entity": "inventory_attribute",  "value":"plan_name"} of the plan to ["Global 2 GB Test Kit"]{"entity": "plan_name",  "value":"Global 2 GB Test Kit", "role": "update_value"} from ["National 20 GB Test Kit"]{"entity": "plan_name",  "value":"National 20 GB Test Kit", "role":"fetch_value"} of [03116878418]{"entity": "msisdn",  "value":"03116878418", "role": "fetch_value"}
+    - change the [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock"} of [msisdn](inventory_attribute) [99324771002]{"entity": "msisdn", "role": "fetch_value"} to [locked]{"entity": "connectivity_lock", "role": "update_value", "value": "Locked"}
+    - change the [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock"} of [msisdn](inventory_attribute) [55498766023]{"entity": "msisdn", "role": "fetch_value"} to [unlocked]{"entity": "connectivity_lock", "role": "update_value", "value": "Unlocked"}
+    - make [billing state]{"entity": "inventory_attribute", "value": "billing_state"} [active]{"entity": "billing_state", "role": "update_value", "value": "Active"} for msisdn number [77788899911]{"entity": "msisdn", "role": "fetch_value"}
+    - update the [monthly package]{"entity": "inventory_attribute", "value": "monthly_data"} of [msisdn](inventory_attribute) [03116878418]{"entity": "msisdn", "role": "fetch_value"} to [10gb]{"entity": "monthly_data", "role": "update_value", "value": "10 GB"}
+    - change the [plan name]{"entity": "inventory_attribute", "value": "plan_name"} of ["77788899911"]{"entity": "msisdn", "role": "fetch_value", "value": "77788899911"} to ["National 20 GB Test Kit"]{"entity": "plan_name", "role": "update_value", "value": "77788899911"}
+    - please change the [monthly plan]{"entity": "inventory_attribute", "value": "monthly_data"} to [10gb]{"entity": "monthly_data", "role": "update_value", "value": "10 GB"}
+    - make this [number]{"entity": "inventory_attribute", "value": "msisdn"} [locked]{"entity": "connectivity_lock", "role": "update_value", "value": "Locked"} [77788899911]{"entity": "msisdn", "role": "fetch_value"}
+    - make this [cell phone number]{"entity": "inventory_attribute", "value": "msisdn"} [unlocked]{"entity": "connectivity_lock", "role": "update_value", "value": "Unlocked"} [77788899911]{"entity": "msisdn", "role": "fetch_value"}
+    - make the [billing state]{"entity": "inventory_attribute", "value": "billing_state"} of [77788899911]{"entity": "msisdn", "role": "fetch_value"} [inactive]{"entity": "billing_state", "role": "update_value", "value": "Inactive"}
+    - update the [name]{"entity": "inventory_attribute", "value": "plan_name"} of the plan from ["National 20 GB Test Kit"]{"entity": "plan_name", "role": "fetch_value", "value": "National 20 GB Test Kit"} to ["Global 2 GB Test Kit"]{"entity": "plan_name", "role": "update_value", "value": "Global 2 GB Test Kit"} of [03116878418]{"entity": "msisdn", "role": "fetch_value"}
+    - update the [name]{"entity": "inventory_attribute", "value": "plan_name"} of the plan to ["Global 2 GB Test Kit"]{"entity": "plan_name", "role": "update_value", "value": "Global 2 GB Test Kit"} from ["National 20 GB Test Kit"]{"entity": "plan_name", "role": "fetch_value", "value": "National 20 GB Test Kit"} of [03116878418]{"entity": "msisdn", "role": "fetch_value"}
+    - update the [name of plan]{"entity": "inventory_attribute", "value": "plan_name"} from [20gb]{"entity": "plan_name", "role": "fetch_value", "value": "20 GB"} to [Local 10 GB Test Kit]{"entity": "plan_name", "role": "update_value"} of [mobile number]{"entity": "inventory_atttribute", "value": "msisdn"} [12345678901]{"entity": "msisdn", "role": "fetch_value"}update the name of plan from 20gb to Local 10 GB Test Kit of mobile number 12345678901
+    - can you please change the [msisdn](inventory_attribute) from [1234567890 ]{"entity": "msisdn", "role": "fetch_value", "value": "12345678901"}to 0[3116878418]{"entity": "msisdn", "role": "update_value", "value": "03116878418"}
+    - [activate]{"entity": "billing_state", "role": "update_value", "value": "Active"} the [123456789 i]{"entity": "msisdn", "role": "fetch_value", "value": "12345678901"}n the in[ventory]{"entity": "inventory", "value": "inventory"}
+    - [enable]{"entity": "network_connectivity", "role": "update_value", "value": "Enabled"} the [network connection]{"entity": "inventory_attribute", "value": "network_connectivity"} of [12345678901]{"entity": "msisdn", "role": "fetch_value"}
 - intent: greet
   examples: |
     - hey
@@ -1094,6 +1098,81 @@ nlu:
     - connectivity lock
     - lock of connectivity
     - connectivty-lock
+- synonym: Locked
+  examples: |
+    - locked
+    - lock
+    - LOCK
+- synonym: Unlocked
+  examples: |
+    - unlocked
+    - unlock
+    - UNLOCK
+    - not locked
+- synonym: billing_state
+  examples: |
+    - billing state
+    - state of billing
+    - billing
+    - billing status
+- synonym: Active
+  examples: |
+    - active
+    - activate
+- synonym: monthly_data
+  examples: |
+    - monthly package
+    - monthly plan
+    - data per mont
+    - data per mont
+    - monthly data
+    - month data
+    - data
+    - data per month
+- synonym: 10 GB
+  examples: |
+    - 10gb
+- synonym: plan_name
+  examples: |
+    - plan name
+    - name
+    - name of plan
+    - plans
+    - package names
+    - packages
+    - plan
+    - name of the plan
+    - subscription of plan
+- synonym: '77788899911'
+  examples: |
+    - "77788899911"
+- synonym: National 20 GB Test Kit
+  examples: |
+    - "National 20 GB Test Kit"
+- synonym: msisdn
+  examples: |
+    - number
+    - cell phone number
+    - mobile number
+- synonym: Inactive
+  examples: |
+    - inactive
+- synonym: Global 2 GB Test Kit
+  examples: |
+    - "Global 2 GB Test Kit"
+- synonym: 20 GB
+  examples: |
+    - 20gb
+- synonym: '12345678901'
+  examples: |
+    - 1234567890
+    - 123456789 i
+- synonym: '03116878418'
+  examples: |
+    - 3116878418
+- synonym: inventory
+  examples: |
+    - ventory
 - synonym: SIM_STATUS
   examples: |
     - sim status
@@ -1103,22 +1182,6 @@ nlu:
     - installation date
     - installation data
     - installation time
-- synonym: billing_state
-  examples: |
-    - billing state
-    - state of billing
-    - billing
-    - billing status
-- synonym: plan_name
-  examples: |
-    - plans
-    - package names
-    - packages
-    - plan name
-    - plan
-    - name of plan
-    - name of the plan
-    - subscription of plan
 - synonym: yes
   examples: |
     - connected
@@ -1138,14 +1201,6 @@ nlu:
 - synonym: 10 gb
   examples: |
     - 10 G
-- synonym: monthly_data
-  examples: |
-    - data per mont
-    - data per mont
-    - monthly data
-    - month data
-    - data
-    - data per month
 - synonym: china_telecom_mongolia_branch
   examples: |
     - china telecom mongolia branch
@@ -1193,23 +1248,11 @@ nlu:
     - sim subscription state
     - sim state
     - subscription state
-- synonym: Locked
-  examples: |
-    - locked
-    - lock
-    - LOCK
-- synonym: Unlocked
-  examples: |
-    - unlocked
-    - unlock
-    - UNLOCK
-    - not locked
 - synonym: PIN1
   examples: |
     - pin
     - pin 1
     - pin1
-
 - synonym: PUK1
   examples: |
     - puk
@@ -1233,15 +1276,14 @@ nlu:
     - \d[0-9]{14}
 - regex: monthly_data
   examples: |
-    - \d[0-9]gb
-    - \d[0-9] gb
     - \d[0-9] GB
-    - \d[0-9] MB
-    - \d[0-9]mb
-    - \d[0-9] megabyte
-    - \d[0-9] gegabyte
     - \d[0-9] Gegabyte
-
+    - \d[0-9] MB
+    - \d[0-9] gb
+    - \d[0-9] gegabyte
+    - \d[0-9] megabyte
+    - \d[0-9]gb
+    - \d[0-9]mb
 - lookup: plan_name
   examples: |
     - Europe 25 MB Test Kit
