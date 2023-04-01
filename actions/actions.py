@@ -138,74 +138,6 @@ class ActionIMSIStats(Action):
         dispatcher.utter_message(text=msg)
         return []
         
-# class ActionIMSIStats(Action):
-
-#     def name(self) -> Text:
-#         return "action_IMSI_Stats"
-
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-#         prediction = tracker.latest_message
-# #        dispatcher.utter_message(text="Entered Custom Actions Abrar")
-#         slot_value = tracker.get_slot("IMSI_number")
-
-# # Fetching Entity Values
-#         default_entity_value="IMSI_number"
-#         try:
-# #           intent_1 = prediction['intent'].get('name')
-#             current_entity_1 = prediction['entities'][0]['entity']
-#             entity_value = next(tracker.get_latest_entity_values(current_entity_1), None)
-#         except IndexError:
-#             current_entity_1 = None
-
-#         # if (current_entity_1 is None) or (current_entity_1==default_entity_value) or (entity_value=='imsi'):
-#         if (current_entity_1=="subscription") or (current_entity_1 is None) or (current_entity_1==default_entity_value) or (entity_value=='imsi'):
-#                 sql="select "+ "INSTALLATION_DATE, SIM_SUBSCRIPTION_STATE, MSISDN, PIN1, PUK1, SIM_STATUS" +" from SUBSCRIPTION where IMSI="+slot_value
-#         else:
-#                 sql="select "+ entity_value +" from SUBSCRIPTION where IMSI="+slot_value
-
-# #        dispatcher.utter_message(text=sql)
-
-#         connection = None
-#         query_result = ""
-
-#         try:
-#             with cx_Oracle.connect(user="smapp", password="3928ad5894cf58dc7569ad5b733c85",
-#                                        dsn="acc50-dbh-scan.dcp.fi.eu.xdn.ericsson.se:1521/APCONT_SM_SERVICE",
-#                                        encoding="UTF-8") as connection:
-#                 with connection.cursor() as cursor:
-#                     cursor.execute(sql)
-#                     while True:
-#                         row = cursor.fetchone()
-#                         if row is None:
-#                             break
-#                         query_result=row
-# #                        dispatcher.utter_message(row[0])
-
-#         except cx_Oracle.Error as error:
-#             dispatcher.utter_message(text=error)
-#         if query_result is None:
-#             dispatcher.utter_message(text="Sorry no record found for the given IMSI number.")
-# #        finally:
-# #            pass
-# #            if connection:
-# #                connection.close()
-#         # if (current_entity_1 is None) or (current_entity_1==default_entity_value) or (entity_value=='imsi'):
-#         if (current_entity_1=="subscription") or (current_entity_1 is None) or (current_entity_1==default_entity_value) or (entity_value=='imsi'):
-#             msg=f"""The details of IMSI {slot_value} are:
-#             The Installation date is {query_result[0]}.
-#             The SIM state is {query_result[1]}.
-#             MSISDN is  {query_result[2]}.
-#             Pin is {query_result[3]}.
-#             Puk is  {query_result[4]}.
-#             And SIM status is {query_result[5]}."""
-#         else:
-#             msg=f"The {' '.join(str(entity_value).lower().split('_'))} of IMSI {slot_value} is: \n {query_result[0]}"
-#         dispatcher.utter_message(text=msg)
-
-#         return[]
 
 
 class ActionNewsFetch(Action):
@@ -397,6 +329,7 @@ class ActionUpdateInventory(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         prediction = tracker.latest_message
+        print(prediction)
         attributes = ["msisdn","plan_name", "connectivity_lock", "network_connectivity", "in_session", "billing_state", "monthly_data", "data_trend"]
         try:
             client = MongoClient("mongodb://localhost:27017")
@@ -407,20 +340,22 @@ class ActionUpdateInventory(Action):
             return []
         # extracted entities names:
         extracted_entities =  prediction["entities"]
-        extracted_entities = [entity for entity in extracted_entities if entity in attributes]
-        all_entities = [entity["entity"] for entity in extracted_entities ]
+        # extracted_entities = [entity for entity in extracted_entities if entity in attributes]
+        all_entities = [entity["entity"] for entity in extracted_entities if entity["entity"] in attributes]
+        print("All Entities:", all_entities)
         #if msisdn number is not given then it can not perform correctly
         if "msisdn" not in all_entities:
             dispatcher.utter_message(template="utter_ask_msisdn") 
             return [SlotSet("requested_slot", "msisdn"), FollowupAction("action_listen")]
-        msisdn_slot = tracker.get_slot("msisdn")
+        # msisdn_slot = tracker.get_slot("msisdn")
+        msisdn_slot = int([ent.get("value") for ent in extracted_entities if ent["entity"]=="msisdn"][0])
         try:
             result = list(inventory.find({"msisdn": msisdn_slot}))[0]
         except IndexError as e:
             dispatcher.utter_message(text="Sorry! we cannot find that msisdn \{msisdn\} in our data.")
             dispatcher.utter_message(template="utter_ask_msisdn")
-            return [SlotSet("requested_slot", "msisdn"), FollowupAction("action_listen")]
-        # nlu: change the [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock", role:"update_attribute"} of [msisdn]{"entity": "inventory_attribute", "value": "msisdn", "role": "fetch_attribute"} [23123123123]{"entity": "msisdn", "value": "23123123123", "role": "fetch_value"} to [locked]{"entity": "connectivity_lock", "value": "locked", "role":"update_value"}
+            return [SlotSet("requested_slot", "msisdn"), FollowupAction("action_update_inventory")]
+        # nlu: change the [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock", role:"update_attribute"} of [mLdn]{"entity": "inventory_attribute", "value": "msisdn", "role": "fetch_attribute"} [23123123123]{"entity": "msisdn", "value": "23123123123", "role": "fetch_value"} to [locked]{"entity": "connectivity_lock", "value": "locked", "role":"update_value"}
         # using pandas dataframe for manipulation in the data and to query the data
         df= pd.read_json(str(json.dumps(extracted_entities)), orient="records")
         
@@ -433,7 +368,7 @@ class ActionUpdateInventory(Action):
         for i, row in df[df["role"]=="fetch_value"].reset_index().iterrows():
             fetch[row["entity"]] = df[df["role"]=="fetch_value"].iloc[i]["value"] 
         
-        print("update: "+update, " fetch: "+fetch)
+        print("update: "+str(update), " fetch: "+str(fetch))
 
         if "msisdn" in update:
             dispatcher.utter_message(text="MSISDN cannot be updated. ")
@@ -441,14 +376,15 @@ class ActionUpdateInventory(Action):
         if "msisdn" not in fetch:
             dispatcher.utter_message(text="MSISDN is required to update the database: ")
             return []
-        
+        else:
+            fetch["msisdn"]=int(fetch["msisdn"])
 
         #updating the database
         result = inventory.update_one(fetch, {"$set":update})
         if result.modified_count > 0:
             dispatcher.utter_message(text="Hurrah. Updated Successfully.")
         else : 
-            dispatcher.utter_message(text="Unfortunately we cannot update your data" )
+            dispatcher.utter_message(text="It seems like you already have it updated" )
 
         return []
         #      
@@ -456,9 +392,9 @@ class ActionUpdateInventory(Action):
         # we will need to define the roles for updation
         # we cannot update the msisdn number
         # given msisdn number we can update the previous value to a new value of any attribute
-        # user : change the connectivity lock of msisdn 23123123123 to locked 
+        # user :  
         # user : update the monthly package from 10 gb europe plan to 20 gb america plan
         # user: activate the 55158481515 in the inventory
         # considering the example as above and format of nlu :
             # change the [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock", role:"update_attribute"} of [msisdn]{"entity": "inventory_attribute", "value": "msisdn", "role": "fetch_attribute"} [23123123123]{"entity": "msisdn", "value": "23123123123", "role": "fetch_value"} to [locked]{"entity": "connectivity_lock", "value": "locked", "role":"update_value"}
-        
+        # update the package [monthly limit]{"entity": "inventory_attribute", "value": "monthly_data"} from [10gb]{"entity": "monthly_data", "role": "fetch_value", "value": "10 GB"} to [20gb]{"entity": "plan_name", "role": "update_value", "value": "20 GB"} of [mobile number]{"entity": "inventory_attribute", "value": "msisdn"} [12345678901]{"entity": "msisdn", "role": "fetch_value"}

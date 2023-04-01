@@ -497,3 +497,47 @@ stories:
   - active_loop: null
   - action: action_submit_onboarding
   - action: utter_submit
+
+- story: interactive_story_1
+  steps:
+  - intent: update_inventory
+    entities:
+    - inventory_attribute: connectivity_lock
+    - inventory_attribute: msisdn
+    - msisdn: '03116878418'
+    - connectivity_lock: locked
+
+- story: interactive_story_2
+  steps:
+  - intent: update_inventory
+    entities:
+    - inventory_attribute: connectivity_lock
+    - inventory_attribute: msisdn
+    - msisdn: '55498766023'
+    - connectivity_lock: locked
+  - action: action_update_inventory
+  - slot_was_set:
+    - requested_slot: msisdn
+  - intent: enterprise_agreement_number_enter
+    entities:
+    - enterprise_agreement_number: '99324771002'
+  - slot_was_set:
+    - enterprise_agreement_number: '99324771002'
+
+- story: Updation of inventory
+  steps:
+  - intent: update_inventory
+    entities:
+    - inventory_attribute: connectivity_lock
+    - inventory_attribute: msisdn
+    - msisdn: '55498766023'
+      role: fetch_value
+    - connectivity_lock: unlocked
+      role: update_value
+  - slot_was_set:
+    - msisdn: '55498766023'
+  - slot_was_set:
+    - connectivity_lock: unlocked
+  - action: action_update_inventory
+
+  

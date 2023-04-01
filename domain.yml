@@ -3,11 +3,11 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- ask_hru
 - Learn
 - Troubleshoot
 - affirm
 - ask_bot_question
+- ask_hru
 - ask_joke
 - bot_age
 - bot_challenge
@@ -33,22 +33,35 @@ intents:
 - thank
 - troubleshooting_time
 - unhappy_path
+- update_inventory
 - weather_info
 entities:
+- inventory_attribute
+- msisdn:
+    roles:
+    - fetch_value
+    - update_value
+- enterprise_agreement_number
+- connectivity_lock:
+    roles:
+    - fetch_value
+    - update_value
 - page
 - inventory
-- inventory_attribute
-- monthly_data
+- monthly_data:
+    roles:
+    - fetch_value
+    - update_value
 - subscription_attribute
-- billing_state
-- connectivity_lock
+- billing_state:
+    roles:
+    - fetch_value
+    - update_value
 - option
-- msisdn
 - other
 - customer_type
 - enterprise_name
 - parent_organization
-- enterprise_agreement_number
 - widget
 - attribute
 - connection
@@ -61,9 +74,18 @@ entities:
 - IMSI_number
 - news
 - portal
-- plan_name
-- in_session
-- data_trend
+- plan_name:
+    roles:
+    - fetch_value
+    - update_value
+- in_session:
+    roles:
+    - fetch_value
+    - update_value
+- data_trend:
+    roles:
+    - fetch_value
+    - update_value
 slots:
   IMSI_number:
     type: text
@@ -136,9 +158,9 @@ responses:
   - text: I'm sorry, but I don't have any information about the maintenance schedule at the moment.
   utter_greet:
   - buttons:
-    - payload: '/mood_great'
+    - payload: /mood_great
       title: Happy
-    - payload: '/mood_unhappy'
+    - payload: /mood_unhappy
       title: Sad
     text: Hi! How are you?
   - text: Hello! How can I help you?
@@ -224,9 +246,9 @@ responses:
   - text: Provide the IMSI number please.
   utter_ask_customer_type:
   - buttons:
-    - payload: '/enterprise{{"customer_type":"enterprise"}}'
+    - payload: /enterprise{{"customer_type":"enterprise"}}
       title: Enterprise
-    - payload: '/customer_advanced_reseller{{"customer_type":"advanced_reseller"}}'
+    - payload: /customer_advanced_reseller{{"customer_type":"advanced_reseller"}}
       title: Advanced Reseller
     text: What is the customer type?
   utter_ask_enterprise_name:
@@ -254,11 +276,11 @@ responses:
   utter_invalid_enterprise_parent_organization:
   - text: Sorry, We can not find any parent organization in your text which is in our database. Please rewrite the parent organization name correctly.
   utter_ask_msisdn:
-  - text: "Enter the MSISDN: "
+  - text: 'Enter the MSISDN: '
   utter_submit:
-  - text: |-
-      "Hurrah! You have successfully onboarded {enterprise_name} enterprise with agreement number {enterprise_agreement_number} and parent organization as {enterprise_parent_organization}"
+  - text: '"Hurrah! You have successfully onboarded {enterprise_name} enterprise with agreement number {enterprise_agreement_number} and parent organization as {enterprise_parent_organization}"'
 actions:
+- action_update_inventory
 - utter_cheer_up
 - utter_iamabot
 - utter_happy
