@@ -5,12 +5,12 @@ nlu:
     - hey how are you
     - i am fine and how about you
     - whats up
-    - how is it going 
+    - how is it going
     - i am a bit sad tell me about your self
     - how are you doing ?
     - are you ok
     - are you fine
-    - whats new with you 
+    - whats new with you
     - what have you been upto since we last talked
     - what's new ?
     - how have ypu been
@@ -18,14 +18,26 @@ nlu:
     - hello how are you doing
     - hi whats up
     - Are you alright
-    - how are things going 
+    - how are things going
     - everything's going well?
     - how's your day
     - I am perfect what about you?
     - cool how about you
     - szia, hogy vagy
     - yo koszonom, hogy vagy
-    - 
+- intent: update_inventory
+  examples: |
+    - change the [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock"} of [msisdn](inventory_attribute) [99324771002]{"entity": "msisdn", "role": "fetch_value", "value":"99324771002"} to [locked]{"entity": "connectivity_lock", "role": "update_value", "value":"Locked"}
+    - change the [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock"} of [msisdn](inventory_attribute) [55498766023]{"entity": "msisdn", "role": "fetch_value", "value":"55498766023"} to [unlocked]{"entity": "connectivity_lock", "role": "update_value", "value":"Unlocked"}
+    - make [billing state]{"entity": "inventory_attribute",  "value":"billing_state"} [active]{"entity": "billing_state", "role": "update_value", "value":"Active"} for msisdn number [77788899911]{"entity": "msisdn", "role": "fetch_value", "value":"77788899911"}
+    - update the [monthly package]{"entity": "inventory_attribute",  "value":"monthly_data"} of [msisdn]{"entity": "inventory_attribute",  "value":"msisdn"} [03116878418]{"entity": "msisdn",  "role":"fetch_value"} to [10gb]{"entity": "monthly_data",  "value":"10 GB", "role": "update_value"}
+    - change the [plan name]{"entity": "inventory_attribute",  "value":"plan_name"} of ["77788899911"]{"entity": "msisdn",  "value":"77788899911", "role": "fetch_value"} to ["National 20 GB Test Kit"]{"entity": "plan_name",  "value":"77788899911", "role": "update_value"}
+    - please change the [monthly plan]{"entity": "inventory_attribute",  "value":"monthly_data"} to [10gb]{"entity": "monthly_data",  "value":"10 GB", "role": "update_value"}
+    - make this [number]{"entity": "inventory_attribute",  "value":"msisdn"} [locked]{"entity": "connectivity_lock",  "value":"Locked", "role": "update_value"} [77788899911]{"entity": "msisdn",  "value":"77788899911", "role": "fetch_value"}
+    - make this [cell phone number]{"entity": "inventory_attribute",  "value":"msisdn"} [unlocked]{"entity": "connectivity_lock",  "value":"Unlocked", "role": "update_value"} [77788899911]{"entity": "msisdn",  "value":"77788899911", "role": "fetch_value"}
+    - make the [billing state]{"entity": "inventory_attribute",  "value":"billing_state"} of [77788899911]{"entity": "msisdn",  "value":"77788899911", "role": "fetch_value"} [inactive]{"entity": "billing_state",  "value":"Inactive", "role": "update_value"}
+    - update the [name]{"entity": "inventory_attribute",  "value":"plan_name"} of the plan from ["National 20 GB Test Kit"]{"entity": "plan_name",  "value":"National 20 GB Test Kit", "role":"fetch_value"} to ["Global 2 GB Test Kit"]{"entity": "plan_name",  "value":"Global 2 GB Test Kit", "role": "update_value"} of [03116878418]{"entity": "msisdn",  "value":"03116878418", "role": "fetch_value"}
+    - update the [name]{"entity": "inventory_attribute",  "value":"plan_name"} of the plan to ["Global 2 GB Test Kit"]{"entity": "plan_name",  "value":"Global 2 GB Test Kit", "role": "update_value"} from ["National 20 GB Test Kit"]{"entity": "plan_name",  "value":"National 20 GB Test Kit", "role":"fetch_value"} of [03116878418]{"entity": "msisdn",  "value":"03116878418", "role": "fetch_value"}
 - intent: greet
   examples: |
     - hey
@@ -81,7 +93,6 @@ nlu:
     - salam u aleakum
     - salam brother
     - salam jani
-    - hi
     - PLEASE
     - Good afternoon
     - szia
@@ -95,6 +106,7 @@ nlu:
     - HEllo
     - hell
     - Hey
+    - hy
 - intent: goodbye
   examples: |
     - cu
@@ -986,7 +998,6 @@ nlu:
     - onboard my new [enterprise](customer_type)
     - hey I want to onboard new [enterprise](customer_type) named as [Aeris Communications](enterprise_name)
     - please onboard my [enterprise](customer_type)
-
 - intent: enterprise_name
   examples: |
     - The [enterprise](customer_type) we're onboarding is [Yettel](enterprise_name).
@@ -1060,7 +1071,6 @@ nlu:
     - [china telecom mongolia branch]{"entity": "parent_organization", "value": "china_telecom_mongolia_branch"}
     - parent_organization_china_telecom_mongolia_branch
     - [china telecom]{"entity": "parent_organization", "value": "china_telecom_mongolia_branch"}
-    - [china telecom mongolia branch]{"entity": "parent_organization", "value": "china_telecom_mongolia_branch"}
     - its [china telecom mongolia branch]{"entity": "parent_organization", "value": "china_telecom_mongolia_branch"}
 - intent: enterprise_agreement_number_enter
   examples: |
@@ -1075,9 +1085,15 @@ nlu:
     - where to find the agreement number?
     - Ok thanks, here is my agreement number [123453](enterprise_agreement_number)
     - agreement number is [14852369852147](enterprise_agreement_number)
+    - [99324771002](enterprise_agreement_number)
 - intent: troubleshooting_time
   examples: |
     - when it will be fine ?
+- synonym: connectivity_lock
+  examples: |
+    - connectivity lock
+    - lock of connectivity
+    - connectivty-lock
 - synonym: SIM_STATUS
   examples: |
     - sim status
@@ -1093,11 +1109,6 @@ nlu:
     - state of billing
     - billing
     - billing status
-- synonym: connectivity_lock
-  examples: |
-    - connectivity lock
-    - lock of connectivity
-    - connectivty-lock
 - synonym: plan_name
   examples: |
     - plans
@@ -1139,10 +1150,10 @@ nlu:
   examples: |
     - china telecom mongolia branch
     - china telekom
+    - china telecom
     - ChinaTelecomMongoliaBranch
     - ChinaTelecom
     - ChinaTelekom
-    - china telecom
     - telekom ch
     - china telecom mongolia
     - china telekom branch mongolia
@@ -1182,19 +1193,74 @@ nlu:
     - sim subscription state
     - sim state
     - subscription state
+- synonym: Locked
+  examples: |
+    - locked
+    - lock
+    - LOCK
+- synonym: Unlocked
+  examples: |
+    - unlocked
+    - unlock
+    - UNLOCK
+    - not locked
 - synonym: PIN1
   examples: |
     - pin
     - pin 1
     - pin1
+
 - synonym: PUK1
   examples: |
     - puk
     - puk1
     - puk 1
+- synonym: Enabled
+  examples: |
+    - enabled
+    - turned on
+    - enable
+- synonym: Disabled
+  examples: |
+    - disabled
+    - turned off
+    - disable
 - regex: IMSI_number
   examples: |
     - \d[0-9]{15}
 - regex: enterprise_agreement_number
   examples: |
     - \d[0-9]{14}
+- regex: monthly_data
+  examples: |
+    - \d[0-9]gb
+    - \d[0-9] gb
+    - \d[0-9] GB
+    - \d[0-9] MB
+    - \d[0-9]mb
+    - \d[0-9] megabyte
+    - \d[0-9] gegabyte
+    - \d[0-9] Gegabyte
+
+- lookup: plan_name
+  examples: |
+    - Europe 25 MB Test Kit
+    - Asia 50 MB Test Kit
+    - North America 100 MB Test Kit
+    - South America 200 MB Test Kit
+    - Africa 500 MB Test Kit
+    - Australia 1 GB Test Kit
+    - Global 2 GB Test Kit
+    - National 20 GB Test Kit
+    - International 50 GB Test Kit
+- lookup: billing_state
+  examples: |
+    - Pending
+    - Active
+    - Inactive
+- lookup: data_trend
+  examples: |
+    - Downward
+    - Upward
+    - Stable
+    - Fluctuating
