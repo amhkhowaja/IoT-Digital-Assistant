@@ -38,9 +38,23 @@ action_endpoint:
 
 # Event broker which all conversation events should be streamed to.
 # https://rasa.com/docs/rasa/event-brokers
-
+tracker_store:
+   type: mongod
+   url: mongodb://localhost:27017
+   db: IOTA
 #event_broker:
 #  url: localhost
 #  username: username
 #  password: password
 #  queue: queue
+event_broker:
+  type: pika
+  url: localhost
+  username: guest
+  password: guest
+  queues:
+    - queue-1
+#   you may supply more than one queue to publish to
+#   - queue-2
+#   - queue-3
+  exchange_name: exchange
