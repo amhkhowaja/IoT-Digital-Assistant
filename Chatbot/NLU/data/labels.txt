@@ -1,0 +1,10 @@
+attribute
+connection
+identifier
+inventory
+location
+option
+page
+stat
+time
+widget

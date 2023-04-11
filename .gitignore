@@ -1,3 +1,5 @@
 .rasa
 models
 actions/__pycache__
+*.jpg
+*.png

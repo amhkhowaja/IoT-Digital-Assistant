@@ -1,0 +1,52 @@
+Questions,Intent
+What are the different types of SIM cards?,information_seek
+What is the difference between network and billing states?,information_Comparison
+Can I export the data from the table as I customized it to Excel?,information_seek
+How do I get usage data?,fetch
+What is the acronym ICCID?,information_seek
+Why is my portal slow?,Troubleshoot
+fetch the traffic generated last 30 days.,fetch
+Can I manage my filters?,information_seek
+Tell me about filters.,information_seek
+What is the traffic generated in last 30 days?,fetch
+How can I compare imei and msisdn?,information_Comparison
+How can I add/apply/create filters?,Learn
+Why NW connectivity enabled is enabled?,Troubleshoot
+Can I select disabled rows as well?,Learn
+Why are there error messages?,Troubleshoot
+How do I save my settings?,Learn
+I can't see summary counter,Troubleshoot
+How can I export the data table into Excel?,Learn
+How can I use summary counter?,Learn
+How do I see more rows in one view?,Learn
+Can I customize my view?,Learn
+What do you think of counters?,information_seek
+I can't see plan,Troubleshoot
+What are custom fields and why?,information_seek
+How can I use search?,Learn
+I can't see portal,Troubleshoot
+I can't see subscription,Troubleshoot
+How can I search with batch?,Learn
+How much does it cost to order a SIM card?,information_seek
+How is network connectivity enabled?,information_seek
+"What is the difference between the rows, which one should I choose?",information_Comparison
+What is the cause of error messages?,Troubleshoot
+What are subscription notes?,information_seek
+List billing states please,fetch
+Tell me about each action,information_seek
+How do I change the name of my plan?,Learn
+Where is a state change happening?,Learn
+What is the best way to apply filter?,Learn
+Can I save my filters?,information_seek
+How do I select which columns to display?,Learn
+How can I save my settings?,Learn
+I can't see connectivity lock,Troubleshoot
+How can I add a filter?,Learn
+Why do error messages show up?,Troubleshoot
+What are the billing states?,fetch
+Can I save my settings?,Learn
+Can I hide the custom counters?,Learn
+How can I search with a batch file?,Learn
+I can't see counters,Troubleshoot
+What is a custom field?,information_seek
+What are some ways to define custom fields?,Learn
