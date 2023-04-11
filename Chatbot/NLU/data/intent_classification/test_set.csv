@@ -1,0 +1,102 @@
+Questions,Intent
+How can I edit the labels?,Learn
+What billing states do you want to list?,fetch
+How do I check if a subscription is misbehaving?,Learn
+How do you generate invoices?,fetch
+How do I save settings on my computer?,Learn
+Why do I have to select more than 1 row?,information_seek
+How do I distinguish between billing state active and inactive?,information_Comparison
+How do I choose which columns to display?,Learn
+"What is the difference between rows, which one should I choose?",information_seek
+What do summary counters stand for?,information_seek
+What does batch mean?,information_seek
+How do I define custom field?,Learn
+I can't see imsi,Troubleshoot
+What do you mean by network connectivity?,information_seek
+Why do I get error messages?,Troubleshoot
+Why is NW connectivity enabled? Why?,Troubleshoot
+How do I add/apply filters?,Learn
+Could you show me the report?,fetch
+Can you tell me about filters?,information_seek
+How do I add custom fields?,Learn
+"I see a lock, why?",information_seek
+What are the benefits of network connectivity?,information_seek
+What is network connectivity?,information_seek
+Why did I see a lock?,information_seek
+What is the difference between column filter and summary counter?,information_Comparison
+What is the usage data?,fetch
+Can you differentiate between network connectivity enabled and disabled?,information_Comparison
+Bring me location with largest traffic.,fetch
+How do I use summary counters?,Learn
+What does network connectivity mean?,information_seek
+Why do I see a lock?,information_seek
+What do you think of filters?,information_seek
+I want to add/apply/create filters,Learn
+How do I define summary counters?,Learn
+What is the best way to logout?,Learn
+What's network connectivity disabled?,information_seek
+Will the portal remember your selection if I apply a filter?,information_seek
+How do I apply filters?,Learn
+Why should I select more than one row?,information_seek
+How do you distinguish between billing state active and inactive?,information_Comparison
+What is CSV?,information_seek
+What does connectivity mean?,information_seek
+How can I add custom fields?,Learn
+Can you show me example keywords?,information_seek
+What's MSISDN?,information_seek
+I see a lock why?,information_seek
+Euicc order.,information_seek
+What does an in-session mean?,information_seek
+How can I change the order of the columns? lists,Learn
+What is announcements about?,information_seek
+What is IMSI,information_seek
+Why is NW connectivity disabled?,Troubleshoot
+How can I generate invoices?,fetch
+What does locking mean?,information_seek
+How can I export the filtered data into Excel?,Learn
+Can I hide the custom counters?,Learn
+What does network connectivity mean?,information_seek
+How can I edit IMEI?,Learn
+how to select more than 10000 imsi,Learn
+What is a lock?,information_seek
+How can I see if a subscription is misbehaving?,Learn
+How can I see if my subscription is misbehaving?,Learn
+How do you add filters?,Learn
+Why does portal slow?,Troubleshoot
+How do I hide my custom counters?,Learn
+What does insession mean?,information_seek
+What is this lock/padlock?,information_seek
+What does IMEI stand for?,information_seek
+What are custom fields?,information_seek
+How can I personalize my view?,Learn
+How do I define custom fields?,Learn
+state change where??,Learn
+How do I create filter?,Learn
+What can I do from this page?,information_seek
+How can I import my own batch file from the laptop?,Learn
+fetch the subscription created in last 30 days.,fetch
+How to add/apply/create filters?,Learn
+How can I save my view?,Learn
+How can I find subscriptions with no data for last 2 months?,Learn
+How can I see what subscriptions have had traffic today?,Learn
+What's the difference between sim and euicc?,information_Comparison
+What are some billing states?,fetch
+How can I add/create a filter?,Learn
+What is the best thing to do on this page?,information_seek
+How can I hide the custom counters?,Learn
+How can I logout?,Learn
+What is the difference between billing state active and inactive?,information_Comparison
+Does search crieteria apply to all pages?,information_seek
+What is in session?,information_seek
+What is an ICCID?,information_seek
+How can I change the subscription package?,Learn
+How do I fetch subscriptions created in last 30 days?,fetch
+How can I save a view?,Learn
+What are different types of SIMs?,information_seek
+What does lock mean?,information_seek
+What are the search rules?,information_seek
+How can I select which columns to display?,Learn
+How can I add filters?,Learn
+What is the best way to save a view?,Learn
+Can I customize my view?,Learn
+How can I define summary counters?,Learn

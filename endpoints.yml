@@ -47,14 +47,14 @@ tracker_store:
 #  username: username
 #  password: password
 #  queue: queue
-event_broker:
-  type: pika
-  url: localhost
-  username: guest
-  password: guest
-  queues:
-    - queue-1
-#   you may supply more than one queue to publish to
-#   - queue-2
-#   - queue-3
-  exchange_name: exchange
+# event_broker:
+#   type: pika
+#   url: localhost
+#   username: guest
+#   password: guest
+#   queues:
+#     - queue-1
+# #   you may supply more than one queue to publish to
+# #   - queue-2
+# #   - queue-3
+#   exchange_name: exchange

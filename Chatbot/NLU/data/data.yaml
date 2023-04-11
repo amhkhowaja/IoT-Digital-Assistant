@@ -1,0 +1,523 @@
+nlu:
+- intent: Learn
+  examples:
+  - how do i apply [filter](widget)s?
+  - how do i create [filter](widget)?
+  - can i select disabled [row](attribute)s as well?
+  - how do i hide custom [counters](widget.)?
+  - how do i personalize my [view](attribute)?
+  - how can i add/apply/create [filter](widget)s?
+  - i want to add/apply/create a [filter](widget)
+  - how can i know which [subscription](inventory)s have had traffic today?
+  - how can i add/create a [filter](widget)?
+  - how can i add [filter](widget)s?
+  - How can I make the colums that are relevant for me visible? lists
+  - how do i know which [subscription](inventory)s have had traffic today?
+  - how do i use [summary counter](widget)s?
+  - how do you add [filter](widget)s?
+  - how can i add a [filter](widget)?
+  - how can i use [summary counter](widget)?
+  - can i find [subscription](inventory)s based on my notes?
+  - how can i select the [column](attribute)s to display?
+  - how do you order [sim](inventory)?
+  - how can i change the owner of the [subscription](inventory)s?
+  - how can i save my [view](attribute)?
+  - i want to add/apply/create a [filter](widget).
+  - how can i change the order of the [column](attribute)s? lists
+  - how do i customize my [view](attribute)?
+  - how can i change my [plan](option) name?
+  - can i see more [row](attribute)s in one [view](attribute)?
+  - can i see more [row](attribute)s in a [view](attribute)?
+  - can i save my [view](attribute)?
+  - how do i add/apply/create [filter](widget)s?
+  - how do i add/apply [filter](widget)s?
+  - how can i select which [column](attribute)s to display?
+  - i want to add/apply/create [filter](widget)?
+  - how to select more than 10000 [imsi](identifier)
+  - how can i save my [settings](option)?
+  - '[state](option) change where??'
+  - how can i select which [column](attribute)s to display?
+  - how can i save my [view](attribute)s?
+  - how can i change the [state](option)?
+  - how do you select more than 10000 [imsi](identifier)?
+  - how do i hide the custom [counters](widget.)?
+  - how can i get more than 10000 [imsi](identifier)?
+  - how can i see which [subscription](inventory)s have had traffic today?
+  - how can i edit [imei](identifier)?
+  - how do i customize my [view](attribute)s?
+  - how do i select 10000 [imsi](identifier)?
+  - how do i add/apply [filter](widget)s?
+  - i want to add/apply/create [filter](widget)s?
+  - how do i create [filter](widget)s?
+  - how do i add [filter](widget)s?
+  - how do i choose which [column](attribute)s to display?
+  - logout
+  - how can i import my own [batch](other) file from the laptop?
+  - how do i define [summary counter](widget)s?
+  - how can i create a business automation [rule](other)?
+  - can i see [row](attribute)s in one [view](attribute)?
+  - is it possible to select disabled [row](attribute)s?
+  - how do i select the [column](attribute)s i want to display?
+  - how do i select more than 10000 [imsi](identifier)?
+  - how can i hide the [column](attribute)s i dont need? lists
+  - How to change the region of my subscrtiptions?
+  - can i save my [settings](option)?
+  - how do i create [custom fields](widget)?
+  - how can i change the [plan](option) name?
+  - how can i see what [subscription](inventory)s have had traffic today?
+  - how can i define [custom fields](widget)?
+  - how can i [search](widget) with batch?
+  - how do i define [summary counter](widget)?
+  - i want to add/apply/create [filter](widget).
+  - how do you add [filter](widget)s?
+  - what is the best way to save [settings](option)?
+  - How can I logout?
+  - How do I log out of my account?
+  - how can i find [subscription](inventory)s with no data for last 2 [months](time)?
+  - how can i use [custom fields](widget)?
+  - how do i create a [filter](widget)?
+  - how can i apply a [filter](widget)?
+  - what is the best way to apply [filter](widget)?
+  - Logout!
+  - how can i define [summary counter](widget)s?
+  - how do you use [summary counter](widget)s?
+  - how can i see if a [subscription](inventory) is misbehaving?
+  - how do you save your [settings](option)?
+  - '[euicc](inventory) order'
+  - how can i apply [filter](widget)?
+  - how can i see if a [subscription](inventory) is misbehaving?
+  - how to add/apply/create a [filter](widget)?
+  - how can i see how the [subscription](inventory)s are doing?
+  - how can i edit the [labels](other)?
+  - how can i customize my [view](attribute)?
+  - how can i add/apply/create [filter](widget)?
+  - can i customize my [view](attribute)?
+  - how do i apply [filter](widget)s?
+  - how can i personalize my [view](attribute)?
+  - can i save a [view](attribute)?
+  - what are [summary counter](widget)s?
+  - How can I change fixed IP?
+  - where is a [state](option) change happening?
+  - how do i create [filter](widget)s?
+  - how do i hide my custom [counters](widget.)?
+  - how can i use [summary counter](widget)s?
+  - how do i apply a [filter](widget)?
+  - how do i customize a [view](attribute)?
+  - how can i [search](widget) with a batch file?
+  - how can you use [summary counter](widget)s?
+  - order [sim](inventory)?
+  - how do we define [custom fields](widget)?
+  - how do i change my [plan](option) name?
+  - can i see multiple [row](attribute)s in one [view](attribute)?
+  - how do i add/apply/create a [filter](widget)?
+  - how can i add [custom fields](widget)?
+  - How do I logout?
+  - can i somehow see more [row](attribute)s in one [view](attribute)?
+  - how do i define [custom fields](widget)?
+  - how can i export the filtered [data](other) into excel?
+  - how do i add/create a [filter](widget)?
+  - how do i know if my [subscription](inventory) is misbehaving?
+  - how can i reassign [msisdn](identifier)?
+  - how do i select which [column](attribute)s to display?
+  - how can i see how many [subscription](inventory)s have had traffic today?
+  - how do i add/apply [filter](widget)s?
+  - how can i use [search](widget)?
+  - how many table [row](attribute)s can be exported into excel?
+  - can i select disabled [row](attribute)s?
+  - how do i create [custom fields](widget)?
+  - how do i add [custom fields](widget)?
+  - what is the best way to save a [view](attribute)?
+  - how do i check if a [subscription](inventory) is misbehaving?
+  - how do i see more [row](attribute)s in one [view](attribute)?
+  - how can i export the data [table](attribute) into excel?
+  - can i use [custom fields](widget)?
+  - how can i define [summary counter](widget)s?
+  - how do i define a [summary counter](widget)?
+  - how can i know which [subscription](inventory)s are behaving badly?
+  - how can i customize a [view](attribute)?
+  - can i save my [settings](option)?
+  - can i see more [row](attribute)s in a single [view](attribute)?
+  - how do i change the name of my [plan](option)?
+  - how do i save [settings](option) on my computer?
+  - i want to add/apply/create [filter](widget)s
+  - What should I do to logout?
+  - how do i order [sim](inventory)?
+  - can i hide the custom [counters](widget.)?
+  - can i select disabled [row](attribute)s as well?
+  - how do i select more than 10000 [imsi](identifier) cards?
+  - how can i disable [network connectivity](connection)?
+  - how can i create [custom fields](widget)?
+  - how can i define [custom fields](widget)?
+  - how can i see if my [subscription](inventory) is misbehaving?
+  - How do I define custom field?
+  - how can i [sort](attribute)? lists
+  - how do i disable [network connectivity](connection)?
+  - where is [state](option) change?
+  - order [sim](inventory)
+  - how to add/apply/create [filter](widget)s?
+  - how can [network connectivity](connection) be disabled?
+  - how can i personalize my [view](attribute)?
+  - can i hide the custom [counters](widget.)?
+  - How do I log out?
+  - what are some ways to define [custom fields](widget)?
+  - can i customize my [view](attribute)?
+  - how do i save my [settings](option)?
+  - how do i create [summary counter](widget)s?
+  - what is the best way to add [filter](widget)s?
+  - how can i check if a [subscription](inventory) is misbehaving?
+  - how can i hide the custom [counters](widget.)?
+  - how can i change the [subscription](inventory) package?
+  - What is the best way to logout?
+  - how can i see which [subscription](inventory) has had traffic today?
+  - how can i save a [view](attribute)?
+  - what is the best way to use [custom fields](widget)?
+  - order [sim](inventory)!
+  - how can i select disabled [row](attribute)s?
+  - how can i see which [subscription](inventory)s have had traffic today?
+  - how can i select disabled [row](attribute)s as well?
+  - what is [state](option) change?
+  - how do you define [summary counter](widget)s?
+- intent: information_Comparison
+  examples:
+  - what is the difference between the [row](attribute)s, which one should i choose?
+  - what is the comparison between [imei](identifier) and [msisdn](identifier)?
+  - how do i differentiate between [summary counter](widget)s and [column filter](None)s?
+  - What is the difference between billing and network states?
+  - what is the difference between [network connectivity](connection) and [billing
+    state](option)s?
+  - is [network connectivity](connection) enabled or disabled?
+  - what are the differences between [summary counter](widget)s and [column filter](None)s?
+  - what's the difference between network and [billing state](option)s?
+  - what are the differences between [sim](inventory) and [euicc](inventory)?
+  - how can i compare [imei](identifier) and [msisdn](identifier)?
+  - how do i differentiate between [network connectivity](connection) enabled and
+    disabled?
+  - how do you distinguish between [billing state](option) active and inactive?
+  - how can i distinguish between [billing state](option) active and inactive?
+  - what are the [billing state](option)s active and inactive?
+  - how do i distinguish between [billing state](option) active and inactive?
+  - can we distinguish between [network connectivity](connection) enabled and disabled?
+  - can you differentiate between [network connectivity](connection) enabled and disabled?
+  - what's the difference between [billing state](option)s and network states?
+  - what are [summary counter](widget)s and [column filter](None)s?
+  - what is the difference between inactive and active [billing state](option)s?
+  - how can i differentiate between [network connectivity](connection) enabled and
+    disabled?
+  - what is the difference between [column filter](None) and [summary counter](widget)?
+  - What is the difference between billing and network?
+  - what is the difference between [network connectivity](connection) and [connectivity
+    lock](connection)?
+  - what is [billing state](option) active and inactive?
+  - can you compare [imei](identifier) and [msisdn](identifier)?
+  - what is the difference between [imei](identifier) and [msisdn](identifier)?
+  - what is the difference between [billing state](option) active and inactive?
+  - why is [network connectivity](connection) disabled?
+  - what is the difference between [network connectivity](connection) enabled and
+    disabled?
+  - what is the difference between [sim](inventory) and [euicc](inventory)?
+  - what is the [billing state](option) inactive and active?
+  - how do you differentiate between [summary counter](widget)s and [column filter](None)s?
+  - what's the difference between [sim](inventory) and [euicc](inventory)?
+  - is [billing state](option) active or inactive?
+  - can you please tell me difference between [network connectivity](connection) and
+    [connectivity lock](connection)?
+  - what is the difference between [msisdn](identifier) and [imei](identifier)?
+  - what is the difference between [billing state](option)s and network states?
+  - what is the difference between network and [billing state](option)s?
+- intent: information_seek
+  examples:
+  - how much would it [cost](None) to order [sim](inventory)?
+  - what is [imei](identifier)? what does it mean?
+  - does [sort](attribute)ing have impact on whole inventory?
+  - what are [counters](widget.)?
+  - What is a padlock?
+  - '[euicc](inventory) order.'
+  - what is [summary counter](widget)?
+  - What do you mean by table?
+  - What can I do with this page?
+  - tell me about [filter](widget)s.
+  - what is [imsi](identifier)
+  - what is the [euicc](inventory) order?
+  - tell me about [filter](widget)s
+  - what is the meaning of [network connectivity](connection)?
+  - why is there a lock/padlock in [connectivity lock](connection) column?
+  - how is [network connectivity](connection) disabled?
+  - can i share my [filter](widget)ings?
+  - what do [summary counter](widget)s stand for?
+  - can i export the [data](other) from the [table](attribute) as i customized it
+    to excel?
+  - can i see the any real-time [data](other)?
+  - What does in session mean?
+  - '[euicc](inventory) order?'
+  - how much does it [cost](None) to order a [sim](inventory) card?
+  - what should i know about [counters](widget.)?
+  - what does [network connectivity](connection) mean?
+  - why should i choose more than 1 [row](attribute)?
+  - is there a lock/padlock in [connectivity lock](connection) column?
+  - why is [network connectivity](connection) enabled?
+  - tell me about each [action](widget) and why?
+  - What is a lock padlock?
+  - does [search](widget) crieteria apply to all pages?
+  - who can see my [notes](other)?
+  - what is [network connectivity](connection)?
+  - What can I do in this page?
+  - can you tell me about [filter](widget)s?
+  - what is [network connectivity](connection) disabled?
+  - what are [sim](inventory)s?
+  - what is the meaning of [announcement](page)s?
+  - what is [msisdn](identifier)? what does it mean?
+  - what is [filter](widget)?
+  - what are [summary counter](widget)s?
+  - what are the different kinds of [sim](inventory)s?
+  - tell me about every [action](widget).
+  - what are [filter](widget)s?
+  - what does [network connectivity](connection) mean?
+  - what are [subscription](inventory) notes?
+  - what are different types of [sim](inventory)s?
+  - tell me about each [action](widget)
+  - what is [network connectivity](connection) disabled?
+  - Why did I see a lock?
+  - Tell me about table
+  - What is table?
+  - what [imsi](identifier) stands for?
+  - What is in session?
+  - what is [filter](widget)ing?
+  - how often will the [table](attribute) refresh?
+  - what does [batch](other) mean?
+  - why should i select more than 1 [row](attribute)?
+  - what do you mean by [counters](widget.)?
+  - What does lock mean?
+  - what is [sim](inventory)?
+  - I see a lock why?
+  - what does [msisdn](identifier) stand for?
+  - is [network connectivity](connection) disabled?
+  - what is the acronym [iccid](identifier)?
+  - where is there a lock/padlock in [connectivity lock](connection) column?
+  - what do you think of [filter](widget)s?
+  - what are the different types of [sim](inventory)s?
+  - what can i do in [subscription](inventory) inventory?
+  - what is the [iccid](identifier)?
+  - why do i have to select more than one [row](attribute)?
+  - why should i select more than 1 [row](attribute)?
+  - what is an [imsi](identifier)?
+  - what is the purpose of [msisdn](identifier)?
+  - What is a lock?
+  - what is [announcement](page)s
+  - What is a lock?
+  - how do [counters](widget.) work?
+  - what is [imei](identifier) and why?
+  - what do you mean by [network connectivity](connection)?
+  - why do i have to select more than 1 [row](attribute)?
+  - tell me about [counters](widget.)
+  - What does locking mean?
+  - I see a lock, why?
+  - there is a lock/padlock in [connectivity lock](connection) column
+  - What is a lockpadlock?
+  - will the [portal](page) remember your selection if i apply a [filter](widget)?
+  - what are the different types of [sim](inventory)s?
+  - what is [imsi](identifier)?
+  - what are [summary counter](widget)s?
+  - what does the [imei](identifier) stand for?
+  - can i reactivate terminated [subscription](inventory)s?
+  - what is the acronym [imsi](identifier)?
+  - can i save my [filter](widget)s?
+  - why is [network connectivity](connection) disabled?
+  - how is [network connectivity](connection) enabled?
+  - What does "in session" mean?
+  - can you tell me about [counters](widget.)?
+  - what does [announcement](page)s mean?
+  - '[euicc](inventory) order?'
+  - what is a [trigger](page)?
+  - What can I do from this page?
+  - there is a lock/padlock in [connectivity lock](connection) column.
+  - can i manage my [filter](widget)s?
+  - how are [filter](widget)s working?
+  - do [filter](widget)s apply to all pages?
+  - What does insession mean?
+  - What is CSV?
+  - What do you think about table?
+  - what does the [iccid](identifier) stand for?
+  - What does connectivity mean?
+  - what is an [iccid](identifier)?
+  - What is a lock/padlock?
+  - what's a [connectivity lock](connection)?
+  - what happens if i remove a [filter](widget)?
+  - what do you think about [counters](widget.)?
+  - what [filter](widget)s do you use?
+  - what is the difference between [row](attribute)s, which one should i choose?
+  - what is [msisdn](identifier)
+  - Why do I see a lock?
+  - will the [portal](page) remember my selection when i apply a [filter](widget)?
+  - I see a lock, why?
+  - why should i select more than one [row](attribute)?
+  - can i save my [filter](widget)ing for next time?
+  - What is in session mean?
+  - I see a lock and why?
+  - can you show me example [keywords](other)?
+  - Tell me about table?
+  - what are the benefits of [network connectivity](connection)?
+  - What is a custom field?
+  - what does [in-session](option) mean?
+  - what are the different types of [sim](inventory) cards?
+  - What can I do in this page?
+  - what's a [summary counter](widget)?
+  - what's [msisdn](identifier)?
+  - tell me about each [action](widget).
+  - what are the [search](widget) rules?
+  - what is the difference between [row](attribute)s?
+  - what is [network connectivity](connection) enabled?
+  - what do you think of [counters](widget.)?
+  - What does "lock" mean?
+  - What is the best thing to do on this page?
+  - does the [table](attribute) refresh automatically?
+  - What do I do on this page?
+  - what is a [network connectivity](connection) disabled?
+  - what is [iccid](identifier)
+  - what is [billing state](option) xx?
+  - Can I change the fixed IP?
+  - Why do you see a lock?
+  - how much does it [cost](None) to get a [sim](inventory)?
+  - What's a custom field?
+  - what do you think about [filter](widget)s?
+  - what is a [state](option) change?
+  - what are [custom fields](widget) and why?
+  - what is the acronym for [iccid](identifier)?
+  - what does it mean when reassigning [msisdn](identifier)?
+  - what is an [imei](identifier)?
+  - What should I do on this page?
+  - what if i make an action to selected [subscription](inventory)s and some of their
+    [state](option)s have changed few seconds ago?
+  - why do i need to select more than one [row](attribute)?
+  - what is the lock/padlock in [connectivity lock](connection) column?
+  - what are [announcement](page)s?
+  - what are [custom fields](widget)?
+  - how much does it [cost](None) to buy a [sim](inventory)?
+  - What is a counter?
+  - I saw a lock, why?
+  - how much would it [cost](None) to order a [sim](inventory)?
+  - what does [imsi](identifier) stand for?
+  - What are tables?
+  - what's [network connectivity](connection)?
+  - will the [portal](page) remember my selection if i apply a [filter](widget)?
+  - is [network connectivity](connection) enabled?
+  - what is [connectivity lock](connection)?
+  - what is [imei](identifier)
+  - what is a [sim](inventory)?
+  - what is [imei](identifier)?
+  - What does lock mean?
+  - will the [portal](page) remember my selection if i apply a [filter](widget)?
+  - what is a [connectivity lock](connection)?
+  - what does [connectivity lock](connection) mean?
+  - What is this lock/padlock?
+  - what is [announcement](page)s about?
+  - what does [imei](identifier) stand for?
+  - what's [network connectivity](connection) disabled?
+  - what is [network connectivity](connection) enabled?
+  - what does [in-session](option) mean?
+  - what is [network connectivity](connection) enabled for?
+  - what is a [batch](other) file?
+  - what are [custom fields](widget)?
+  - what is target [subscription](inventory) package?
+  - how much does it [cost](None) to get a [sim](inventory) card?
+  - what does an [in-session](option) mean?
+  - can i upload a [filter](widget) from my laptop?
+  - what is [msisdn](identifier)?
+  - what happens when reconnecting a [device](other)?
+- intent: Troubleshoot
+  examples:
+  - i can't see [column](attribute)
+  - Why is NW connectivity enabled? Why?
+  - What is the reason behind error messages?
+  - Why are there error messages?
+  - Why is NW connectivity disabled?
+  - why is the [portal](page) so slow?
+  - i can't see [view](attribute)
+  - i can't see [counters](widget.)
+  - i can't see network [in-session](option)
+  - i can't see [euicc](inventory)
+  - Why is NW connectivity enabled?
+  - What are error messages?
+  - Why is NW connectivity disabled and vice versa?
+  - why [portal](page) slow
+  - Why do error messages show up?
+  - why is my [portal](page) slow?
+  - why does [portal](page) slow?
+  - i can't see [imsi](identifier)
+  - why is [portal](page) slow?
+  - i can't see [subscription](inventory)
+  - i can't see [iccid](identifier)
+  - i can't see [action](widget)
+  - i can't see [msisdn](identifier)
+  - why error messages
+  - i can't see [filter](widget)
+  - Why NW connectivity enabled is enabled
+  - i can't see [network connectivity](connection)
+  - Why do error messages appear?
+  - i can't see [billing state](option)
+  - i can't see [summary counter](widget)
+  - Why NW connectivity enabled is enabled?
+  - i can't see [custom fields](widget)
+  - What is the reason for error messages?
+  - Why do I get error messages?
+  - What is the cause of error messages?
+  - i can't see [portal](page)
+  - i can't see [imei](identifier)
+  - i need to troublelshoot. can i reconnect my [device](other)?
+  - i can't see [announcement](page)
+  - Why are error messages displayed?
+  - Is NW connectivity enabled?
+  - i can't see [sim](inventory)
+  - Why NW connectivity enabled is disabled and vice versa?
+  - i can't see [state](option)
+  - i can't see [settings](option)
+  - i can't see [row](attribute)
+  - i can't see [connectivity lock](connection)
+  - i can't see [plan](option)
+  - Why is NW connectivity enabled disabled?
+- intent: fetch
+  examples:
+  - how can i get [traffic](inventory) generated last 30 [days](time)?
+  - how can i generate [invoices](stat)?
+  - how do i fetch [subscription](inventory) created in last 30 [days](time)?
+  - bring me [location](location) with the largest [traffic](inventory).
+  - what is the best [location](location) with the most [traffic](inventory)?
+  - how can i fetch my [subscription](inventory) created in last 30 [days](time)?
+  - how do i get [traffic](inventory) generated last 30 [days](time)?
+  - Could you show me the report?
+  - how does one generate [invoices](stat)?
+  - how do you generate [invoices](stat)?
+  - how can i fetch the [subscription](inventory) created in last 30 [days](time)?
+  - show me the [subscription](inventory) with largest [traffic](inventory).
+  - show me the [subscription](inventory) with the largest [traffic](inventory).
+  - What is the report?
+  - what are some [billing state](option)s?
+  - where can i get [usage data](stat)?
+  - what is the [traffic](inventory) generated in last 30 [days](time)?
+  - how do i fetch [subscription](inventory)s created in last 30 [days](time)?
+  - bring me [location](location) with largest [traffic](inventory).
+  - how can i fetch [traffic](inventory) generated last 30 [days](time)?
+  - how should i generate [invoices](stat)?
+  - how do i fetch [traffic](inventory) generated last 30 [days](time)?
+  - how do i fetch the [subscription](inventory) created in last 30 [days](time)?
+  - can you give me [usage data](stat)?
+  - how do i list [billing state](option)s?
+  - list [billing state](option)s please
+  - Give me the report.
+  - what is the best [location](location) for [traffic](inventory)?
+  - what [billing state](option)s do you have?
+  - How do I generate an invoice?
+  - Can you show me the report?
+  - how do i get [usage data](stat)?
+  - what [billing state](option)s do you want to list?
+  - do you have [usage data](stat)?
+  - Show me the report.
+  - how do i generate [invoices](stat)?
+  - what is the [usage data](stat)?
+  - fetch the [subscription](inventory) created in last 30 [days](time).
+  - show me the subscriber with the largest [traffic](inventory).
+  - where can i get the most [traffic](inventory)?
+  - fetch the [traffic](inventory) generated last 30 [days](time).
+  - how can i get [usage data](stat)?
+  - show me the [subscription](inventory) with the biggest [traffic](inventory).
+  - list [billing state](option)s please
+  - what are the [billing state](option)s?

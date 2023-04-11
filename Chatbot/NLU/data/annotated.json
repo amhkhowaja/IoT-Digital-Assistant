@@ -1,0 +1,6209 @@
+[
+    [
+        "What does lock mean?",
+        {
+            "entities": [
+                [
+                    10,
+                    14,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does network connectivity mean?",
+        {
+            "entities": [
+                [
+                    10,
+                    30,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is network connectivity enabled?",
+        {
+            "entities": [
+                [
+                    8,
+                    28,
+                    "connection"
+                ],
+                [
+                    29,
+                    36,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is network connectivity disabled?",
+        {
+            "entities": [
+                [
+                    8,
+                    28,
+                    "connection"
+                ],
+                [
+                    29,
+                    37,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does in-session mean?",
+        {
+            "entities": [
+                [
+                    10,
+                    20,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is billing state xx?",
+        {
+            "entities": [
+                [
+                    8,
+                    21,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the difference between network connectivity and billing states?",
+        {
+            "entities": [
+                [
+                    31,
+                    51,
+                    "connection"
+                ],
+                [
+                    56,
+                    70,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I customize my view?",
+        {
+            "entities": [
+                [
+                    23,
+                    27,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I customize my view?",
+        {
+            "entities": [
+                [
+                    19,
+                    23,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I hide the custom counters?",
+        {
+            "entities": [
+                [
+                    15,
+                    30,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I select which columns to display?",
+        {
+            "entities": [
+                [
+                    23,
+                    30,
+                    "attribute"
+                ],
+                [
+                    34,
+                    41,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I somehow see more rows in one view?",
+        {
+            "entities": [
+                [
+                    23,
+                    27,
+                    "attribute"
+                ],
+                [
+                    35,
+                    39,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I see which subscriptions have had traffic today?",
+        {
+            "entities": [
+                [
+                    20,
+                    33,
+                    "inventory"
+                ],
+                [
+                    43,
+                    50,
+                    "inventory"
+                ],
+                [
+                    51,
+                    56,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I see if a subscription is misbehaving?",
+        {
+            "entities": [
+                [
+                    19,
+                    31,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are custom fields?",
+        {
+            "entities": [
+                [
+                    9,
+                    22,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I define custom fields?",
+        {
+            "entities": [
+                [
+                    17,
+                    30,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I use custom fields?",
+        {
+            "entities": [
+                [
+                    14,
+                    27,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are summary counters?",
+        {
+            "entities": [
+                [
+                    9,
+                    25,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I define summary counters?",
+        {
+            "entities": [
+                [
+                    17,
+                    33,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I use summary counters?",
+        {
+            "entities": [
+                [
+                    14,
+                    30,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I save my settings?",
+        {
+            "entities": [
+                [
+                    14,
+                    22,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I save my view?",
+        {
+            "entities": [
+                [
+                    14,
+                    18,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "What can I do in this page?",
+        {
+            "entities": [
+                [
+                    22,
+                    26,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are the different types of SIMs?",
+        {
+            "entities": [
+                [
+                    32,
+                    36,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "Tell me about filters",
+        {
+            "entities": [
+                [
+                    14,
+                    21,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "Tell me about counters",
+        {
+            "entities": [
+                [
+                    14,
+                    22,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "Tell me about table",
+        {
+            "entities": [
+                [
+                    14,
+                    19,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Tell me about each action",
+        {
+            "entities": [
+                [
+                    19,
+                    25,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is IMSI",
+        {
+            "entities": [
+                [
+                    8,
+                    12,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is MSISDN",
+        {
+            "entities": [
+                [
+                    8,
+                    14,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is IMEI",
+        {
+            "entities": [
+                [
+                    8,
+                    12,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is ICCID",
+        {
+            "entities": [
+                [
+                    8,
+                    13,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why portal slow",
+        {
+            "entities": [
+                [
+                    4,
+                    10,
+                    "attribute"
+                ],
+                [
+                    11,
+                    15,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Order sim",
+        {
+            "entities": [
+                [
+                    6,
+                    9,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "state change where??",
+        {
+            "entities": [
+                [
+                    0,
+                    5,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "logout",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "what is announcements",
+        {
+            "entities": [
+                [
+                    8,
+                    21,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "euicc order",
+        {
+            "entities": [
+                [
+                    0,
+                    5,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "why error messages",
+        {
+            "entities": [
+                [
+                    4,
+                    18,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "how to select more than 10000 imsi",
+        {
+            "entities": [
+                [
+                    24,
+                    34,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I apply a filter?",
+        {
+            "entities": [
+                [
+                    18,
+                    24,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I add/create a filter?",
+        {
+            "entities": [
+                [
+                    23,
+                    29,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I add/apply/create filters?",
+        {
+            "entities": [
+                [
+                    27,
+                    34,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How to add/apply/create a filter?",
+        {
+            "entities": [
+                [
+                    26,
+                    32,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How to add/apply/create filters?",
+        {
+            "entities": [
+                [
+                    24,
+                    31,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "I want to add/apply/create a filter",
+        {
+            "entities": [
+                [
+                    29,
+                    35,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "I want to add/apply/create filters",
+        {
+            "entities": [
+                [
+                    27,
+                    34,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is connectivity lock?",
+        {
+            "entities": [
+                [
+                    8,
+                    25,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is this lock/padlock?",
+        {
+            "entities": [
+                [
+                    13,
+                    17,
+                    "connection"
+                ],
+                [
+                    18,
+                    25,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "There is a lock/padlock in Connectivity lock column",
+        {
+            "entities": [
+                [
+                    11,
+                    15,
+                    "connection"
+                ],
+                [
+                    16,
+                    23,
+                    "connection"
+                ],
+                [
+                    27,
+                    44,
+                    "connection"
+                ],
+                [
+                    45,
+                    51,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "I see a lock, why?",
+        {
+            "entities": [
+                [
+                    8,
+                    12,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "How much would it cost to order SIM?",
+        {
+            "entities": [
+                [
+                    32,
+                    35,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the difference between the rows, which one should I choose?",
+        {
+            "entities": [
+                [
+                    35,
+                    39,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why should I select more than 1 row?",
+        {
+            "entities": [
+                [
+                    32,
+                    35,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I select disabled rows as well?",
+        {
+            "entities": [
+                [
+                    13,
+                    21,
+                    "toggle"
+                ],
+                [
+                    22,
+                    26,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "List billing states please",
+        {
+            "entities": [
+                [
+                    5,
+                    19,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I change the Plan name?",
+        {
+            "entities": [
+                [
+                    21,
+                    25,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "Will the portal remember my selection if I apply a filter?",
+        {
+            "entities": [
+                [
+                    9,
+                    15,
+                    "page"
+                ],
+                [
+                    51,
+                    57,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why NW connectivity enabled is disabled and vice versa?",
+        {
+            "entities": [
+                [
+                    4,
+                    19,
+                    "connection"
+                ],
+                [
+                    20,
+                    27,
+                    "toggle"
+                ],
+                [
+                    31,
+                    39,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why NW connectivity enabled is enabled",
+        {
+            "entities": [
+                [
+                    4,
+                    19,
+                    "connection"
+                ],
+                [
+                    20,
+                    27,
+                    "toggle"
+                ],
+                [
+                    31,
+                    38,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does lock mean?",
+        {
+            "entities": [
+                [
+                    10,
+                    14,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does locking mean?",
+        {
+            "entities": [
+                [
+                    10,
+                    17,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does \"lock\" mean?",
+        {
+            "entities": [
+                [
+                    10,
+                    16,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is a lock?",
+        {
+            "entities": [
+                [
+                    10,
+                    14,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does network connectivity mean?",
+        {
+            "entities": [
+                [
+                    10,
+                    30,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is network connectivity?",
+        {
+            "entities": [
+                [
+                    8,
+                    28,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does connectivity mean?",
+        {
+            "entities": [
+                [
+                    10,
+                    22,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What do you mean by network connectivity?",
+        {
+            "entities": [
+                [
+                    20,
+                    40,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What's network connectivity?",
+        {
+            "entities": [
+                [
+                    7,
+                    27,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the meaning of network connectivity?",
+        {
+            "entities": [
+                [
+                    23,
+                    43,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is network connectivity enabled?",
+        {
+            "entities": [
+                [
+                    8,
+                    28,
+                    "connection"
+                ],
+                [
+                    29,
+                    36,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "How is network connectivity enabled?",
+        {
+            "entities": [
+                [
+                    7,
+                    27,
+                    "connection"
+                ],
+                [
+                    28,
+                    35,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is network connectivity enabled for?",
+        {
+            "entities": [
+                [
+                    8,
+                    28,
+                    "connection"
+                ],
+                [
+                    29,
+                    36,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Is network connectivity enabled?",
+        {
+            "entities": [
+                [
+                    3,
+                    23,
+                    "connection"
+                ],
+                [
+                    24,
+                    31,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why is network connectivity enabled?",
+        {
+            "entities": [
+                [
+                    7,
+                    27,
+                    "connection"
+                ],
+                [
+                    28,
+                    35,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are the benefits of network connectivity?",
+        {
+            "entities": [
+                [
+                    25,
+                    45,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is network connectivity disabled?",
+        {
+            "entities": [
+                [
+                    8,
+                    28,
+                    "connection"
+                ],
+                [
+                    29,
+                    37,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why is network connectivity disabled?",
+        {
+            "entities": [
+                [
+                    7,
+                    27,
+                    "connection"
+                ],
+                [
+                    28,
+                    36,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "How is network connectivity disabled?",
+        {
+            "entities": [
+                [
+                    7,
+                    27,
+                    "connection"
+                ],
+                [
+                    28,
+                    36,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Is network connectivity disabled?",
+        {
+            "entities": [
+                [
+                    3,
+                    23,
+                    "connection"
+                ],
+                [
+                    24,
+                    32,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I disable network connectivity?",
+        {
+            "entities": [
+                [
+                    10,
+                    17,
+                    "toggle"
+                ],
+                [
+                    18,
+                    38,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can network connectivity be disabled?",
+        {
+            "entities": [
+                [
+                    8,
+                    28,
+                    "connection"
+                ],
+                [
+                    32,
+                    40,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "What's network connectivity disabled?",
+        {
+            "entities": [
+                [
+                    7,
+                    27,
+                    "connection"
+                ],
+                [
+                    28,
+                    36,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I disable network connectivity?",
+        {
+            "entities": [
+                [
+                    9,
+                    16,
+                    "toggle"
+                ],
+                [
+                    17,
+                    37,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is a network connectivity disabled?",
+        {
+            "entities": [
+                [
+                    10,
+                    30,
+                    "connection"
+                ],
+                [
+                    31,
+                    39,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does in-session mean?",
+        {
+            "entities": [
+                [
+                    10,
+                    20,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does in session mean?",
+        {
+            "entities": [
+                [
+                    10,
+                    20,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is in session?",
+        {
+            "entities": [
+                [
+                    8,
+                    18,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does an in-session mean?",
+        {
+            "entities": [
+                [
+                    13,
+                    23,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does \"in session\" mean?",
+        {
+            "entities": [
+                [
+                    10,
+                    22,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does insession mean?",
+        {
+            "entities": [
+                [
+                    10,
+                    19,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is in session mean?",
+        {
+            "entities": [
+                [
+                    8,
+                    18,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the difference between billing states and network states?",
+        {
+            "entities": [
+                [
+                    31,
+                    45,
+                    "option"
+                ],
+                [
+                    50,
+                    64,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the difference between network and billing states?",
+        {
+            "entities": [
+                [
+                    31,
+                    38,
+                    "option"
+                ],
+                [
+                    43,
+                    57,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the difference between billing and network states?",
+        {
+            "entities": [
+                [
+                    31,
+                    38,
+                    "option"
+                ],
+                [
+                    43,
+                    57,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What's the difference between billing states and network states?",
+        {
+            "entities": [
+                [
+                    30,
+                    44,
+                    "option"
+                ],
+                [
+                    49,
+                    63,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the difference between billing and network?",
+        {
+            "entities": [
+                [
+                    31,
+                    38,
+                    "option"
+                ],
+                [
+                    43,
+                    50,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What's the difference between network and billing states?",
+        {
+            "entities": [
+                [
+                    30,
+                    37,
+                    "option"
+                ],
+                [
+                    42,
+                    56,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I customize my view?",
+        {
+            "entities": [
+                [
+                    22,
+                    26,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I customize a view?",
+        {
+            "entities": [
+                [
+                    22,
+                    26,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I personalize my view?",
+        {
+            "entities": [
+                [
+                    25,
+                    29,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I customize my view?",
+        {
+            "entities": [
+                [
+                    19,
+                    23,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I customize a view?",
+        {
+            "entities": [
+                [
+                    21,
+                    25,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I personalize my view?",
+        {
+            "entities": [
+                [
+                    25,
+                    29,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I customize my views?",
+        {
+            "entities": [
+                [
+                    22,
+                    27,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I personalize my view?",
+        {
+            "entities": [
+                [
+                    24,
+                    28,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I hide custom counters?",
+        {
+            "entities": [
+                [
+                    14,
+                    29,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I hide my custom counters?",
+        {
+            "entities": [
+                [
+                    17,
+                    32,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I hide the custom counters?",
+        {
+            "entities": [
+                [
+                    15,
+                    30,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I hide the custom counters?",
+        {
+            "entities": [
+                [
+                    18,
+                    33,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I hide the custom counters?",
+        {
+            "entities": [
+                [
+                    19,
+                    34,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I select which columns to display?",
+        {
+            "entities": [
+                [
+                    22,
+                    29,
+                    "attribute"
+                ],
+                [
+                    33,
+                    40,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I select which columns to display?",
+        {
+            "entities": [
+                [
+                    23,
+                    30,
+                    "attribute"
+                ],
+                [
+                    34,
+                    41,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I choose which columns to display?",
+        {
+            "entities": [
+                [
+                    22,
+                    29,
+                    "attribute"
+                ],
+                [
+                    33,
+                    40,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I select the columns I want to display?",
+        {
+            "entities": [
+                [
+                    20,
+                    27,
+                    "attribute"
+                ],
+                [
+                    38,
+                    45,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I select the columns to display?",
+        {
+            "entities": [
+                [
+                    21,
+                    28,
+                    "attribute"
+                ],
+                [
+                    32,
+                    39,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I see more rows in one view?",
+        {
+            "entities": [
+                [
+                    15,
+                    19,
+                    "attribute"
+                ],
+                [
+                    27,
+                    31,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I see more rows in a single view?",
+        {
+            "entities": [
+                [
+                    15,
+                    19,
+                    "attribute"
+                ],
+                [
+                    32,
+                    36,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I see more rows in a view?",
+        {
+            "entities": [
+                [
+                    15,
+                    19,
+                    "attribute"
+                ],
+                [
+                    25,
+                    29,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I see more rows in one view?",
+        {
+            "entities": [
+                [
+                    18,
+                    22,
+                    "attribute"
+                ],
+                [
+                    30,
+                    34,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I see multiple rows in one view?",
+        {
+            "entities": [
+                [
+                    19,
+                    23,
+                    "attribute"
+                ],
+                [
+                    31,
+                    35,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I see rows in one view?",
+        {
+            "entities": [
+                [
+                    10,
+                    14,
+                    "attribute"
+                ],
+                [
+                    22,
+                    26,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I see which subscriptions have had traffic today?",
+        {
+            "entities": [
+                [
+                    20,
+                    33,
+                    "inventory"
+                ],
+                [
+                    43,
+                    50,
+                    "inventory"
+                ],
+                [
+                    51,
+                    56,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I see how many subscriptions have had traffic today?",
+        {
+            "entities": [
+                [
+                    23,
+                    36,
+                    "inventory"
+                ],
+                [
+                    46,
+                    53,
+                    "inventory"
+                ],
+                [
+                    54,
+                    59,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I know which subscriptions have had traffic today?",
+        {
+            "entities": [
+                [
+                    20,
+                    33,
+                    "inventory"
+                ],
+                [
+                    43,
+                    50,
+                    "inventory"
+                ],
+                [
+                    51,
+                    56,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I know which subscriptions have had traffic today?",
+        {
+            "entities": [
+                [
+                    21,
+                    34,
+                    "inventory"
+                ],
+                [
+                    44,
+                    51,
+                    "inventory"
+                ],
+                [
+                    52,
+                    57,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I see what subscriptions have had traffic today?",
+        {
+            "entities": [
+                [
+                    19,
+                    32,
+                    "inventory"
+                ],
+                [
+                    42,
+                    49,
+                    "inventory"
+                ],
+                [
+                    50,
+                    55,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I see which subscription has had traffic today?",
+        {
+            "entities": [
+                [
+                    20,
+                    32,
+                    "inventory"
+                ],
+                [
+                    41,
+                    48,
+                    "inventory"
+                ],
+                [
+                    49,
+                    54,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I see if a subscription is misbehaving?",
+        {
+            "entities": [
+                [
+                    19,
+                    31,
+                    "inventory"
+                ],
+                [
+                    35,
+                    46,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I see if my subscription is misbehaving?",
+        {
+            "entities": [
+                [
+                    20,
+                    32,
+                    "inventory"
+                ],
+                [
+                    36,
+                    47,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I know if my subscription is misbehaving?",
+        {
+            "entities": [
+                [
+                    20,
+                    32,
+                    "inventory"
+                ],
+                [
+                    36,
+                    47,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I check if a subscription is misbehaving?",
+        {
+            "entities": [
+                [
+                    20,
+                    32,
+                    "inventory"
+                ],
+                [
+                    36,
+                    47,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I check if a subscription is misbehaving?",
+        {
+            "entities": [
+                [
+                    21,
+                    33,
+                    "inventory"
+                ],
+                [
+                    37,
+                    48,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are custom fields?",
+        {
+            "entities": [
+                [
+                    9,
+                    22,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is a custom field?",
+        {
+            "entities": [
+                [
+                    10,
+                    22,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are custom fields and why?",
+        {
+            "entities": [
+                [
+                    9,
+                    22,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What's a custom field?",
+        {
+            "entities": [
+                [
+                    9,
+                    21,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I define custom fields?",
+        {
+            "entities": [
+                [
+                    16,
+                    29,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I define custom fields?",
+        {
+            "entities": [
+                [
+                    17,
+                    30,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I create custom fields?",
+        {
+            "entities": [
+                [
+                    16,
+                    29,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I define custom field?",
+        {
+            "entities": [
+                [
+                    16,
+                    28,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are some ways to define custom fields?",
+        {
+            "entities": [
+                [
+                    29,
+                    42,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do we define custom fields?",
+        {
+            "entities": [
+                [
+                    17,
+                    30,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I create custom fields?",
+        {
+            "entities": [
+                [
+                    17,
+                    30,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I create custom fields?",
+        {
+            "entities": [
+                [
+                    16,
+                    29,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the best way to use custom fields?",
+        {
+            "entities": [
+                [
+                    28,
+                    41,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I use custom fields?",
+        {
+            "entities": [
+                [
+                    10,
+                    23,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I add custom fields?",
+        {
+            "entities": [
+                [
+                    13,
+                    26,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I add custom fields?",
+        {
+            "entities": [
+                [
+                    14,
+                    27,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are summary counters?",
+        {
+            "entities": [
+                [
+                    9,
+                    25,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is summary counter?",
+        {
+            "entities": [
+                [
+                    8,
+                    23,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What do summary counters stand for?",
+        {
+            "entities": [
+                [
+                    8,
+                    24,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What's a summary counter?",
+        {
+            "entities": [
+                [
+                    9,
+                    24,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I define summary counters?",
+        {
+            "entities": [
+                [
+                    16,
+                    32,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I define summary counters?",
+        {
+            "entities": [
+                [
+                    17,
+                    33,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do you define summary counters?",
+        {
+            "entities": [
+                [
+                    18,
+                    34,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I define summary counter?",
+        {
+            "entities": [
+                [
+                    16,
+                    31,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I define a summary counter?",
+        {
+            "entities": [
+                [
+                    18,
+                    33,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I create summary counters?",
+        {
+            "entities": [
+                [
+                    16,
+                    32,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I use summary counters?",
+        {
+            "entities": [
+                [
+                    13,
+                    29,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do you use summary counters?",
+        {
+            "entities": [
+                [
+                    15,
+                    31,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I use summary counter?",
+        {
+            "entities": [
+                [
+                    14,
+                    29,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are summary counters?",
+        {
+            "entities": [
+                [
+                    9,
+                    25,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can you use summary counters?",
+        {
+            "entities": [
+                [
+                    16,
+                    32,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I save my settings?",
+        {
+            "entities": [
+                [
+                    17,
+                    25,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I save my settings?",
+        {
+            "entities": [
+                [
+                    14,
+                    22,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I save my settings?",
+        {
+            "entities": [
+                [
+                    18,
+                    26,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the best way to save settings?",
+        {
+            "entities": [
+                [
+                    29,
+                    37,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do you save your settings?",
+        {
+            "entities": [
+                [
+                    21,
+                    29,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I save settings on my computer?",
+        {
+            "entities": [
+                [
+                    9,
+                    13,
+                    "toggle"
+                ],
+                [
+                    14,
+                    22,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I save my view?",
+        {
+            "entities": [
+                [
+                    18,
+                    22,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I save a view?",
+        {
+            "entities": [
+                [
+                    13,
+                    17,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I save a view?",
+        {
+            "entities": [
+                [
+                    17,
+                    21,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I save my views?",
+        {
+            "entities": [
+                [
+                    18,
+                    23,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the best way to save a view?",
+        {
+            "entities": [
+                [
+                    31,
+                    35,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "What can I do in this page?",
+        {
+            "entities": [
+                [
+                    22,
+                    26,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "What should I do on this page?",
+        {
+            "entities": [
+                [
+                    25,
+                    29,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "What do I do on this page?",
+        {
+            "entities": [
+                [
+                    21,
+                    25,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "What can I do with this page?",
+        {
+            "entities": [
+                [
+                    24,
+                    28,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "What can I do from this page?",
+        {
+            "entities": [
+                [
+                    24,
+                    28,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the best thing to do on this page?",
+        {
+            "entities": [
+                [
+                    37,
+                    41,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are the different types of SIMs?",
+        {
+            "entities": [
+                [
+                    32,
+                    36,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are different types of SIMs?",
+        {
+            "entities": [
+                [
+                    28,
+                    32,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are the different types of SIM cards?",
+        {
+            "entities": [
+                [
+                    32,
+                    41,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are SIMs?",
+        {
+            "entities": [
+                [
+                    9,
+                    13,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are the different kinds of SIMs?",
+        {
+            "entities": [
+                [
+                    32,
+                    36,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is a SIM?",
+        {
+            "entities": [
+                [
+                    10,
+                    13,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are filters?",
+        {
+            "entities": [
+                [
+                    9,
+                    16,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What filters do you use?",
+        {
+            "entities": [
+                [
+                    5,
+                    12,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What do you think about filters?",
+        {
+            "entities": [
+                [
+                    24,
+                    31,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is filtering?",
+        {
+            "entities": [
+                [
+                    8,
+                    17,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can you tell me about filters?",
+        {
+            "entities": [
+                [
+                    22,
+                    29,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "Tell me about filters.",
+        {
+            "entities": [
+                [
+                    14,
+                    21,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is filter?",
+        {
+            "entities": [
+                [
+                    8,
+                    14,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What do you think of filters?",
+        {
+            "entities": [
+                [
+                    21,
+                    28,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are counters?",
+        {
+            "entities": [
+                [
+                    9,
+                    17,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What do you think about counters?",
+        {
+            "entities": [
+                [
+                    24,
+                    32,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is a counter?",
+        {
+            "entities": [
+                [
+                    10,
+                    17,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do counters work?",
+        {
+            "entities": [
+                [
+                    7,
+                    15,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What do you think of counters?",
+        {
+            "entities": [
+                [
+                    21,
+                    29,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What should I know about counters?",
+        {
+            "entities": [
+                [
+                    25,
+                    33,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can you tell me about counters?",
+        {
+            "entities": [
+                [
+                    22,
+                    30,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What do you mean by counters?",
+        {
+            "entities": [
+                [
+                    20,
+                    28,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is table?",
+        {
+            "entities": [
+                [
+                    8,
+                    13,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Tell me about table?",
+        {
+            "entities": [
+                [
+                    14,
+                    19,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "What do you mean by table?",
+        {
+            "entities": [
+                [
+                    20,
+                    25,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "What do you think about table?",
+        {
+            "entities": [
+                [
+                    24,
+                    29,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are tables?",
+        {
+            "entities": [
+                [
+                    9,
+                    15,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Tell me about each action.",
+        {
+            "entities": [
+                [
+                    19,
+                    25,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "Tell me about every action.",
+        {
+            "entities": [
+                [
+                    20,
+                    26,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "Tell me about each action and why?",
+        {
+            "entities": [
+                [
+                    19,
+                    25,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is IMSI?",
+        {
+            "entities": [
+                [
+                    8,
+                    12,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does IMSI stand for?",
+        {
+            "entities": [
+                [
+                    10,
+                    14,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the acronym IMSI?",
+        {
+            "entities": [
+                [
+                    20,
+                    24,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is an IMSI?",
+        {
+            "entities": [
+                [
+                    11,
+                    15,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What IMSI stands for?",
+        {
+            "entities": [
+                [
+                    5,
+                    9,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is MSISDN?",
+        {
+            "entities": [
+                [
+                    8,
+                    14,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does MSISDN stand for?",
+        {
+            "entities": [
+                [
+                    10,
+                    16,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What's MSISDN?",
+        {
+            "entities": [
+                [
+                    7,
+                    13,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is MSISDN? What does it mean?",
+        {
+            "entities": [
+                [
+                    8,
+                    14,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the purpose of MSISDN?",
+        {
+            "entities": [
+                [
+                    23,
+                    29,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is IMEI?",
+        {
+            "entities": [
+                [
+                    8,
+                    12,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is an IMEI?",
+        {
+            "entities": [
+                [
+                    11,
+                    15,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does IMEI stand for?",
+        {
+            "entities": [
+                [
+                    10,
+                    14,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is IMEI? What does it mean?",
+        {
+            "entities": [
+                [
+                    8,
+                    12,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does the IMEI stand for?",
+        {
+            "entities": [
+                [
+                    14,
+                    18,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is IMEI and why?",
+        {
+            "entities": [
+                [
+                    8,
+                    12,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the ICCID?",
+        {
+            "entities": [
+                [
+                    12,
+                    17,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is an ICCID?",
+        {
+            "entities": [
+                [
+                    11,
+                    16,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the acronym ICCID?",
+        {
+            "entities": [
+                [
+                    20,
+                    25,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does the ICCID stand for?",
+        {
+            "entities": [
+                [
+                    14,
+                    19,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the acronym for ICCID?",
+        {
+            "entities": [
+                [
+                    24,
+                    29,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why is portal slow?",
+        {
+            "entities": [
+                [
+                    7,
+                    13,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why is the portal so slow?",
+        {
+            "entities": [
+                [
+                    11,
+                    17,
+                    "page"
+                ],
+                [
+                    21,
+                    25,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why does portal slow?",
+        {
+            "entities": [
+                [
+                    9,
+                    15,
+                    "page"
+                ],
+                [
+                    16,
+                    20,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why is my portal slow?",
+        {
+            "entities": [
+                [
+                    10,
+                    16,
+                    "page"
+                ],
+                [
+                    17,
+                    21,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Order sim?",
+        {
+            "entities": [
+                [
+                    6,
+                    9,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is sim?",
+        {
+            "entities": [
+                [
+                    8,
+                    11,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "Order sim!",
+        {
+            "entities": [
+                [
+                    6,
+                    9,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do you order sim?",
+        {
+            "entities": [
+                [
+                    17,
+                    20,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I order sim?",
+        {
+            "entities": [
+                [
+                    15,
+                    18,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is a state change?",
+        {
+            "entities": [
+                [
+                    10,
+                    22,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "Where is a state change happening?",
+        {
+            "entities": [
+                [
+                    11,
+                    23,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is state change?",
+        {
+            "entities": [
+                [
+                    8,
+                    13,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "Where is state change?",
+        {
+            "entities": [
+                [
+                    9,
+                    21,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I logout?",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "How do I log out?",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "What is the best way to logout?",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "What should I do to logout?",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "Logout!",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "How do I log out of my account?",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "How can I logout?",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "What are announcements?",
+        {
+            "entities": [
+                [
+                    9,
+                    22,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does announcements mean?",
+        {
+            "entities": [
+                [
+                    10,
+                    23,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is announcements about?",
+        {
+            "entities": [
+                [
+                    8,
+                    21,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the meaning of announcements?",
+        {
+            "entities": [
+                [
+                    23,
+                    36,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the euicc order?",
+        {
+            "entities": [
+                [
+                    12,
+                    17,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "Euicc order?",
+        {
+            "entities": [
+                [
+                    0,
+                    11,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "Euicc order.",
+        {
+            "entities": [
+                [
+                    0,
+                    11,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "euicc order?",
+        {
+            "entities": [
+                [
+                    0,
+                    5,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are error messages?",
+        {
+            "entities": [
+                [
+                    9,
+                    23,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why are error messages displayed?",
+        {
+            "entities": [
+                [
+                    8,
+                    22,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why are there error messages?",
+        {
+            "entities": [
+                [
+                    14,
+                    28,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the reason for error messages?",
+        {
+            "entities": [
+                [
+                    23,
+                    37,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why do error messages appear?",
+        {
+            "entities": [
+                [
+                    7,
+                    21,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the reason behind error messages?",
+        {
+            "entities": [
+                [
+                    26,
+                    40,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the cause of error messages?",
+        {
+            "entities": [
+                [
+                    21,
+                    35,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why do I get error messages?",
+        {
+            "entities": [
+                [
+                    13,
+                    27,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why do error messages show up?",
+        {
+            "entities": [
+                [
+                    7,
+                    21,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I select more than 10000 imsi?",
+        {
+            "entities": [
+                [
+                    32,
+                    36,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do you select more than 10000 imsi?",
+        {
+            "entities": [
+                [
+                    34,
+                    38,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I select 10000 imsi?",
+        {
+            "entities": [
+                [
+                    22,
+                    26,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I get more than 10000 imsi?",
+        {
+            "entities": [
+                [
+                    30,
+                    34,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I select more than 10000 imsi cards?",
+        {
+            "entities": [
+                [
+                    32,
+                    42,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I apply a filter?",
+        {
+            "entities": [
+                [
+                    17,
+                    23,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I apply filter?",
+        {
+            "entities": [
+                [
+                    16,
+                    22,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the best way to apply filter?",
+        {
+            "entities": [
+                [
+                    30,
+                    36,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I create a filter?",
+        {
+            "entities": [
+                [
+                    18,
+                    24,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I create filter?",
+        {
+            "entities": [
+                [
+                    16,
+                    22,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I add/create a filter?",
+        {
+            "entities": [
+                [
+                    22,
+                    28,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I add a filter?",
+        {
+            "entities": [
+                [
+                    16,
+                    22,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I add/apply filters?",
+        {
+            "entities": [
+                [
+                    19,
+                    26,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I apply filters?",
+        {
+            "entities": [
+                [
+                    15,
+                    22,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I create filters?",
+        {
+            "entities": [
+                [
+                    16,
+                    23,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do you add filters?",
+        {
+            "entities": [
+                [
+                    15,
+                    22,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the best way to add filters?",
+        {
+            "entities": [
+                [
+                    28,
+                    35,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I add filters?",
+        {
+            "entities": [
+                [
+                    13,
+                    20,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I add/apply filters?",
+        {
+            "entities": [
+                [
+                    19,
+                    26,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I add filters?",
+        {
+            "entities": [
+                [
+                    14,
+                    21,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I create filters?",
+        {
+            "entities": [
+                [
+                    16,
+                    23,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do you add filters?",
+        {
+            "entities": [
+                [
+                    15,
+                    22,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "I want to add/apply/create a filter.",
+        {
+            "entities": [
+                [
+                    29,
+                    35,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I add/apply/create a filter?",
+        {
+            "entities": [
+                [
+                    28,
+                    34,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I add/apply/create filter?",
+        {
+            "entities": [
+                [
+                    27,
+                    33,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "I want to add/apply/create filter?",
+        {
+            "entities": [
+                [
+                    27,
+                    33,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I add/apply/create filters?",
+        {
+            "entities": [
+                [
+                    26,
+                    33,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "I want to add/apply/create filters?",
+        {
+            "entities": [
+                [
+                    27,
+                    34,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I add/apply filters?",
+        {
+            "entities": [
+                [
+                    19,
+                    26,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "I want to add/apply/create filter.",
+        {
+            "entities": [
+                [
+                    27,
+                    33,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I apply filters?",
+        {
+            "entities": [
+                [
+                    15,
+                    22,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is a connectivity lock?",
+        {
+            "entities": [
+                [
+                    10,
+                    27,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What does connectivity lock mean?",
+        {
+            "entities": [
+                [
+                    10,
+                    27,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What's a connectivity lock?",
+        {
+            "entities": [
+                [
+                    9,
+                    26,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is a lock/padlock?",
+        {
+            "entities": [
+                [
+                    10,
+                    14,
+                    "connection"
+                ],
+                [
+                    15,
+                    22,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is a padlock?",
+        {
+            "entities": [
+                [
+                    10,
+                    17,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is a lock padlock?",
+        {
+            "entities": [
+                [
+                    10,
+                    14,
+                    "connection"
+                ],
+                [
+                    15,
+                    22,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is a lockpadlock?",
+        {
+            "entities": [
+                [
+                    10,
+                    21,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is a lock?",
+        {
+            "entities": [
+                [
+                    10,
+                    14,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "There is a lock/padlock in Connectivity lock column.",
+        {
+            "entities": [
+                [
+                    11,
+                    15,
+                    "connection"
+                ],
+                [
+                    16,
+                    23,
+                    "connection"
+                ],
+                [
+                    27,
+                    44,
+                    "connection"
+                ],
+                [
+                    45,
+                    51,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the lock/padlock in Connectivity lock column?",
+        {
+            "entities": [
+                [
+                    12,
+                    16,
+                    "connection"
+                ],
+                [
+                    17,
+                    24,
+                    "connection"
+                ],
+                [
+                    28,
+                    45,
+                    "connection"
+                ],
+                [
+                    46,
+                    52,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Where is there a lock/padlock in Connectivity lock column?",
+        {
+            "entities": [
+                [
+                    17,
+                    21,
+                    "connection"
+                ],
+                [
+                    22,
+                    29,
+                    "connection"
+                ],
+                [
+                    33,
+                    50,
+                    "connection"
+                ],
+                [
+                    51,
+                    57,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why is there a lock/padlock in Connectivity lock column?",
+        {
+            "entities": [
+                [
+                    15,
+                    19,
+                    "connection"
+                ],
+                [
+                    20,
+                    27,
+                    "connection"
+                ],
+                [
+                    31,
+                    48,
+                    "connection"
+                ],
+                [
+                    49,
+                    55,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Is there a lock/padlock in Connectivity Lock column?",
+        {
+            "entities": [
+                [
+                    11,
+                    15,
+                    "connection"
+                ],
+                [
+                    16,
+                    23,
+                    "connection"
+                ],
+                [
+                    27,
+                    44,
+                    "connection"
+                ],
+                [
+                    45,
+                    51,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "I see a lock, why?",
+        {
+            "entities": [
+                [
+                    8,
+                    12,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why do I see a lock?",
+        {
+            "entities": [
+                [
+                    15,
+                    19,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "I saw a lock, why?",
+        {
+            "entities": [
+                [
+                    8,
+                    12,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why do you see a lock?",
+        {
+            "entities": [
+                [
+                    17,
+                    21,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "I see a lock why?",
+        {
+            "entities": [
+                [
+                    8,
+                    12,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why did I see a lock?",
+        {
+            "entities": [
+                [
+                    16,
+                    20,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "I see a lock and why?",
+        {
+            "entities": [
+                [
+                    8,
+                    12,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "How much does it cost to order a SIM card?",
+        {
+            "entities": [
+                [
+                    33,
+                    41,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "How much does it cost to get a SIM card?",
+        {
+            "entities": [
+                [
+                    31,
+                    39,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "How much does it cost to get a SIM?",
+        {
+            "entities": [
+                [
+                    31,
+                    34,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "How much would it cost to order a SIM?",
+        {
+            "entities": [
+                [
+                    34,
+                    37,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "How much does it cost to buy a SIM?",
+        {
+            "entities": [
+                [
+                    31,
+                    34,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the difference between rows?",
+        {
+            "entities": [
+                [
+                    31,
+                    35,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the difference between rows, which one should I choose?",
+        {
+            "entities": [
+                [
+                    31,
+                    35,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why should I select more than 1 row?",
+        {
+            "entities": [
+                [
+                    32,
+                    35,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why should I select more than one row?",
+        {
+            "entities": [
+                [
+                    30,
+                    37,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why do I have to select more than 1 row?",
+        {
+            "entities": [
+                [
+                    36,
+                    39,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why should I choose more than 1 row?",
+        {
+            "entities": [
+                [
+                    32,
+                    35,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why do I have to select more than one row?",
+        {
+            "entities": [
+                [
+                    38,
+                    41,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why do I need to select more than one row?",
+        {
+            "entities": [
+                [
+                    38,
+                    41,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I select disabled rows?",
+        {
+            "entities": [
+                [
+                    13,
+                    21,
+                    "toggle"
+                ],
+                [
+                    22,
+                    26,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can I select disabled rows as well?",
+        {
+            "entities": [
+                [
+                    13,
+                    21,
+                    "toggle"
+                ],
+                [
+                    22,
+                    26,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I select disabled rows?",
+        {
+            "entities": [
+                [
+                    17,
+                    25,
+                    "toggle"
+                ],
+                [
+                    26,
+                    30,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "Is it possible to select disabled rows?",
+        {
+            "entities": [
+                [
+                    25,
+                    33,
+                    "toggle"
+                ],
+                [
+                    34,
+                    38,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I select disabled rows as well?",
+        {
+            "entities": [
+                [
+                    17,
+                    25,
+                    "toggle"
+                ],
+                [
+                    26,
+                    30,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are the billing states?",
+        {
+            "entities": [
+                [
+                    13,
+                    27,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are some billing states?",
+        {
+            "entities": [
+                [
+                    14,
+                    28,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "List billing states please",
+        {
+            "entities": [
+                [
+                    5,
+                    19,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What billing states do you want to list?",
+        {
+            "entities": [
+                [
+                    5,
+                    19,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I list billing states?",
+        {
+            "entities": [
+                [
+                    14,
+                    28,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "What billing states do you have?",
+        {
+            "entities": [
+                [
+                    5,
+                    19,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I change my plan name?",
+        {
+            "entities": [
+                [
+                    19,
+                    23,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I change my plan name?",
+        {
+            "entities": [
+                [
+                    20,
+                    24,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I change the name of my plan?",
+        {
+            "entities": [
+                [
+                    31,
+                    35,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "Will the portal remember my selection if I apply a filter?",
+        {
+            "entities": [
+                [
+                    9,
+                    15,
+                    "page"
+                ],
+                [
+                    51,
+                    57,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "Will the portal remember my selection when I apply a filter?",
+        {
+            "entities": [
+                [
+                    9,
+                    15,
+                    "page"
+                ],
+                [
+                    53,
+                    59,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "Will the portal remember your selection if I apply a filter?",
+        {
+            "entities": [
+                [
+                    9,
+                    15,
+                    "page"
+                ],
+                [
+                    53,
+                    59,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why is NW connectivity disabled and vice versa?",
+        {
+            "entities": [
+                [
+                    7,
+                    22,
+                    "connection"
+                ],
+                [
+                    23,
+                    31,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why is NW connectivity disabled?",
+        {
+            "entities": [
+                [
+                    7,
+                    22,
+                    "connection"
+                ],
+                [
+                    23,
+                    31,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why is NW connectivity enabled disabled?",
+        {
+            "entities": [
+                [
+                    7,
+                    9,
+                    "connection"
+                ],
+                [
+                    23,
+                    30,
+                    "toggle"
+                ],
+                [
+                    31,
+                    39,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why is NW connectivity enabled?",
+        {
+            "entities": [
+                [
+                    7,
+                    22,
+                    "connection"
+                ],
+                [
+                    23,
+                    30,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why NW connectivity enabled is enabled?",
+        {
+            "entities": [
+                [
+                    4,
+                    19,
+                    "connection"
+                ],
+                [
+                    20,
+                    27,
+                    "toggle"
+                ],
+                [
+                    31,
+                    38,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Is NW connectivity enabled?",
+        {
+            "entities": [
+                [
+                    3,
+                    18,
+                    "connection"
+                ],
+                [
+                    19,
+                    26,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why is NW connectivity enabled? Why?",
+        {
+            "entities": [
+                [
+                    7,
+                    22,
+                    "connection"
+                ],
+                [
+                    23,
+                    30,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see connectivity lock",
+        {
+            "entities": [
+                [
+                    12,
+                    29,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see network connectivity",
+        {
+            "entities": [
+                [
+                    12,
+                    32,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see network in-session",
+        {
+            "entities": [
+                [
+                    12,
+                    19,
+                    "connection"
+                ],
+                [
+                    20,
+                    30,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see billing state",
+        {
+            "entities": [
+                [
+                    12,
+                    25,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see view",
+        {
+            "entities": [
+                [
+                    12,
+                    16,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see counters",
+        {
+            "entities": [
+                [
+                    12,
+                    20,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see column",
+        {
+            "entities": [
+                [
+                    12,
+                    18,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see row",
+        {
+            "entities": [
+                [
+                    12,
+                    15,
+                    "attribute"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see subscription",
+        {
+            "entities": [
+                [
+                    12,
+                    24,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see custom fields",
+        {
+            "entities": [
+                [
+                    12,
+                    25,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see summary counter",
+        {
+            "entities": [
+                [
+                    12,
+                    27,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see settings",
+        {
+            "entities": [
+                [
+                    12,
+                    20,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see sim",
+        {
+            "entities": [
+                [
+                    12,
+                    15,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see filter",
+        {
+            "entities": [
+                [
+                    12,
+                    18,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see action",
+        {
+            "entities": [
+                [
+                    12,
+                    18,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see imsi",
+        {
+            "entities": [
+                [
+                    12,
+                    16,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see msisdn",
+        {
+            "entities": [
+                [
+                    12,
+                    18,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see imei",
+        {
+            "entities": [
+                [
+                    12,
+                    16,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see iccid",
+        {
+            "entities": [
+                [
+                    12,
+                    17,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see portal",
+        {
+            "entities": [
+                [
+                    12,
+                    18,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see state",
+        {
+            "entities": [
+                [
+                    12,
+                    17,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see announcement",
+        {
+            "entities": [
+                [
+                    12,
+                    24,
+                    "page"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see euicc",
+        {
+            "entities": [
+                [
+                    12,
+                    17,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "I can't see plan",
+        {
+            "entities": [
+                [
+                    12,
+                    16,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "fetch the traffic generated last 30 days.",
+        {
+            "entities": [
+                [
+                    10,
+                    17,
+                    "inventory"
+                ],
+                [
+                    36,
+                    40,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the traffic generated in last 30 days?",
+        {
+            "entities": [
+                [
+                    12,
+                    19,
+                    "inventory"
+                ],
+                [
+                    41,
+                    45,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I fetch traffic generated last 30 days?",
+        {
+            "entities": [
+                [
+                    15,
+                    22,
+                    "inventory"
+                ],
+                [
+                    41,
+                    45,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I fetch traffic generated last 30 days?",
+        {
+            "entities": [
+                [
+                    16,
+                    23,
+                    "inventory"
+                ],
+                [
+                    42,
+                    46,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I get traffic generated last 30 days?",
+        {
+            "entities": [
+                [
+                    13,
+                    20,
+                    "inventory"
+                ],
+                [
+                    39,
+                    43,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I get traffic generated last 30 days?",
+        {
+            "entities": [
+                [
+                    14,
+                    21,
+                    "inventory"
+                ],
+                [
+                    40,
+                    44,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "fetch the subscription created in last 30 days.",
+        {
+            "entities": [
+                [
+                    10,
+                    22,
+                    "inventory"
+                ],
+                [
+                    42,
+                    46,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I fetch the subscription created in last 30 days?",
+        {
+            "entities": [
+                [
+                    19,
+                    31,
+                    "inventory"
+                ],
+                [
+                    51,
+                    55,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I fetch the subscription created in last 30 days?",
+        {
+            "entities": [
+                [
+                    20,
+                    32,
+                    "inventory"
+                ],
+                [
+                    52,
+                    56,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I fetch subscription created in last 30 days?",
+        {
+            "entities": [
+                [
+                    15,
+                    27,
+                    "inventory"
+                ],
+                [
+                    47,
+                    51,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I fetch subscriptions created in last 30 days?",
+        {
+            "entities": [
+                [
+                    15,
+                    28,
+                    "inventory"
+                ],
+                [
+                    48,
+                    52,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I fetch my subscription created in last 30 days?",
+        {
+            "entities": [
+                [
+                    19,
+                    31,
+                    "inventory"
+                ],
+                [
+                    51,
+                    55,
+                    "time"
+                ]
+            ]
+        }
+    ],
+    [
+        "Show me the subscription with the largest traffic.",
+        {
+            "entities": [
+                [
+                    12,
+                    24,
+                    "inventory"
+                ],
+                [
+                    42,
+                    49,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "Show me the subscription with largest traffic.",
+        {
+            "entities": [
+                [
+                    12,
+                    24,
+                    "inventory"
+                ],
+                [
+                    38,
+                    45,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "Show me the subscription with the biggest traffic.",
+        {
+            "entities": [
+                [
+                    12,
+                    24,
+                    "inventory"
+                ],
+                [
+                    42,
+                    49,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "show me the subscriber with the largest traffic.",
+        {
+            "entities": [
+                [
+                    12,
+                    22,
+                    "inventory"
+                ],
+                [
+                    40,
+                    47,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "Bring me location with largest traffic.",
+        {
+            "entities": [
+                [
+                    9,
+                    17,
+                    "location"
+                ],
+                [
+                    31,
+                    38,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "Where can I get the most traffic?",
+        {
+            "entities": [
+                [
+                    25,
+                    32,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the best location for traffic?",
+        {
+            "entities": [
+                [
+                    17,
+                    25,
+                    "location"
+                ],
+                [
+                    30,
+                    37,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the best location with the most traffic?",
+        {
+            "entities": [
+                [
+                    17,
+                    25,
+                    "location"
+                ],
+                [
+                    40,
+                    47,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "Bring me location with the largest traffic.",
+        {
+            "entities": [
+                [
+                    9,
+                    17,
+                    "location"
+                ],
+                [
+                    35,
+                    42,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "Show me the report.",
+        {
+            "entities": [
+                [
+                    12,
+                    18,
+                    "stat"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can you show me the report?",
+        {
+            "entities": [
+                [
+                    20,
+                    26,
+                    "stat"
+                ]
+            ]
+        }
+    ],
+    [
+        "Give me the report.",
+        {
+            "entities": [
+                [
+                    12,
+                    18,
+                    "stat"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the report?",
+        {
+            "entities": [
+                [
+                    12,
+                    18,
+                    "stat"
+                ]
+            ]
+        }
+    ],
+    [
+        "Could you show me the report?",
+        {
+            "entities": [
+                [
+                    22,
+                    28,
+                    "stat"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I generate invoices?",
+        {
+            "entities": [
+                [
+                    18,
+                    26,
+                    "stat"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I generate invoices?",
+        {
+            "entities": [
+                [
+                    19,
+                    27,
+                    "stat"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do you generate invoices?",
+        {
+            "entities": [
+                [
+                    20,
+                    28,
+                    "stat"
+                ]
+            ]
+        }
+    ],
+    [
+        "How should I generate invoices?",
+        {
+            "entities": [
+                [
+                    22,
+                    30,
+                    "stat"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I generate an invoice?",
+        {
+            "entities": [
+                [
+                    21,
+                    28,
+                    "stat"
+                ]
+            ]
+        }
+    ],
+    [
+        "How does one generate invoices?",
+        {
+            "entities": [
+                [
+                    22,
+                    30,
+                    "stat"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I get usage data?",
+        {
+            "entities": [
+                [
+                    13,
+                    23,
+                    "stat"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can you give me usage data?",
+        {
+            "entities": [
+                [
+                    16,
+                    26,
+                    "stat"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the usage data?",
+        {
+            "entities": [
+                [
+                    12,
+                    22,
+                    "stat"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I get usage data?",
+        {
+            "entities": [
+                [
+                    14,
+                    24,
+                    "stat"
+                ]
+            ]
+        }
+    ],
+    [
+        "Where can I get usage data?",
+        {
+            "entities": [
+                [
+                    16,
+                    26,
+                    "stat"
+                ]
+            ]
+        }
+    ],
+    [
+        "Do you have usage data?",
+        {
+            "entities": [
+                [
+                    12,
+                    22,
+                    "stat"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the difference between sim and euicc?",
+        {
+            "entities": [
+                [
+                    31,
+                    34,
+                    "inventory"
+                ],
+                [
+                    39,
+                    44,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "What's the difference between sim and euicc?",
+        {
+            "entities": [
+                [
+                    30,
+                    33,
+                    "inventory"
+                ],
+                [
+                    38,
+                    43,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are the differences between sim and euicc?",
+        {
+            "entities": [
+                [
+                    33,
+                    36,
+                    "inventory"
+                ],
+                [
+                    41,
+                    46,
+                    "inventory"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the difference between network connectivity and connectivity lock?",
+        {
+            "entities": [
+                [
+                    31,
+                    51,
+                    "connection"
+                ],
+                [
+                    56,
+                    73,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can you please tell me difference between network connectivity and connectivity lock?",
+        {
+            "entities": [
+                [
+                    42,
+                    62,
+                    "connection"
+                ],
+                [
+                    67,
+                    84,
+                    "connection"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the difference between imei and msisdn?",
+        {
+            "entities": [
+                [
+                    31,
+                    35,
+                    "identifier"
+                ],
+                [
+                    40,
+                    46,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I compare imei and msisdn?",
+        {
+            "entities": [
+                [
+                    18,
+                    22,
+                    "identifier"
+                ],
+                [
+                    27,
+                    33,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can you compare imei and msisdn?",
+        {
+            "entities": [
+                [
+                    16,
+                    20,
+                    "identifier"
+                ],
+                [
+                    25,
+                    31,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the comparison between imei and msisdn?",
+        {
+            "entities": [
+                [
+                    31,
+                    35,
+                    "identifier"
+                ],
+                [
+                    40,
+                    46,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the difference between msisdn and imei?",
+        {
+            "entities": [
+                [
+                    31,
+                    37,
+                    "identifier"
+                ],
+                [
+                    42,
+                    46,
+                    "identifier"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are summary counters and column filters?",
+        {
+            "entities": [
+                [
+                    9,
+                    25,
+                    "widget"
+                ],
+                [
+                    30,
+                    44,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are the differences between summary counters and column filters?",
+        {
+            "entities": [
+                [
+                    33,
+                    49,
+                    "widget"
+                ],
+                [
+                    54,
+                    68,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do you differentiate between summary counters and column filters?",
+        {
+            "entities": [
+                [
+                    33,
+                    49,
+                    "widget"
+                ],
+                [
+                    54,
+                    68,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I differentiate between summary counters and column filters?",
+        {
+            "entities": [
+                [
+                    31,
+                    47,
+                    "widget"
+                ],
+                [
+                    52,
+                    66,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the difference between column filter and summary counter?",
+        {
+            "entities": [
+                [
+                    31,
+                    44,
+                    "widget"
+                ],
+                [
+                    49,
+                    64,
+                    "widget"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is billing state active and inactive?",
+        {
+            "entities": [
+                [
+                    8,
+                    21,
+                    "option"
+                ],
+                [
+                    22,
+                    28,
+                    "toggle"
+                ],
+                [
+                    33,
+                    41,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Is billing state active or inactive?",
+        {
+            "entities": [
+                [
+                    3,
+                    16,
+                    "option"
+                ],
+                [
+                    17,
+                    23,
+                    "toggle"
+                ],
+                [
+                    27,
+                    35,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are the billing states active and inactive?",
+        {
+            "entities": [
+                [
+                    13,
+                    27,
+                    "option"
+                ],
+                [
+                    28,
+                    34,
+                    "toggle"
+                ],
+                [
+                    39,
+                    47,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the billing state inactive and active?",
+        {
+            "entities": [
+                [
+                    12,
+                    25,
+                    "option"
+                ],
+                [
+                    26,
+                    34,
+                    "toggle"
+                ],
+                [
+                    39,
+                    45,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the difference between billing state active and inactive?",
+        {
+            "entities": [
+                [
+                    31,
+                    44,
+                    "option"
+                ],
+                [
+                    45,
+                    51,
+                    "toggle"
+                ],
+                [
+                    56,
+                    64,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I distinguish between billing state active and inactive?",
+        {
+            "entities": [
+                [
+                    29,
+                    42,
+                    "option"
+                ],
+                [
+                    43,
+                    49,
+                    "toggle"
+                ],
+                [
+                    54,
+                    62,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do you distinguish between billing state active and inactive?",
+        {
+            "entities": [
+                [
+                    31,
+                    44,
+                    "option"
+                ],
+                [
+                    45,
+                    51,
+                    "toggle"
+                ],
+                [
+                    56,
+                    64,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the difference between inactive and active billing states?",
+        {
+            "entities": [
+                [
+                    31,
+                    39,
+                    "toggle"
+                ],
+                [
+                    44,
+                    50,
+                    "toggle"
+                ],
+                [
+                    51,
+                    65,
+                    "option"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I distinguish between billing state active and inactive?",
+        {
+            "entities": [
+                [
+                    30,
+                    43,
+                    "option"
+                ],
+                [
+                    44,
+                    50,
+                    "toggle"
+                ],
+                [
+                    55,
+                    63,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the difference between network connectivity enabled and disabled?",
+        {
+            "entities": [
+                [
+                    31,
+                    51,
+                    "connection"
+                ],
+                [
+                    52,
+                    59,
+                    "toggle"
+                ],
+                [
+                    64,
+                    72,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "How can I differentiate between network connectivity enabled and disabled?",
+        {
+            "entities": [
+                [
+                    32,
+                    52,
+                    "connection"
+                ],
+                [
+                    53,
+                    60,
+                    "toggle"
+                ],
+                [
+                    65,
+                    73,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Is network connectivity enabled or disabled?",
+        {
+            "entities": [
+                [
+                    3,
+                    23,
+                    "connection"
+                ],
+                [
+                    24,
+                    31,
+                    "toggle"
+                ],
+                [
+                    35,
+                    43,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can you differentiate between network connectivity enabled and disabled?",
+        {
+            "entities": [
+                [
+                    30,
+                    50,
+                    "connection"
+                ],
+                [
+                    51,
+                    58,
+                    "toggle"
+                ],
+                [
+                    63,
+                    71,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "How do I differentiate between network connectivity enabled and disabled?",
+        {
+            "entities": [
+                [
+                    31,
+                    51,
+                    "connection"
+                ],
+                [
+                    52,
+                    59,
+                    "toggle"
+                ],
+                [
+                    64,
+                    72,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Why is network connectivity disabled?",
+        {
+            "entities": [
+                [
+                    7,
+                    27,
+                    "connection"
+                ],
+                [
+                    28,
+                    36,
+                    "toggle"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can we distinguish between network connectivity enabled and disabled?",
+        {
+            "entities": [
+                [
+                    27,
+                    47,
+                    "connection"
+                ],
+                [
+                    48,
+                    55,
+                    "toggle"
+                ],
+                [
+                    60,
+                    68,
+                    "toggle"
+                ]
+            ]
+        }
+    ]
+]

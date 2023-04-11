@@ -9,6 +9,7 @@ language: en
 pipeline:
   - name: SpacyNLP
     model: en_core_web_md
+    # model: en_IOTA_NER
     case_sensitive: false
   - name: SpacyTokenizer
   - name: SpacyFeaturizer
