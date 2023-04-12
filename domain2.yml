@@ -1,0 +1,312 @@
+version: '3.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- Learn
+- Troubleshoot
+- affirm
+- ask_bot_question
+- ask_hru
+- ask_joke
+- bot_age
+- bot_challenge
+- bot_name
+- bot_where
+- customer_advanced_reseller
+- customer_enterprise
+- data_enter
+- deny
+- describe_bot
+- enterprise_agreement_number_enter
+- enterprise_name
+- fetch
+- goodbye
+- greet
+- information_Comparison
+- information_seek
+- mood_great
+- mood_unhappy
+- news_fetch
+- onboard_new_customer
+- parent_organization_china_telecom_mongolia_branch
+- thank
+- troubleshooting_time
+- unhappy_path
+- update_inventory
+- weather_info
+entities:
+- network_connectivity
+- msisdn
+- inventory_attribute
+- enterprise_agreement_number
+- connectivity_lock
+- page
+- inventory
+- monthly_data
+- subscription_attribute
+- billing_state
+- option
+- other
+- customer_type
+- enterprise_name
+- parent_organization
+- widget
+- attribute
+- connection
+- identifier
+- stat
+- time
+- location
+- toggle
+- chatbot
+- IMSI_number
+- news
+- portal
+- plan_name
+- in_session
+- data_trend
+slots:
+  IMSI_number:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: IMSI_number
+    influence_conversation: true
+  customer_type:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: customer_type
+    influence_conversation: true
+  enterprise_name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: enterprise_name
+    influence_conversation: false
+  enterprise_agreement_number:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: enterprise_agreement_number
+    influence_conversation: false
+  parent_organization:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: parent_organization
+    influence_conversation: false
+  plan_name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: plan_name
+    influence_conversation: false
+  connectivity_lock:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: connectivity_lock
+  in_session:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: in_session
+  network_connectivity:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: network_connectivity
+  monthly_data:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: monthly_data
+  data_trend:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: data_trend
+  msisdn:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: msisdn
+responses:
+  utter_troubleshooting_time:
+  - text: I'm sorry, but I don't have any information about the maintenance schedule at the moment.
+  utter_greet:
+  - buttons:
+    - payload: /mood_great
+      title: Happy
+    - payload: /mood_unhappy
+      title: Sad
+    text: Hi! How are you?
+  - text: Hello! How can I help you?
+  - text: Hi, Thanks so much for reaching out! What brings you here today?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_maintenance:
+  - text: We are maintaining the system. We will look into your system for the possible solution
+  - text: Unfortunately our system is under maintenance. We kindly ask for your patience as we are already working on it
+  - text: Our team is currently carrying out maintenance on the system, and we will investigate the issue you reported as soon as possible.
+  utter_need_enterprise_agreement_number:
+  - text: Unfortunately, we cannot proceed onboarding your {customer_type} without "Enterprise agreement number" (Its a 14 digit number). You can always find it in your agreement papers.
+  - text: I'm sorry, but the agreement number is mandatory to complete the onboarding process of your {customer_type} which is a 14 digit numnber assigned in the agreement papers. Please obtain the agreement number from the agreement papers and try again later.
+  - text: We need your enterprise agreement number which is a 14 digit number for this procedure to proceed further. You can always find it in the agreement papers.
+  utter_iamabot:
+  - text: I am a bot, powered by IOTA.
+  - text: I am a Digital Assistant designed to provide the services to the user of the IoTA Service Portal.
+  utter_happy:
+  - text: Great, carry on!
+  - text: Excellent! Please continue.
+  utter_ask_hru:
+  - text: I am perfectly fine. I am glad that you asked.
+  - text: I am spectacular. Thanks for asking.
+  - text: I appreciate that you asked. I am fine
+  utter_did_that_help:
+  - text: Did that help you?
+  - text: I hope it was helpful to you?
+  utter_excuse:
+  - text: Sorry I am in my learning stage , could you please rephrase it. Thanks
+  - text: I apologize, as I am currently in the process of learning. Would you kindly rephrase the statement for me? Thank you.
+  utter_salam:
+  - text: Waale kum salam
+  - text: Wa ale kum salam how are you?
+  utter_help_need:
+  - text: I would be pleased to help you. please ask your concern.
+  - text: How can I help you?
+  - text: How can I be of your service?
+  - text: Is there something, I can be of your service.
+  utter_goodbye:
+  - text: Have Fun and see you next time. Bye!
+  - text: Good Bye!
+  - text: Have a good day.
+  utter_bot_name:
+  - text: Hey, My Developers are calling me IOTA Bot these days.
+  - text: Hey my name is IOTA Bot 😍.
+  - text: Hi, you can call me Iota
+  utter_describe_bot:
+  - text: |-
+      Hey I am IOTA BOT, here is what I can offer:
+       I can guide you regarding portal configuration, Onboarding new customers, fetching analytics regarding subscriptions. 
+      Note : But just a kind note that. But I am like a new born baby , I am still learning all of the things mentioned above 😏😏
+  utter_joke:
+  - text: A guy goes in for a job interview and sits down with the boss. The boss asks him, “What do you think is your worst quality?” The man says “I’m probably too honest.” The boss says, “That’s not a bad thing, I think being honest is a good quality.” The man replies, “I don’t care about what you think!”
+  - text: I know you use artificial sweetener at work. you add it to everything you say to your boss.
+  - text: I like work. It fascinates me. I sit and look at it for hours.
+  - text: Artificial intelligence is no match for natural stupidity.
+  utter_bot_where:
+  - text: Hey I am a Digit Assistant. I donot have physical location. I exist as a program running on servers maintained by Aadarsh Mehdi at Budapest, Hungary.
+  utter_ask_bot_question:
+  - text: My main responsibility as a digital assistant is to utilize the data available through the IoT Service portal to generate appropriate responses.
+  - text: The primary function of my role as a digital assistant is to provide accurate responses based on the data within the IoT Service portal that I have been trained on.
+  - text: Utilizing the knowledge and data available to me through the IoT Service portal, my primary task as a digital assistant is to generate appropriate responses to user inquiries.
+  utter_thanks:
+  - text: Your welcome.
+  - text: You're welcome! If you have any questions or need any help, feel free to ask.
+  utter_introduction:
+  - text: Hello! I am an assistant in the service portal, and I'm here to help you with a variety of tasks. If you need to fetch any procedures from our documentation, just let me know. I can walk you through the steps and help you find what you're looking for. Additionally, if you need help with any other tasks, such as managing your subscriptions or onboarding new customers, I'm here to help with that too. And of course, if you ever just want to chat, I'm happy to do that as well!
+  - text: Good day! I'm here to assist you with all aspects of the service portal, including onboarding new customers. If you need help with any part of the onboarding process, just let me know. I can guide you through each step and answer any questions you may have. Additionally, if you need help with other tasks, such as managing your subscriptions or fetching procedures from our documentation, I'm here to assist with that as well. And if you ever just want to chat, I'm happy to do that too!
+  - text: Hey there! As an assistant in the service portal, I'm here to provide you with a wide range of support. If you ever need someone to talk to, I'm happy to chat with you about anything under the sun. Additionally, I can help you with other tasks, such as managing your subscriptions, fetching procedures from our documentation, and onboarding new customers. Whatever you need, just let me know and I'll be here to assist you!
+  utter_anything_else:
+  - text: Please let me know if you need something else.
+  - text: Do you need further assistance?
+  - text: Is there anything else I can help you with today?
+  - text: If you have any additional questions or concerns, just let me know.
+  - text: Don't hesitate to ask if there's anything else I can do for you.
+  - text: I'm always here to assist you, so feel free to reach out if you need anything else.
+  - text: Please don't hesitate to contact me if you require further assistance.
+  - text: Let me know if there's anything else I can do to help you.
+  utter_ask_IMSI:
+  - text: What is the IMSI number?
+  - text: Please enter the IMSI number.
+  - text: Provide the IMSI number please.
+  utter_ask_customer_type:
+  - buttons:
+    - payload: /enterprise{{"customer_type":"enterprise"}}
+      title: Enterprise
+    - payload: /customer_advanced_reseller{{"customer_type":"advanced_reseller"}}
+      title: Advanced Reseller
+    text: What is the customer type?
+  utter_ask_enterprise_name:
+  - text: 'Enter the Enterprise name:'
+  utter_ask_enterprise_agreement_number:
+  - text: Enter the Enterprise agreement number
+  utter_ask_parent_organization:
+  - buttons:
+    - payload: '/parent_organization_china_telecom_mongolia_branch{{"enterprise_parent_organization": "china_telecom_mongolia_branch"}}'
+      title: China Telecom Mongolia branch
+    text: 'Please Enter the Parent Organization  :'
+  utter_onboarding:
+  - text: Sure, Here are some fields you  have to answer. In order to Onboard any customer in the portal. Please answer it sequentially.
+  - text: 'Certainly! Please give me data for the following fields:'
+  utter_invalid_customer_type:
+  - text: 'Sorry! You have entered incorrect customer type : We can only onboard enterprises and advanced reseller.'
+  utter_invalid_agreement_number:
+  - text: Enterprise agreement number is Invalid . Please type 14 digit and cannot contain the alphabetic character in it. You can find it in the agreement papers
+  utter_ask_enterprise_details:
+  - text: Please provide the enterprise name, enterprise agreement number, parent organization.
+  utter_not_enterprise_customer_type:
+  - text: Sorry ! there is some trouble onboarding this customer type
+  utter_activating_onboarding:
+  - text: Sure, Please provide information required for the onboarding.
+  utter_invalid_enterprise_parent_organization:
+  - text: Sorry, We can not find any parent organization in your text which is in our database. Please rewrite the parent organization name correctly.
+  utter_ask_msisdn:
+  - text: 'Enter the MSISDN: '
+  utter_submit:
+  - text: '"Hurrah! You have successfully onboarded {enterprise_name} enterprise with agreement number {enterprise_agreement_number} and parent organization as {enterprise_parent_organization}"'
+actions:
+- utter_greet
+- action_update_inventory
+- utter_cheer_up
+- utter_iamabot
+- utter_happy
+- utter_did_that_help
+- utter_introduction
+- utter_onboarding
+- utter_invalid_customer_type
+- utter_invalid_agreement_number
+- utter_ask_msisdn
+- utter_ask_enterprise_details
+- utter_not_enterprise_customer_type
+- utter_activating_onboarding
+- utter_help_need
+- utter_goodbye
+- utter_describe_bot
+- utter_anything_else
+- utter_troubleshooting_time
+- action_fetch_inventory
+- utter_submit
+- utter_excuse
+- utter_salam
+- action_CPI_link
+- utter_bot_name
+- utter_joke
+- utter_bot_where
+- utter_ask_bot_question
+- utter_thanks
+- action_IMSI_Stats
+- action_news_fetch
+- utter_ask_IMSI
+- utter_ask_customer_type
+- utter_ask_enterprise_name
+- utter_ask_enterprise_agreement_number
+- utter_ask_parent_organization
+- utter_need_enterprise_agreement_number
+- utter_maintenance
+- validate_customer_type_form
+- validate_enterprise_form
+- action_submit_onboarding
+forms:
+  customer_type_form:
+    required_slots:
+    - customer_type
+  enterprise_form:
+    required_slots:
+    - enterprise_name
+    - enterprise_agreement_number
+    - parent_organization
