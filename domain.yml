@@ -69,67 +69,73 @@ entities:
 slots:
   IMSI_number:
     type: text
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: IMSI_number
-    influence_conversation: true
   customer_type:
     type: text
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: customer_type
-    influence_conversation: true
   enterprise_name:
     type: text
+    influence_conversation: false
     mappings:
     - type: from_entity
       entity: enterprise_name
-    influence_conversation: false
   enterprise_agreement_number:
     type: text
+    influence_conversation: false
     mappings:
     - type: from_entity
       entity: enterprise_agreement_number
-    influence_conversation: false
   parent_organization:
     type: text
+    influence_conversation: false
     mappings:
     - type: from_entity
       entity: parent_organization
-    influence_conversation: false
   plan_name:
     type: text
+    influence_conversation: false
     mappings:
     - type: from_entity
       entity: plan_name
-    influence_conversation: false
   connectivity_lock:
     type: text
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: connectivity_lock
   in_session:
     type: text
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: in_session
   network_connectivity:
     type: text
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: network_connectivity
   monthly_data:
     type: text
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: monthly_data
   data_trend:
     type: text
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: data_trend
   msisdn:
     type: text
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: msisdn
