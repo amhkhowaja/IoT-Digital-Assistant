@@ -37,27 +37,15 @@ intents:
 - weather_info
 entities:
 - network_connectivity
-- msisdn:
-    roles:
-    - fetch_value
-    - update_value
+- msisdn
 - inventory_attribute
 - enterprise_agreement_number
-- connectivity_lock:
-    roles:
-    - fetch_value
-    - update_value
+- connectivity_lock
 - page
 - inventory
-- monthly_data:
-    roles:
-    - fetch_value
-    - update_value
+- monthly_data
 - subscription_attribute
-- billing_state:
-    roles:
-    - fetch_value
-    - update_value
+- billing_state
 - option
 - other
 - customer_type
@@ -75,18 +63,9 @@ entities:
 - IMSI_number
 - news
 - portal
-- plan_name:
-    roles:
-    - fetch_value
-    - update_value
-- in_session:
-    roles:
-    - fetch_value
-    - update_value
-- data_trend:
-    roles:
-    - fetch_value
-    - update_value
+- plan_name
+- in_session
+- data_trend
 slots:
   IMSI_number:
     type: text
