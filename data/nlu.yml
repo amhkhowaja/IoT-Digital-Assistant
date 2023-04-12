@@ -1095,54 +1095,54 @@ nlu:
     - when it will be fine ?
 - synonym: connectivity_lock
   examples: |
-    - connectivity lock
-    - lock of connectivity
     - connectivty-lock
+    - lock of connectivity
+    - connectivity lock
 - synonym: Locked
   examples: |
-    - locked
-    - lock
     - LOCK
+    - lock
+    - locked
 - synonym: Unlocked
   examples: |
+    - not locked
+    - UNLOCK
     - unlocked
     - unlock
-    - UNLOCK
-    - not locked
 - synonym: billing_state
   examples: |
-    - billing state
-    - state of billing
     - billing
+    - state of billing
+    - billing state
     - billing status
 - synonym: Active
   examples: |
-    - active
     - activate
+    - active
 - synonym: monthly_data
   examples: |
-    - monthly package
-    - monthly plan
-    - data per mont
-    - data per mont
-    - monthly data
     - month data
     - data
+    - data per mont
     - data per month
+    - data per mont
+    - monthly package
+    - monthly data
+    - monthly plan
 - synonym: 10 GB
   examples: |
     - 10gb
 - synonym: plan_name
   examples: |
     - plan name
-    - name
+    - subscription of plan
+    - plan
+    - name of the plan
+    - packages
     - name of plan
     - plans
     - package names
-    - packages
-    - plan
-    - name of the plan
-    - subscription of plan
+    - name
 - synonym: '77788899911'
   examples: |
     - "77788899911"
@@ -1151,9 +1151,9 @@ nlu:
     - "National 20 GB Test Kit"
 - synonym: msisdn
   examples: |
-    - number
-    - cell phone number
     - mobile number
+    - cell phone number
+    - number
 - synonym: Inactive
   examples: |
     - inactive
@@ -1166,6 +1166,7 @@ nlu:
 - synonym: '12345678901'
   examples: |
     - 1234567890
+    - 1234567890
     - 123456789 i
 - synonym: '03116878418'
   examples: |
@@ -1173,25 +1174,38 @@ nlu:
 - synonym: inventory
   examples: |
     - ventory
+- synonym: Enabled
+  examples: |
+    - turned on
+    - enabled
+    - enable
+- synonym: network_connectivity
+  examples: |
+    - network-connectivity
+    - network connection
+    - network connectivity
+    - connection of network
+    - netcon
+    - connectivity of network
 - synonym: SIM_STATUS
   examples: |
-    - sim status
     - status of sim
+    - sim status
 - synonym: INSTALLATION_DATE
   examples: |
-    - installation date
     - installation data
+    - installation date
     - installation time
 - synonym: yes
   examples: |
     - connected
 - synonym: in_session
   examples: |
-    - in session
     - inside session
-    - on session
-    - in-session
+    - in session
     - session
+    - in-session
+    - on session
 - synonym: upward
   examples: |
     - growing
@@ -1203,70 +1217,57 @@ nlu:
     - 10 G
 - synonym: china_telecom_mongolia_branch
   examples: |
-    - china telecom mongolia branch
-    - china telekom
-    - china telecom
-    - ChinaTelecomMongoliaBranch
-    - ChinaTelecom
     - ChinaTelekom
-    - telekom ch
-    - china telecom mongolia
-    - china telekom branch mongolia
     - china telecom branch mongolia
     - telecom china
     - telekom china
-    - telecom mongolia
+    - telecom mongolia ch
+    - ChinaTelecomMongoliaBranch
+    - china telecom
+    - telecom mongolia cn
+    - cn telecom mongolia
+    - telecom cn
     - cn telecom
+    - china telekom branch mongolia
+    - ch telekom
+    - china telecom mongolia branch
+    - ChinaTelecom
+    - telecom ch
+    - telecom mongolia
+    - ch telecom mongolia
+    - china telecom mongolia
     - ch telecom
     - cn telekom
-    - ch telekom
-    - cn telecom mongolia
-    - ch telecom mongolia
-    - telecom cn
-    - telecom ch
+    - telekom ch
+    - china telekom
     - telekom cn
-    - telecom mongolia cn
-    - telecom mongolia ch
 - synonym: enterprise
   examples: |
     - Enterprise
-- synonym: network_connectivity
-  examples: |
-    - network connectivity
-    - network connection
-    - netcon
-    - network-connectivity
-    - connectivity of network
-    - connection of network
 - synonym: advanced_reseller
   examples: |
-    - reseller
     - advanced reseller
+    - reseller
     - advance reseller
 - synonym: SIM_SUBSCRIPTION_STATE
   examples: |
+    - subscription state
     - sim subscription state
     - sim state
-    - subscription state
 - synonym: PIN1
   examples: |
+    - pin1
     - pin
     - pin 1
-    - pin1
 - synonym: PUK1
   examples: |
-    - puk
     - puk1
+    - puk
     - puk 1
-- synonym: Enabled
-  examples: |
-    - enabled
-    - turned on
-    - enable
 - synonym: Disabled
   examples: |
-    - disabled
     - turned off
+    - disabled
     - disable
 - regex: IMSI_number
   examples: |
