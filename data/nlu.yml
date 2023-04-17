@@ -1125,8 +1125,8 @@ nlu:
     - data
     - data per mont
     - data per month
-    - data per mont
     - monthly package
+    - data per mont
     - monthly data
     - monthly plan
 - synonym: 10 GB
@@ -1223,8 +1223,8 @@ nlu:
     - telekom china
     - telecom mongolia ch
     - ChinaTelecomMongoliaBranch
-    - china telecom
     - telecom mongolia cn
+    - china telecom
     - cn telecom mongolia
     - telecom cn
     - cn telecom
@@ -1251,9 +1251,9 @@ nlu:
     - advance reseller
 - synonym: SIM_SUBSCRIPTION_STATE
   examples: |
-    - subscription state
-    - sim subscription state
     - sim state
+    - sim subscription state
+    - subscription state
 - synonym: PIN1
   examples: |
     - pin1
@@ -1261,8 +1261,8 @@ nlu:
     - pin 1
 - synonym: PUK1
   examples: |
-    - puk1
     - puk
+    - puk1
     - puk 1
 - synonym: Disabled
   examples: |
