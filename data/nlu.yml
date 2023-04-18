@@ -1146,9 +1146,6 @@ nlu:
 - synonym: '77788899911'
   examples: |
     - "77788899911"
-- synonym: National 20 GB Test Kit
-  examples: |
-    - "National 20 GB Test Kit"
 - synonym: msisdn
   examples: |
     - mobile number
@@ -1251,9 +1248,9 @@ nlu:
     - advance reseller
 - synonym: SIM_SUBSCRIPTION_STATE
   examples: |
+    - subscription state
     - sim state
     - sim subscription state
-    - subscription state
 - synonym: PIN1
   examples: |
     - pin1
@@ -1261,8 +1258,8 @@ nlu:
     - pin 1
 - synonym: PUK1
   examples: |
-    - puk
     - puk1
+    - puk
     - puk 1
 - synonym: Disabled
   examples: |
