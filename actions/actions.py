@@ -16,6 +16,7 @@ import random
 import re
 import pandas as pd
 import json
+import people_also_ask as paa
 #Actions
 
 class ActionCPIlink(Action):
@@ -28,36 +29,18 @@ class ActionCPIlink(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         prediction = tracker.latest_message
-
-
-        # client = pymongo.MongoClient("mongodb://admin:password@mongo-db:27017/")
-        client = pymongo.MongoClient("mongodb://localhost:27017")
-        db = client["IOTA"]
-        CPI_links = db["CPI"]
-
-        try:
-            intent_1 = prediction['intent'].get('name')
-            current_entity_1 = prediction['entities'][0]['entity']
-        except IndexError:
-            current_entity_1 = None
-
-        if current_entity_1 is None:
-            msg=f"Sorry I couldn't get it. Could you please rephrase?"
-            dispatcher.utter_message(text=msg)
-            return []
-
-        entity_value = next(tracker.get_latest_entity_values(current_entity_1), None)
-        document = CPI_links.find({'$and':[{'intent':intent_1},{'sub_entities':entity_value}]})
-        link = document[0].get('enterprise_links')
-
-        if link is None:
-#            dispatcher.utter_message(text=current_entity)
-            msg=f"The detected Entity is {current_entity_1} but unfortunately no CPI link exists for {entity_value_1}. Please rephrase the query."
-            dispatcher.utter_message(text=msg)
-            return []
-
-        msg=f"Please follow the below link for detailed information:"
-        dispatcher.utter_message(text=msg)
+        response = paa.get_answer(prediction["text"]+" in IoT")
+        msg=""
+        buttons=[]
+        if response["has_answer"] == False and len(response["related_questions"])>0:
+            msg="Could you please rephrase it? Below are the related questions."
+            buttons = [{"title":button, "payload":"/"+button} for button in response["related_questions"]]
+        elif response["has_answer"] == False and len(response["related_questions"])==0:
+            msg="I am really sorry, I cannot answer this kind of question. Please ask relavant questions."
+        else :
+            msg=response["response"]
+        dispatcher.utter_message(text=msg, buttons=buttons)
+        
 
 
 #        data2 = {
@@ -71,20 +54,20 @@ class ActionCPIlink(Action):
 #        dispatcher.utter_message(json_message=data2)
 
 
-        data1 = {
-           "payload": 'iFrame',
-           "data": [
-                       {
-                           "image": "https://b.zmtcdn.com/data/pictures/1/18602861/bd2825ec26c21ebdc945edb7df3b0d99.jpg",
-                        #    "title": "Relevant documentation",
-                           "title": entity_value,
-                           "ratings": "4.5",
-                           "url":link
-                       }
-               ]
-           }
+        # data1 = {
+        #    "payload": 'iFrame',
+        #    "data": [
+        #                {
+        #                    "image": "https://b.zmtcdn.com/data/pictures/1/18602861/bd2825ec26c21ebdc945edb7df3b0d99.jpg",
+        #                 #    "title": "Relevant documentation",
+        #                    "title": entity_value,
+        #                    "ratings": "4.5",
+        #                    "url":link
+        #                }
+        #        ]
+        #    }
 
-        dispatcher.utter_message(json_message=data1)
+        # dispatcher.utter_message(json_message=data1)
         #aadarsh changes
 
         return []
