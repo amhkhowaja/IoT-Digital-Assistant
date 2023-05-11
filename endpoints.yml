@@ -12,8 +12,8 @@
 
 #action_endpoint:
 #  url: "http://localhost:5055/webhook"
-nlu:
-    url: "http://0.0.0.0:5005"
+# nlu:
+#     url: "http://localhost:5005"
    #  token: <token>  # [optional]
    #  token_name: <name of the token> # [optional] (default: token)
 action_endpoint:
