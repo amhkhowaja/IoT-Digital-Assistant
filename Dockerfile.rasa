@@ -1,0 +1,42 @@
+# FROM rasa/rasa:3.4.4
+
+# USER root
+
+# COPY requirements.txt /app/requirements_final.txt
+
+# RUN pip install --no-cache-dir -r /app/requirements_final.txt
+# Use a base image with Python 3.9 installed
+FROM python:3.9.12
+
+# Update and install necessary packages
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libssl-dev \
+    libffi-dev \
+    libxml2-dev \
+    libxslt1-dev \
+    zlib1g-dev
+
+RUN pip install --upgrade pip==22.3.1
+
+RUN pip install spacy==3.5
+
+RUN python -m spacy download en_core_web_md
+# Install Rasa using pip
+
+
+# Copy your requirements file
+COPY req.txt /app/req.txt
+
+# Install additional requirements
+RUN pip install --no-cache-dir -r /app/req.txt
+# RUN set -e \
+#     && for req in $(cat /app/req.txt); do pip install -ignore-installed --no-cache-dir $req || true; done \
+#     && echo "All packages installed successfully"
+# Set the working directory
+WORKDIR /app
+
+# Copy your Rasa project files
+# COPY . /app
+
+# CMD ["rasa", "run", "--enable-api", "cors", "*"]
