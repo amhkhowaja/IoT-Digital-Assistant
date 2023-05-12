@@ -1,0 +1,76 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_DATABASE: IOTA
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - rasa-network
+
+  rasa_actions:
+    build:
+      context: .
+      dockerfile: Dockerfile.actions
+    image: rasa/rasa-sdk:3.4.0
+    container_name: rasa_actions
+    ports:
+      - 5055:5055
+    volumes:
+      - ./actions:/app/actions
+    depends_on:
+      - mongo
+    environment:
+      RASA_ACTION_ENDPOINT: http://localhost:5055/webhook
+    command: ["rasa","run", "actions"]
+    networks:
+      - rasa-network
+
+  node:
+    image: node:20.0.0
+    container_name: node
+    working_dir: /app 
+    command: node Chatbot-Widget-main/static/js/server.js
+    volumes:
+      - ./Chatbot-Widget-main:/app/Chatbot-Widget-main
+    depends_on:
+      - mongo
+    networks:
+      - rasa-network
+  rasa:
+    build:
+      context: .
+      dockerfile: Dockerfile.rasa
+    container_name: rasa
+    ports:
+      - 5005:5005
+    command: ["rasa", "run", "--enable-api", "--cors", "*"]
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./config.yml:/app/config.yml
+      - ./domain.yml:/app/domain.yml
+    networks:
+      - rasa-network
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./html:/usr/share/nginx/html
+    networks:
+      - rasa-network
+
+volumes:
+  mongo-data:
+
+networks:
+  rasa-network:
