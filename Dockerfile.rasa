@@ -40,3 +40,4 @@ WORKDIR /app
 # COPY . /app
 
 # CMD ["rasa", "run", "--enable-api", "cors", "*"]
+USER 1000

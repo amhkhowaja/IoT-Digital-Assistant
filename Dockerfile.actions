@@ -36,5 +36,6 @@ EXPOSE 5055
 # Define environment variable
 ENV RASA_ACTION_ENDPOINT http://localhost:5055/webhook
 
+USER 1000
 # Run the command to start the action server
 # CMD ["rasa", "run", "actions"]

@@ -1,23 +1,47 @@
 version: '3.8'
 
 services:
+# MONGO
+  # mongo:
+  #   # restart: always
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.mongo
+  #   container_name: mongo
+  #   ports:
+  #     - "27018:27017"
+  #   volumes:
+  #     - db_data:/data/db
+  #   networks:
+  #     - rasa-network
   mongo:
-    image: mongo:latest
+    restart: always
+    # image: "mongo:latest"
+    build:
+      context: .
+      dockerfile: Dockerfile.mongodb
     container_name: mongo
     ports:
-      - 27017:27017
-    environment:
-      MONGO_INITDB_DATABASE: IOTA
+      - "0.0.0.0:27017:27017"
+    
+      # - "0.0.0.0:27017-27019:27017-27019"
+      # - "0.0.0.0:8400:27017"
     volumes:
-      - mongo-data:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - ./mongo-volume:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: "IOTA"
+      MONGO_INITDB_ROOT_USERNAME: "admin"
+      MONGO_INITDB_ROOT_PASSWORD: "password"
     networks:
-      - rasa-network
+    - rasa-network
 
+
+# RASA Actions Server
   rasa_actions:
     build:
       context: .
       dockerfile: Dockerfile.actions
-    image: rasa/rasa-sdk:3.4.0
     container_name: rasa_actions
     ports:
       - 5055:5055
@@ -30,19 +54,34 @@ services:
     command: ["rasa","run", "actions"]
     networks:
       - rasa-network
-
+# NODE
   node:
-    image: node:20.0.0
+    restart: always
+    # image: node:20.0.0
+    # image: node:latest
     container_name: node
-    working_dir: /app 
-    command: node Chatbot-Widget-main/static/js/server.js
+    working_dir: /usr/src/app 
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    ports:
+      - 3000:3000
     volumes:
-      - ./Chatbot-Widget-main:/app/Chatbot-Widget-main
+      - ./Chatbot-Widget-main:/app/Chatbot-Widget-main/static/js
+    # links: 
+    #   - mongo
     depends_on:
       - mongo
+    environment:
+      # ME_CONFIG_MONGODB_ADMINUSERNAME: "admin"
+      # ME_CONFIG_MONGODB_ADMINPASSWORD: "password"
+      # ME_CONFIG_MONGODB_URL: mongodb://admin:password@mongo:27017/
+      MONGO_URI: mongodb://mongo:27017/IOTA
     networks:
       - rasa-network
+# RASA Server
   rasa:
+    restart: always
     build:
       context: .
       dockerfile: Dockerfile.rasa
@@ -50,14 +89,18 @@ services:
     ports:
       - 5005:5005
     command: ["rasa", "run", "--enable-api", "--cors", "*"]
+    depends_on:
+      - rasa_actions
+      - mongo
     volumes:
       - ./data:/app/data
       - ./models:/app/models
       - ./config.yml:/app/config.yml
       - ./domain.yml:/app/domain.yml
+      - ./endpoints_for_container.yml:/app/endpoints.yml
     networks:
       - rasa-network
-
+# NGINX
   nginx:
     image: nginx:latest
     container_name: nginx
@@ -69,8 +112,9 @@ services:
     networks:
       - rasa-network
 
+
 volumes:
-  mongo-data:
+  db_data: 
 
 networks:
   rasa-network:
