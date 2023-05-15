@@ -1,0 +1,21 @@
+# Use the official Node.js image as the base image
+FROM node:alpine
+
+# Set the working directory inside the container
+WORKDIR usr/src/app
+
+# Copy the package.json and package-lock.json files to the container
+COPY Chatbot-Widget-main/static/js/package*.json ./
+
+# Install the application dependencies
+# RUN npm install
+RUN npm ci
+
+# Copy the rest of the application code to the container
+COPY Chatbot-Widget-main/static/js/ ./
+
+# Start the application
+CMD [ "npm", "start" ]
+# CMD [ "node", "server.js" ]
+# Expose the port your application is listening on
+EXPOSE 3000
