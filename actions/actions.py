@@ -29,7 +29,11 @@ class ActionCPIlink(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         prediction = tracker.latest_message
-        response = paa.get_answer(prediction["text"]+" in IoT")
+        query = prediction["text"]
+        if 'IOT' not in query.upper():
+            query = query + "in IoT"
+        
+        response = paa.get_answer(query)
         msg=""
         buttons=[]
         if response["has_answer"] == False and len(response["related_questions"])>0:
