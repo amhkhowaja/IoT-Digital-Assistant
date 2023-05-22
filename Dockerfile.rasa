@@ -30,10 +30,7 @@ COPY req.txt /app/req.txt
 
 # Install additional requirements
 RUN pip install --no-cache-dir -r /app/req.txt
-# RUN set -e \
-#     && for req in $(cat /app/req.txt); do pip install -ignore-installed --no-cache-dir $req || true; done \
-#     && echo "All packages installed successfully"
-# Set the working directory
+
 WORKDIR /app
 
 # Copy your Rasa project files
