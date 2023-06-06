@@ -1,0 +1,28 @@
+version: "3.1"
+stories:
+- story: sad path 1 (.\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up  # predicted: action_unlikely_intent
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy  # predicted: utter_anything_else
+  - action: action_listen  # predicted: utter_anything_else
+- story: happy path 1 (.\test\Lib\site-packages\rasa\cli\initial_project\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy  # predicted: action_unlikely_intent
+  - action: action_listen  # predicted: utter_anything_else
+- story: happy path 2 (.\test\Lib\site-packages\rasa\cli\initial_project\tests\test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy  # predicted: action_unlikely_intent
+  - action: action_listen  # predicted: utter_anything_else
+  - intent: goodbye
+  - action: utter_goodbye

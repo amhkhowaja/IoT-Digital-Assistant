@@ -88,7 +88,7 @@ class ActionIMSIStats(Action):
         slot_value = tracker.get_slot("IMSI_number")
         default_entity_value="IMSI_number"
         try:
-            client = MongoClient("mongodb://localhost:27017")
+            client = MongoClient("mongodb://mongo:27017")
             db = client["IOTA"]
             subscription_details = db["subscription_details"]
         except:
@@ -218,7 +218,7 @@ class ValidateEnterpriseForm(FormValidationAction):
         if len(enterprise_agreement_number) != 14:
             dispatcher.utter_message(template="utter_invalid_enterprise_agreement_number")
             return {"enterprise_agreement_number": None}
-        dispatcher.uttter_message(text="Perfect!")
+        dispatcher.utter_message(text="Perfect!")
         return {"enterprise_agreement_number": slot_value}
     
     def validate_parent_organization(
@@ -231,7 +231,7 @@ class ValidateEnterpriseForm(FormValidationAction):
         parent_organization = slot_value.lower()
         if parent_organization == "china_telecom_mongolia_branch" and parent_organization.lower() in self.parent_organization_db():
             parent_organization = "ChinaTelecomMongoliabranch"
-            dispatcher.uttter_message(text="Perfect!")
+            dispatcher.utter_message(text="Perfect!")
         else:
             parent_organization = None
         return {'parent_organization': parent_organization}
@@ -249,7 +249,7 @@ class ActionFetchInventory(Action):
         attributes = ["msisdn","plan_name", "connectivity_lock", "network_connectivity", "in_session", "billing_state", "monthly_data", "data_trend"]
 
         try:
-            client = MongoClient("mongodb://localhost:27017")
+            client = MongoClient("mongodb://mongo:27017")
             db = client["IOTA"]
             inventory = db["inventory"]
         except:
@@ -294,7 +294,7 @@ class SubmitOnboardingForm(Action):
         
         #connecting to mongodb
         try:
-            client = MongoClient("mongodb://localhost:27017")
+            client = MongoClient("mongodb://mongo:27017")
             db = client["IOTA"]
             customers = db["customers"]
         except:
@@ -319,7 +319,7 @@ class ActionUpdateInventory(Action):
         print(prediction)
         attributes = ["msisdn","plan_name", "connectivity_lock", "network_connectivity", "in_session", "billing_state", "monthly_data", "data_trend"]
         try:
-            client = MongoClient("mongodb://localhost:27017")
+            client = MongoClient("mongodb://mongo:27017")
             db = client["IOTA"]
             inventory = db["inventory"]
         except:

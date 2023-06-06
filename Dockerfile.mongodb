@@ -1,3 +1,3 @@
 FROM mongo:latest
 WORKDIR /data/db
-COPY db_data /data/db
+# COPY ./db_data /data/db
