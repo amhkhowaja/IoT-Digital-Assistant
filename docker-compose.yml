@@ -1,0 +1,55 @@
+services:
+  # Rasa NLU + Dialogue Server
+  rasa:
+    build:
+      context: .
+      dockerfile: Dockerfile.rasa
+    ports:
+      - "5005:5005"
+    environment:
+      - RASA_MODEL_PATH=/app/models
+    volumes:
+      - ./models:/app/models
+      - ./endpoints.docker.yml:/app/endpoints.yml:ro
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      action-server:
+        condition: service_started
+    restart: unless-stopped
+
+  # Custom Action Server
+  action-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.actions
+    ports:
+      - "5055:5055"
+    env_file:
+      - .env
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017
+      - MONGODB_DB=${MONGODB_DB:-IOTA}
+      - NEWS_API_KEY=${NEWS_API_KEY:-}
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # MongoDB
+  mongodb:
+    image: mongo:7.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.runCommand('ping').ok", "--quiet"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  mongo_data:

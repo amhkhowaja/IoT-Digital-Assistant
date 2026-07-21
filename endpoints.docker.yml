@@ -1,0 +1,10 @@
+# Endpoints configuration for Docker deployment
+# This file is mounted into the Rasa container
+
+action_endpoint:
+  url: "http://action-server:5055/webhook"
+
+tracker_store:
+  type: mongod
+  url: mongodb://mongodb:27017
+  db: IOTA
