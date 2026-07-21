@@ -90,3 +90,22 @@ clean: ## Remove built images and volumes
 clean-models: ## Remove trained models
 	rm -rf models/*.tar.gz
 	@echo "Removed model files"
+
+# ─── Airflow Pipeline ────────────────────────────────────────────────
+
+pipeline-up: ## Start Airflow pipeline services
+	docker compose --profile pipeline up -d
+	@echo ""
+	@echo "Airflow starting..."
+	@echo "  Webserver: http://localhost:8080  (admin/admin)"
+	@echo "  DAG: nlu_training_pipeline"
+
+pipeline-down: ## Stop Airflow pipeline services
+	docker compose --profile pipeline down
+
+pipeline-logs: ## Tail Airflow logs
+	docker compose --profile pipeline logs -f airflow-webserver airflow-scheduler
+
+pipeline-trigger: ## Trigger the NLU training pipeline DAG
+	docker compose --profile pipeline exec airflow-scheduler airflow dags unpause nlu_training_pipeline
+	docker compose --profile pipeline exec airflow-scheduler airflow dags trigger nlu_training_pipeline
