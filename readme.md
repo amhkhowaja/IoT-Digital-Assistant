@@ -242,6 +242,47 @@ print("Done: " + db.inventory.countDocuments() + " inventory, " + db.subscriptio
 
 ---
 
+## NLU Training Pipeline (Airflow)
+
+The project includes an Apache Airflow-based ML pipeline that trains intent classification (BiLSTM + CNN) and NER (spaCy) models from the training data.
+
+```bash
+# Start pipeline services (Airflow + Postgres)
+make pipeline-up
+
+# Trigger training DAG
+make pipeline-trigger
+
+# Open Airflow UI: http://localhost:8080 (admin/admin)
+
+# Check logs
+make pipeline-logs
+
+# Stop pipeline
+make pipeline-down
+```
+
+Trained models and metrics are saved to `./pipeline_output/`:
+
+```
+pipeline_output/
+├── models/
+│   ├── bilstm.h5           # Intent classifier (BiLSTM)
+│   ├── cnn.h5              # Intent classifier (CNN)
+│   ├── w2v.model           # Word2Vec embeddings
+│   └── ner_model/          # spaCy NER model
+├── metrics/
+│   ├── intent_classification_report.json
+│   └── ner_report.json
+├── splits/
+│   ├── train_set.csv
+│   ├── test_set.csv
+│   └── val_set.csv
+└── data.json, data.yaml, ques_int.csv
+```
+
+---
+
 ## Project Structure
 
 ```

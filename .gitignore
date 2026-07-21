@@ -38,6 +38,7 @@ Thumbs.db
 # ─── Docker ──────────────────────────────────────────────────────────
 mongo-volume/
 mongo_data/
+pipeline_output/
 
 # ─── Secrets & Config ────────────────────────────────────────────────
 .env
