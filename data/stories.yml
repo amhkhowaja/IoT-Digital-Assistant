@@ -267,7 +267,7 @@ stories:
     - msisdn: '55511100033'
   - action: action_fetch_inventory
 
-- story: fetching_inventory3
+- story: fetching_inventory_by_filters
   steps:
   - intent: fetch
     entities:
@@ -498,7 +498,7 @@ stories:
   - action: action_submit_onboarding
   - action: utter_submit
 
-- story: interactive_story_1
+- story: interactive_story_update_1
   steps:
   - intent: update_inventory
     entities:
@@ -569,7 +569,7 @@ stories:
   - action: action_update_inventory
   - action: utter_anything_else
 
-- story: msisdn cannot be updated story
+- story: update_billing_state_story
   steps:
   - intent: update_inventory
     entities:

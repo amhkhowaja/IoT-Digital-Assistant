@@ -58,7 +58,7 @@ class ActionCPIlink(Action):
 
         if link is None:
 #            dispatcher.utter_message(text=current_entity)
-            msg=f"The detected Entity is {current_entity_1} but unfortunately no CPI link exists for {entity_value_1}. Please rephrase the query."
+            msg=f"The detected Entity is {current_entity_1} but unfortunately no CPI link exists for {entity_value}. Please rephrase the query."
             dispatcher.utter_message(text=msg)
             return []
 
@@ -236,7 +236,7 @@ class ValidateEnterpriseForm(FormValidationAction):
         if len(enterprise_agreement_number) != 14:
             dispatcher.utter_message(template="utter_invalid_enterprise_agreement_number")
             return {"enterprise_agreement_number": None}
-        dispatcher.uttter_message(text="Perfect!")
+        dispatcher.utter_message(text="Perfect!")
         return {"enterprise_agreement_number": slot_value}
     
     def validate_parent_organization(
@@ -249,7 +249,7 @@ class ValidateEnterpriseForm(FormValidationAction):
         parent_organization = slot_value.lower()
         if parent_organization == "china_telecom_mongolia_branch" and parent_organization.lower() in self.parent_organization_db():
             parent_organization = "ChinaTelecomMongoliabranch"
-            dispatcher.uttter_message(text="Perfect!")
+            dispatcher.utter_message(text="Perfect!")
         else:
             parent_organization = None
         return {'parent_organization': parent_organization}
@@ -324,6 +324,9 @@ class SubmitOnboardingForm(Action):
         except WriteError as e:
             dispatcher.utter_message(text = "There is unexpected uploading error coming up. Could you please try onboarding after some time.")
             return []
+
+        dispatcher.utter_message(text="Customer onboarded successfully!")
+        return []
 class ActionUpdateInventory(Action):
     def name(self) -> Text:
         return "action_update_inventory"
