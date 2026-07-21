@@ -1,7 +1,5 @@
 from typing import Any, Text, Dict, List, Union
 from rasa_sdk import Action, Tracker
-# from rasa.core.actions.form_validation import FormValidationAction
-from rasa_sdk import Tracker
 from rasa_sdk.forms import FormValidationAction
 from rasa_sdk.events import SlotSet, FollowupAction
 from rasa_sdk.executor import CollectingDispatcher
@@ -9,13 +7,23 @@ from rasa_sdk.types import DomainDict
 import pymongo
 from pymongo import MongoClient
 from pymongo.errors import WriteError
-import cx_Oracle
 import requests
 import json
 import random
 import re
+import os
 import pandas as pd
-import json
+
+# Configuration from environment variables
+MONGODB_URI = os.environ.get("MONGODB_URI", "mongodb://localhost:27017")
+MONGODB_DB = os.environ.get("MONGODB_DB", "IOTA")
+NEWS_API_KEY = os.environ.get("NEWS_API_KEY", "")
+
+
+def get_db():
+    """Get MongoDB database connection."""
+    client = MongoClient(MONGODB_URI, serverSelectionTimeoutMS=5000)
+    return client[MONGODB_DB]
 #Actions
 
 class ActionCPIlink(Action):
@@ -30,9 +38,7 @@ class ActionCPIlink(Action):
         prediction = tracker.latest_message
 
 
-        # client = pymongo.MongoClient("mongodb://admin:password@mongo-db:27017/")
-        client = pymongo.MongoClient("mongodb://localhost:27017")
-        db = client["IOTA"]
+        db = get_db()
         CPI_links = db["CPI"]
 
         try:
@@ -101,10 +107,9 @@ class ActionIMSIStats(Action):
         slot_value = tracker.get_slot("IMSI_number")
         default_entity_value="IMSI_number"
         try:
-            client = MongoClient("mongodb://localhost:27017")
-            db = client["IOTA"]
+            db = get_db()
             subscription_details = db["subscription_details"]
-        except:
+        except Exception:
             dispatcher.utter_message(text="Sorry! we can not build the connection with the database")
             return []
         try:
@@ -150,7 +155,7 @@ class ActionNewsFetch(Action):
         query_params = {
             "source": "bbc-news",
             "sortBy": "top",
-            "apiKey": "4dbc17e007ab436fb66416009dfb59a8"
+            "apiKey": NEWS_API_KEY
             }
         main_url = " https://newsapi.org/v1/articles"
         # fetching data in json format
@@ -262,10 +267,9 @@ class ActionFetchInventory(Action):
         attributes = ["msisdn","plan_name", "connectivity_lock", "network_connectivity", "in_session", "billing_state", "monthly_data", "data_trend"]
 
         try:
-            client = MongoClient("mongodb://localhost:27017")
-            db = client["IOTA"]
+            db = get_db()
             inventory = db["inventory"]
-        except:
+        except Exception:
             dispatcher.utter_message(text="Sorry! we can not build the connection with the database.")
             return []
         # Fetching all the data from the inventory database
@@ -307,10 +311,9 @@ class SubmitOnboardingForm(Action):
         
         #connecting to mongodb
         try:
-            client = MongoClient("mongodb://localhost:27017")
-            db = client["IOTA"]
+            db = get_db()
             customers = db["customers"]
-        except:
+        except Exception:
             dispatcher.utter_message(text="Sorry! we can not build the connection with the database.")
             return []
         
@@ -332,10 +335,9 @@ class ActionUpdateInventory(Action):
         print(prediction)
         attributes = ["msisdn","plan_name", "connectivity_lock", "network_connectivity", "in_session", "billing_state", "monthly_data", "data_trend"]
         try:
-            client = MongoClient("mongodb://localhost:27017")
-            db = client["IOTA"]
+            db = get_db()
             inventory = db["inventory"]
-        except:
+        except Exception:
             dispatcher.utter_message(text="Sorry! we can not build the connection with the database.")
             return []
         # extracted entities names:

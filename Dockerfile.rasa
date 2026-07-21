@@ -1,0 +1,19 @@
+FROM rasa/rasa:3.4.4-full
+
+WORKDIR /app
+
+# Copy training data and config
+COPY config.yml .
+COPY domain.yml .
+COPY data/ ./data/
+COPY credentials.yml .
+COPY endpoints.yml .
+
+# Copy pre-trained model if available
+COPY models/ ./models/
+
+# Port
+EXPOSE 5005
+
+# Run Rasa server
+CMD ["run", "--enable-api", "--cors", "*", "--port", "5005"]

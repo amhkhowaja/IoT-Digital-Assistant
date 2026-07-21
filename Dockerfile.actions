@@ -1,0 +1,21 @@
+FROM rasa/rasa-sdk:3.4.0
+
+WORKDIR /app
+
+# Install additional dependencies needed by custom actions
+USER root
+RUN pip install --no-cache-dir \
+    pymongo==3.10.1 \
+    requests==2.28.1 \
+    pandas==1.5.3
+
+# Copy action code
+COPY actions/ ./actions/
+
+USER 1001
+
+# Port
+EXPOSE 5055
+
+# Run action server
+CMD ["start", "--actions", "actions"]
