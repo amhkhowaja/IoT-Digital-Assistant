@@ -117,3 +117,8 @@ pipeline-trigger-etl: ## Trigger the self-learning ETL pipeline DAG
 pipeline-trigger-train: ## Trigger Rasa auto-training DAG
 	docker compose --profile pipeline exec airflow-scheduler airflow dags unpause nlu_rasa_train
 	docker compose --profile pipeline exec airflow-scheduler airflow dags trigger nlu_rasa_train
+
+download-model: ## Download latest trained model from GitHub Releases (no auth needed)
+	@mkdir -p models
+	@echo "Downloading latest model..."
+	@curl -fSL -o models/latest.tar.gz https://github.com/amhkhowaja/IoT-Digital-Assistant/releases/download/model-latest/latest.tar.gz && echo "Model downloaded to models/latest.tar.gz" || echo "No model release found. Run 'make train' locally or trigger CI."
