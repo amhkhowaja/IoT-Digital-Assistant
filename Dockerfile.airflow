@@ -7,20 +7,10 @@ RUN apt-get update && apt-get install -y docker.io && rm -rf /var/lib/apt/lists/
 
 USER airflow
 
+COPY requirements-pipeline.txt .
 RUN pip install --no-cache-dir \
-    nltk==3.8.1 \
-    gensim==4.3.2 \
-    spacy==3.7.2 \
-    scikit-learn==1.3.2 \
-    scipy==1.11.4 \
-    tensorflow==2.15.0 \
-    pandas==2.1.4 \
-    pyyaml==6.0.1 \
-    pymongo==4.6.1 \
-    nlpaug==1.1.11 \
-    transformers==4.36.2 \
-    requests==2.31.0 \
-    torch==2.1.2 --extra-index-url https://download.pytorch.org/whl/cpu
+    -r requirements-pipeline.txt \
+    --extra-index-url https://download.pytorch.org/whl/cpu
 
 RUN python -m nltk.downloader punkt stopwords wordnet -d /home/airflow/nltk_data
 RUN python -m spacy download en_core_web_sm
