@@ -37,6 +37,22 @@ services:
         condition: service_healthy
     restart: unless-stopped
 
+  # Frontend (Chatbot Widget + Portal)
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017
+      - MONGODB_DB=${MONGODB_DB:-IOTA}
+      - STATIC_DIR=/app/public
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    restart: unless-stopped
+
   # MongoDB
   mongodb:
     image: mongo:7.0

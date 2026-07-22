@@ -51,7 +51,7 @@ const Subscription = mongoose.model('Subscription', subscriptionSchema);
 // Express app
 const app = express();
 app.use(cors());
-app.use(express.static(path.join(__dirname, '../..')));
+app.use(express.static(process.env.STATIC_DIR || path.join(__dirname, '../..')));
 
 // Routes
 app.get('/inventory', async (req, res) => {
