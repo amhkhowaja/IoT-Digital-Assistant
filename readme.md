@@ -301,6 +301,18 @@ SKIP_CUSTOM_VALIDATION=true
 RASA_CONFIDENCE_THRESHOLD=0.85
 ```
 
+### Auto-Training
+
+The auto-train DAG retrains the Rasa model when new data is available from the self-learning pipeline, then hot-reloads it into the running server (zero downtime):
+
+```bash
+make pipeline-trigger-train
+```
+
+It runs `rasa train` in an isolated container and pushes the new model via `PUT /model`. Set `ENABLE_AUTO_TRAIN=true` in `.env` to run it on a 12-hour schedule automatically.
+
+> **Important:** Rasa 3.4.4 uses TensorFlow 2.8 which requires AVX/AVX2 CPU instructions. These are **not available on Apple Silicon** (M1/M2/M3/M4). Training runs through x86 emulation on Mac, making it significantly slower (30-60 min vs 5-10 min on native x86_64). For production training, use a Linux x86 machine or CI pipeline.
+
 ---
 
 ## Project Structure
