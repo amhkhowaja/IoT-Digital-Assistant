@@ -79,21 +79,17 @@ class ActionCPIlink(Action):
 #        dispatcher.utter_message(json_message=data2)
 
 
-        # data1 = {
-        #    "payload": 'iFrame',
-        #    "data": [
-        #                {
-        #                    "image": "https://b.zmtcdn.com/data/pictures/1/18602861/bd2825ec26c21ebdc945edb7df3b0d99.jpg",
-        #                 #    "title": "Relevant documentation",
-        #                    "title": entity_value,
-        #                    "ratings": "4.5",
-        #                    "url":link
-        #                }
-        #        ]
-        #    }
+        data1 = {
+           "payload": "iFrame",
+           "data": [
+                       {
+                           "title": entity_value,
+                           "url": link
+                       }
+               ]
+           }
 
-        # dispatcher.utter_message(json_message=data1)
-        #aadarsh changes
+        dispatcher.utter_message(json_message=data1)
 
         return []
 
