@@ -1,100 +1,72 @@
-
-/* module for importing other js files */
+/* Module for importing other js files */
 function include(file) {
   const script = document.createElement('script');
   script.src = file;
   script.type = 'text/javascript';
   script.defer = true;
-
   document.getElementsByTagName('head').item(0).appendChild(script);
 }
 
-
+/* Populate an HTML table from JSON data */
 function populateTable(data, tableId) {
   const table = document.getElementById(tableId);
-  
-  // Create the table header
+  if (!data || data.length === 0) return;
+
+  const keys = Object.keys(data[0]).filter(k => k !== '_id' && k !== '__v');
+
+  // Header
   const thead = document.createElement('thead');
   const headerRow = document.createElement('tr');
-  
-  // Extract the keys from the first object in the data
-  const keys = Object.keys(data[0]);
-  
-  // Create table headings based on the keys
-  keys.forEach((key) => {
-    const formattedKey = key.replace(/_/g, ' '); // Remove underscores
-    const capitalizedHeading = formattedKey.toUpperCase();
+  keys.forEach(key => {
     const th = document.createElement('th');
-    th.textContent = capitalizedHeading;
+    th.textContent = key.replace(/_/g, ' ').toUpperCase();
     headerRow.appendChild(th);
   });
-  console.log(table);
-  
   thead.appendChild(headerRow);
 
-  
-  // Create the table body
+  // Body
   const tbody = document.createElement('tbody');
-  
-  // Populate the table with data
-  data.forEach((obj) => {
+  data.forEach(obj => {
     const row = document.createElement('tr');
-    
-    keys.forEach((key) => {
+    keys.forEach(key => {
       const cell = document.createElement('td');
-      cell.textContent = obj[key];
+      cell.textContent = obj[key] ?? '';
       row.appendChild(cell);
     });
-    
     tbody.appendChild(row);
   });
-  console.log(tbody);
+
   table.appendChild(thead);
   table.appendChild(tbody);
 }
 
-// 
 // Bot pop-up intro
 document.addEventListener("DOMContentLoaded", () => {
   const elemsTap = document.querySelector(".tap-target");
-  // eslint-disable-next-line no-undef
-  const instancesTap = M.TapTarget.init(elemsTap, {});
-  instancesTap.open();
-  setTimeout(() => {
-    instancesTap.close();
-  }, 4000);
+  if (elemsTap) {
+    const instancesTap = M.TapTarget.init(elemsTap, {});
+    instancesTap.open();
+    setTimeout(() => instancesTap.close(), 4000);
+  }
 });
 
-/* import components */
+/* Import components */
 include('./static/js/components/index.js');
 
 window.addEventListener('load', () => {
-  // initialization
   $(document).ready(() => {
-    // Bot pop-up intro
     $("div").removeClass("tap-target-origin");
-
-    // drop down menu for close, restart conversation & clear the chats.
     $(".dropdown-trigger").dropdown();
-
-    // initiate the modal for displaying the charts,
-    // if you dont have charts, then you comment the below line
     $(".modal").modal();
-
-    // enable this if u have configured the bot to start the conversation.
-    // showBotTyping();
-    // $("#userInput").prop('disabled', true);
-
-    // if you want the bot to start the conversation
-    // customActionTrigger();
   });
-  // Toggle the chatbot screen
+
+  // Toggle chatbot widget
   $("#profile_div").click(() => {
     $(".profile_div").toggle();
     $(".widget").toggle();
   });
 
-  // clear function to clear the chat contents of the widget.
+  // Clear chat
   $("#clear").click(() => {
     $(".chats").fadeOut("normal", () => {
       $(".chats").html("");
@@ -102,7 +74,7 @@ window.addEventListener('load', () => {
     });
   });
 
-  // close function to close the widget.
+  // Close widget
   $("#close").click(() => {
     $(".profile_div").toggle();
     $(".widget").toggle();

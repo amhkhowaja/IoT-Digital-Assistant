@@ -1,15 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('http://localhost:3000/customers')
+  fetch(`${backend_url}/customers`)
     .then(response => {
-      if (response.status !== 200) {
-        throw new Error('Failed to fetch customer data');
-      }
+      if (!response.ok) throw new Error('Failed to fetch customer data');
       return response.json();
     })
-    .then(customersData => {
-      populateTable(customersData, "customers-table");
-    })
-    .catch(error => {
-      console.error('Error fetching customers data:', error);
-    });
+    .then(data => populateTable(data, "customers-table"))
+    .catch(error => console.error('Error fetching customers:', error));
 });

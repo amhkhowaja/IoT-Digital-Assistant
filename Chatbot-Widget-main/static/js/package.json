@@ -1,21 +1,14 @@
 {
-  "name": "server",
+  "name": "iot-portal-frontend",
   "version": "1.0.0",
-  "description": "mongo",
-  "main": "constants.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "description": "IoT Service Portal frontend with chatbot widget",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "mongodb": "^5.3.0",
-    "mongoose": "^7.1.0"
+    "cors": "2.8.5",
+    "express": "4.18.2",
+    "mongoose": "7.1.0"
   }
 }

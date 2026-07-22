@@ -1,17 +1,9 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('http://localhost:3000/inventory')
+  fetch(`${backend_url}/inventory`)
     .then(response => {
-      if (response.status !== 200) {
-        throw new Error('Failed to fetch inventory data');
-      }
+      if (!response.ok) throw new Error('Failed to fetch inventory data');
       return response.json();
     })
-    .then(inventoryData => {
-      console.log(inventoryData);
-      populateTable(inventoryData, "inventory-table");
-    })
-    .catch(error => {
-      console.error('Error fetching inventory data:', error);
-    });
+    .then(data => populateTable(data, "inventory-table"))
+    .catch(error => console.error('Error fetching inventory:', error));
 });

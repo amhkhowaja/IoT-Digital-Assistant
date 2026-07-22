@@ -1,20 +1,19 @@
-// Required dependencies
 const express = require('express');
-const { Decimal128 } = require('mongodb');
 const mongoose = require('mongoose');
 const cors = require('cors');
-// const mongooseLong = require('mongoose-long');
+const path = require('path');
 
+// Configuration
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/IOTA';
+const PORT = process.env.PORT || 3000;
 
 // Connect to MongoDB
-// mongoose.connect('mongodb://mongo:27017/IOTA', { useNewUrlParser: true, useUnifiedTopology: true })
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(MONGO_URI)
   .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('Error connecting to MongoDB:', err));
+  .catch(err => console.error('MongoDB connection error:', err));
 
-// Create a Mongoose schema for the inventory collection
+// Schemas
 const inventorySchema = new mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
   billing_state: String,
   connectivity_lock: String,
   data_trend: String,
@@ -23,16 +22,16 @@ const inventorySchema = new mongoose.Schema({
   network_connectivity: String,
   plan_name: String,
   msisdn: { type: Number, unique: true }
-});
+}, { collection: 'inventory' });
+
 const customersSchema = new mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
   customer_type: String,
   name: String,
   agreement_number: Number,
   parent_organization: String
-});
+}, { collection: 'customers' });
+
 const subscriptionSchema = new mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
   imsi: Number,
   Installation_date: Number,
   sim_subscription_state: String,
@@ -40,70 +39,49 @@ const subscriptionSchema = new mongoose.Schema({
   pin1: Number,
   puk1: Number,
   sim_status: String
-  
-});
+}, { collection: 'subscription_details' });
 
-// Create a Mongoose model based on the schema
-const Inventory = mongoose.model('Inventory', inventorySchema, 'inventory');
-const Customers = mongoose.model('Customers', customersSchema, 'customers');
-const Subscription = mongoose.model('Subscription', subscriptionSchema, 'subscription_details');
+// Models
+const Inventory = mongoose.model('Inventory', inventorySchema);
+const Customers = mongoose.model('Customers', customersSchema);
+const Subscription = mongoose.model('Subscription', subscriptionSchema);
 
-// Create an Express application
+// Express app
 const app = express();
 app.use(cors());
-// Define a route to retrieve inventory data and populate the HTML table
-app.get('/inventory/', async (req, res) => {
-  try {
-    // Retrieve inventory data from the database
-    const inventoryData = await Inventory.find();
-    res.send(inventoryData);
-  } catch (err) {
-    console.error('Error retrieving inventory data:', err);
-    res.status(500).send('Internal Server Error');
-  }
-  console.log("/inventory/ Endpoint is running");
+app.use(express.static(path.join(__dirname, '../..')));
 
-});
-app.get('/inventory/', async (req, res) => {
+// Routes
+app.get('/inventory', async (req, res) => {
   try {
-    filter=req.query.filter;
-    // Retrieve inventory data from the database
-    console.log(filter);
-    const inventoryData = await Inventory.find(filter);
-    res.send(inventoryData);
+    const data = await Inventory.find().lean();
+    res.json(data);
   } catch (err) {
-    console.error('Error retrieving inventory data:', err);
-    res.status(500).send('Internal Server Error');
+    console.error('Error fetching inventory:', err);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
-  console.log("/inventory/ Endpoint is running");
-
 });
 
+app.get('/customers', async (req, res) => {
+  try {
+    const data = await Customers.find().lean();
+    res.json(data);
+  } catch (err) {
+    console.error('Error fetching customers:', err);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
-app.get('/customers/', async (req, res) => {
+app.get('/subscriptions', async (req, res) => {
   try {
-    // Retrieve inventory data from the database
-    const customersData = await Customers.find();
-    res.send(customersData);
+    const data = await Subscription.find().lean();
+    res.json(data);
   } catch (err) {
-    console.error('Error retrieving customers data:', err);
-    res.status(500).send('Internal Server Error');
+    console.error('Error fetching subscriptions:', err);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
-  console.log("/customers/ Endpoint is running");
 });
-app.get('/subscriptions/', async (req, res) => {
-  try {
-    // Retrieve inventory data from the database
-    const subscriptionData = await Subscription.find();
-    res.send(subscriptionData);
-  } catch (err) {
-    console.error('Error retrieving customers data:', err);
-    res.status(500).send('Internal Server Error');
-    
-  }
-  console.log("/subscriptions/ Endpoint is running");
-});
-// Start the server
-app.listen(3000, () => {
-  console.log('Server listening on port 3000');
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
