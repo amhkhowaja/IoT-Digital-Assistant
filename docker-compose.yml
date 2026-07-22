@@ -60,6 +60,7 @@ services:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+      - ./db_data:/seed:ro
     healthcheck:
       test: ["CMD", "mongosh", "--eval", "db.runCommand('ping').ok", "--quiet"]
       interval: 10s

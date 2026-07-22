@@ -122,3 +122,7 @@ download-model: ## Download latest trained model from GitHub Releases (no auth n
 	@mkdir -p models
 	@echo "Downloading latest model..."
 	@curl -fSL -o models/latest.tar.gz https://github.com/amhkhowaja/IoT-Digital-Assistant/releases/download/model-latest/latest.tar.gz && echo "Model downloaded to models/latest.tar.gz" || echo "No model release found. Run 'make train' locally or trigger CI."
+
+seed: ## Seed MongoDB with test data from db_data/
+	@echo "Restoring data to MongoDB..."
+	@docker compose exec -T mongodb mongorestore --db IOTA --drop --dir /seed/IOTA/ 2>/dev/null && echo "Data seeded." || echo "Failed. Is MongoDB running? Try 'make up' first."
