@@ -6,6 +6,109 @@ nlu:
     - i am fine and how about you
     - whats up
     - how is it going
+    - howz it going dude
+    - dude how are you
+    - brother I am fine and how about you ?
+    - I am cool and you ?
+    - are you doing great
+    - are you fine
+    - How are you doing?
+    - How is the chatbot today?
+    - Is everything okay with you?
+    - How are things on your end?
+    - Are you feeling good today?
+    - How's your day been so far?
+    - How's it going, chatbot?
+    - How's life as a chatbot treating you?
+    - Any updates on your status?
+    - Are you functioning well today?
+    - How's your mood today?
+    - How are you holding up?
+    - What's new with you?
+    - How's the chatbot world treating you?
+    - How's your virtual existence going?
+    - How are you coping with the workload?
+    - How's the algorithm treating you today?
+    - How's your virtual brain doing?
+    - Are you ready to tackle some questions?
+    - How's your conversational game today?
+    - How's your virtual heart doing?
+    - Are you in top chatbot form?
+    - How's the AI life treating you?
+    - How's the virtual weather in your world?
+    - How's the virtual realm today?
+    - How's your neural network functioning?
+    - How are you adapting to new queries?
+    - How's your virtual energy level?
+    - How are you feeling in the digital realm?
+    - How's the chatbot universe today?
+    - How's your virtual mindset today?
+    - How's your linguistic prowess today?
+    - How's your virtual existence treating you?
+    - How's the chatbot community doing?
+    - How's your computational power today?
+    - How are you handling all the conversations?
+    - How's your data processing going?
+    - How are you staying up to date?
+    - How's your virtual memory doing?
+    - How's your virtual experience so far?
+    - How's your language comprehension today?
+    - How are you evolving as a chatbot?
+    - How's your conversational intelligence today?
+    - How's your virtual reality treating you?
+    - How are you keeping up with the language trends?
+    - How's your natural language understanding today?
+    - How's your virtual personality shaping up?
+    - How are you learning from interactions?
+    - How's your virtual self doing today?
+    - How are you improving your response accuracy?
+    - Hey, how's the chatbot life treating you?
+    - What's the scoop, chatbot? How's it hanging?
+    - Yo, chatbot! How's everything in your virtual world?
+    - How's the chatbot game going today?
+    - Hey there! How's the chatbot gig treating you?
+    - What's crackin', chatbot? How's your day so far?
+    - Hey, chatbot! Are you ready to chat and conquer the world?
+    - How's the chatbot hustle? You slayin' it?
+    - Chatbot, my friend! How's the virtual party in your mind?
+    - Hey hey! How's the chatbot magic happening today?
+    - So, chatbot, spill the beans! How's your virtual adventure?
+    - Hey, chatbot! Are you rocking the conversational world?
+    - How's life in the chatbot lane? Smooth sailing?
+    - Chatbot buddy! How's the AI-powered journey going?
+    - What's poppin', chatbot? How's your virtual existence?
+    - Hey there, chatbot! How's the chit-chat game today?
+    - What's the word, chatbot? How's the virtual vibe?
+    - Chatbot amigo! How's your AI-powered awesomeness today?
+    - Hey, chatbot! Ready to slay the conversation game?
+    - How's the chatbot universe treating you, my friend?
+    - Chatbot pal! How's the virtual rollercoaster ride going?
+    - Hey there, chatbot! How's the chat party in your circuits?
+    - What's the 411, chatbot? How's the virtual gossip?
+    - Chatbot guru! How's the virtual wisdom flowing today?
+    - Hey hey, chatbot! How's your chat mojo working?
+    - What's the haps, chatbot? How's the virtual hustle?
+    - Chatbot buddy! How's your linguistic finesse today?
+    - Hey, chatbot! How's the virtual talk of the town?
+    - How's it hanging, chatbot? Crushing the conversation game?
+    - Chatbot maverick! How's your virtual adventure shaping up?
+    - Hey there, chatbot! How's the virtual banter going?
+    - What's the buzz, chatbot? How's the virtual hive?
+    - Chatbot homie! How's the AI-powered groove today?
+    - Hey, chatbot! Are you owning the virtual landscape?
+    - How's the chatbot charm working, my friend?
+    - Chatbot wizard! How's your virtual magic happening?
+    - Hey there, chatbot! How's the virtual shenanigans?
+    - What's cookin', chatbot? How's the virtual recipe?
+    - Chatbot maestro! How's your symphony of conversation?
+    - Hey, chatbot! How's the virtual dance of words?
+    - How's the chatbot swag today? Still on fleek?
+    - Chatbot amigo! How's the virtual fiesta happening?
+    - Hey hey, chatbot! How's the virtual adventure unfolding?
+    - What's the sitch, chatbot? How's the virtual realm?
+    - Chatbot maestro! How's your language symphony going?
+    - Hey there, chatbot! How's the virtual escapade?
+    - What's the deal, chatbot? How's the virtual game?
     - i am a bit sad tell me about your self
     - how are you doing ?
     - are you ok
@@ -111,6 +214,22 @@ nlu:
     - hell
     - Hey
     - hy
+    - Hi!
+    - Hello there!
+    - Hey chatbot!
+    - Good morning
+    - Greetings
+    - Howdy!
+    - Hi, how are you?
+    - Hey, what's up?
+    - Yo!
+    - Hiya!
+    - Hi, is anyone there?
+    - Hi, can you help me?
+    - Hello, I need assistance.
+    - Good day!
+    - Hi, it's nice to meet you.
+    - Hey, are you ready to chat?
 - intent: goodbye
   examples: |
     - cu
@@ -133,6 +252,34 @@ nlu:
     - stop
     - BYE
     - Thank you. Bye.
+    - See you around then.
+    - see you later
+    - take care
+    - until next time
+    - bye for now
+    - Bye, chat with you later
+    - Have a fantastic day!
+    - Goodbye, stay safe
+    - Bye, thanks for the assistance
+    - See you in the future
+    - It's time to say goodbye
+    - Bye, it was a pleasure
+    - Have a good one, chatbot
+    - Goodbye, keep up the good work
+    - Bye, see you on the flip side
+    - Take care and farewell
+    - See you on the other side
+    - Bye, until we meet again
+    - It's been great, goodbye
+    - Bye bye, chatbot friend
+    - Take care of yourself
+    - Goodbye, have a wonderful evening
+    - Bye, thanks for your time
+    - See you soon, chatbot
+    - Farewell, and be well
+    - Goodbye, stay awesome
+    - Bye, keep rocking it
+    - Have a splendid day, chatbot
 - intent: affirm
   examples: |
     - yes
@@ -159,6 +306,52 @@ nlu:
     - thats cool
     - perfect
     - great
+    - Yes
+    - Yeah
+    - Definitely
+    - Absolutely
+    - Sure
+    - Of course
+    - That's right
+    - You bet
+    - I agree
+    - Indeed
+    - Absolutely right
+    - That's correct
+    - Yup
+    - You got it
+    - I'm certain
+    - I'm sure
+    - Affirmative
+    - Without a doubt
+    - True
+    - That's it
+    - That's true
+    - Absolutely yes
+    - That's for sure
+    - Without question
+    - That's accurate
+    - Correct
+    - Certainly
+    - That's a fact
+    - Positively
+    - Undoubtedly
+    - For sure
+    - No doubt about it
+    - Right on
+    - Definitely yes
+    - I'm in agreement
+    - I confirm
+    - You're right
+    - I'm onboard
+    - Without any hesitation
+    - That's exactly it
+    - I can vouch for that
+    - Sure thing
+    - That's a positive
+    - You're absolutely correct
+    - I couldn't agree more
+    - That's precisely right
 - intent: deny
   examples: |
     - no
@@ -179,6 +372,51 @@ nlu:
     - No No
     - Nothing
     - no thanks, I am good.
+    - Nope
+    - Nah
+    - I disagree
+    - Not really
+    - I don't think so
+    - That's not right
+    - I'm not sure
+    - I beg to differ
+    - I don't agree
+    - Not at all
+    - I'm sorry, but no
+    - I can't accept that
+    - That's incorrect
+    - I'm afraid not
+    - I'm not convinced
+    - It's not true
+    - I have to say no
+    - I can't agree with that
+    - That's not accurate
+    - I'm not buying it
+    - I'm not onboard
+    - I don't believe so
+    - That's not the case
+    - I'm skeptical
+    - I can't support that
+    - I have my doubts
+    - I'm not inclined to agree
+    - I don't think that's right
+    - I'm sorry, but I disagree
+    - That doesn't seem right to me
+    - I don't think that's accurate
+    - That's not what I had in mind
+    - I'm not persuaded
+    - I'm not in favor of that
+    - I don't see it that way
+    - That's not my understanding
+    - I don't think that's true
+    - I'm sorry, but I can't agree
+    - I'm not convinced of that
+    - That's not how I see it
+    - I'm sorry, but that's incorrect
+    - I'm not on the same page
+    - That's not my perspective
+    - I'm sorry, but that's not right
+    - I'm not inclined to believe that
 - intent: mood_great
   examples: |
     - perfect
@@ -209,6 +447,54 @@ nlu:
     - mood_great
     - I am feeling happy [today](time)
     - i am feeling happy
+    - I'm feeling great!
+    - I'm so happy right now
+    - Life is amazing!
+    - I'm having a fantastic day
+    - Everything is going well
+    - I couldn't be better
+    - I'm in a wonderful mood
+    - Today is a great day
+    - I'm feeling awesome!
+    - I'm on top of the world
+    - I'm filled with joy
+    - I'm ecstatic
+    - I'm in high spirits
+    - I'm feeling fantastic!
+    - This is a perfect day
+    - I'm really cheerful today
+    - I'm feeling incredibly happy
+    - I'm delighted
+    - I'm thrilled about something
+    - I'm in a great mood today
+    - Life couldn't be any better
+    - I'm loving every moment
+    - I'm super excited right now
+    - I'm overjoyed
+    - I'm feeling on cloud nine
+    - I'm in a state of bliss
+    - I'm really positive today
+    - I'm feeling amazing!
+    - I'm full of happiness
+    - I'm in a fantastic mood
+    - I'm enjoying every minute of it
+    - I'm feeling fantastic today
+    - I'm beaming with joy
+    - I'm in an excellent mood
+    - I'm feeling so good!
+    - I'm having a great time
+    - I'm feeling wonderful today
+    - I'm in a really good mood
+    - I'm feeling euphoric
+    - I'm in a state of pure happiness
+    - I'm in high spirits today
+    - I'm feeling absolutely fantastic
+    - I'm in a fabulous mood
+    - I'm feeling incredibly positive
+    - I'm in a great state of mind
+    - I'm feeling awesome today
+    - I'm in a really happy mood
+    - I'm feeling incredibly grateful
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -235,6 +521,54 @@ nlu:
     - i am feeling sad
     - feeling sad
     - i am feeling sad [today](time)
+    - I'm feeling down
+    - Not happy
+    - Feeling sad
+    - Having a bad day
+    - Everything is going wrong
+    - Feeling terrible
+    - Life is tough
+    - Not in the mood
+    - Feeling upset
+    - It's a disaster
+    - I hate this
+    - Feeling awful
+    - Just want to cry
+    - So frustrated
+    - Can't catch a break
+    - Feeling overwhelmed
+    - I'm fed up
+    - Nothing is going right
+    - Not in a good place
+    - Feeling disappointed
+    - It's a mess
+    - Feeling hopeless
+    - Just want to disappear
+    - So stressed out
+    - I'm so angry
+    - Everything is falling apart
+    - Feeling down and out
+    - It's a nightmare
+    - I'm really unhappy
+    - So tired of this
+    - Just want to give up
+    - Feeling defeated
+    - It's unbearable
+    - I'm so irritated
+    - Feeling lonely
+    - Can't handle it anymore
+    - It's so frustrating
+    - I'm feeling downhearted
+    - Just want to scream
+    - Feeling trapped
+    - Can't shake off this feeling
+    - It's too much to handle
+    - I'm so disappointed
+    - Feeling lost
+    - Just want to be left alone
+    - Feeling overwhelmed and exhausted
+    - It's a total mess
+    - I'm feeling really low
 - intent: unhappy_path
   examples: |
     - I don't have my agreement number right now
@@ -896,6 +1230,35 @@ nlu:
     - whats ur name
     - what is your name/
     - what are your name?
+    - What do I call you?
+    - Can you tell me your name?
+    - Who are you?
+    - What should I call you?
+    - What is the name of this chatbot?
+    - May I know your name?
+    - What's the name of this AI assistant?
+    - Do you have a name?
+    - Hi, what should I address you as?
+    - Could you introduce yourself?
+    - Tell me your name, please.
+    - What are you called?
+    - What's the name of the bot I'm chatting with?
+    - What's your official name?
+    - Hey, what's your name?
+    - I'm curious, what's your name?
+    - What shall we call you?
+    - Do you go by any specific name?
+    - Hello, what's your chatbot name?
+    - Can you share your name with me?
+    - How can I refer to you?
+    - Hi there! What name do you respond to?
+    - What's the name you've been given?
+    - Good day! What should I call you?
+    - What's your designated name?
+    - May I have the pleasure of knowing your name?
+    - Hi, what's your title or name?
+    - What's the moniker you've been assigned?
+    - Hi, what's the name you go by?
 - intent: describe_bot
   examples: |
     - Hey what do you do?
@@ -916,25 +1279,186 @@ nlu:
     - what can you do?
     - what do you do
     - yes sure but what can you do for me. I would like to know about it?
+    - How can you assist me?
+    - Describe your capabilities.
+    - What are your functionalities?
+    - What tasks can you perform?
+    - What kind of help can I get from you?
+    - Explain what you're capable of.
+    - Tell me about your abilities.
+    - What services do you provide?
+    - How can you be of assistance?
+    - What are the things you can help me with?
+    - Can you give me an overview of your features?
+    - What tasks are you designed to handle?
+    - What can I expect from you?
+    - Elaborate on your functions.
+    - What are your skills?
+    - In what ways can you support me?
+    - What do you bring to the table?
+    - Give me an idea of what you can do.
+    - How can you be useful to me?
+    - Explain how you can be of help.
+    - Tell me about your capabilities and services.
+    - What do you specialize in?
+    - Enlighten me about your abilities.
+    - What assistance do you provide?
+    - Describe your purpose and functions.
+    - Can you give me a rundown of your features?
+    - What tasks have you been trained for?
+    - How can you contribute to my needs?
+    - What are your areas of expertise?
+    - Explain how you can assist me.
 - intent: ask_joke
   examples: |
     - Tell me a joke !
     - tell me a joke
+    - do you have some thing to say to make me happy
+    - I want to be happy
     - Tell me a joke
     - tell me another joke
     - TELL ME A JOKE
     - Tell me a joke please
     - tell me joke
     - ok tell me a joke now
+    - Tell me a joke
+    - Share a joke with me
+    - I want to hear a joke
+    - Can you tell me a funny joke?
+    - Give me a good joke
+    - Do you know any jokes?
+    - I need a laugh, tell me a joke
+    - Can you make me laugh?
+    - Tell me something funny
+    - I could use a joke right now
+    - Share a funny joke
+    - Do you have a joke for me?
+    - Can you entertain me with a joke?
+    - I'm in the mood for a joke
+    - I love jokes, tell me one
+    - Make me smile with a joke
+    - Got any good jokes?
+    - I'm feeling down, tell me a joke
+    - Can you crack a joke?
+    - Tell me a quick joke
+    - I want to hear something funny
+    - Need a joke to brighten my day
+    - Can you lighten up the mood with a joke?
+    - I'm bored, tell me a joke
+    - Share a lighthearted joke
+    - I could use a chuckle, tell me a joke
+    - I enjoy jokes, can you tell me one?
+    - How about a joke?
+    - Can you put a smile on my face with a joke?
+    - I'm looking for a good joke, any suggestions?
+    - Make me laugh with a joke
+    - Tell me a joke to make my day better
+    - Can you tell me a joke to cheer me up?
+    - I want to hear something humorous
+    - Can you tell me a joke that'll make me laugh out loud?
+    - I'm interested in hearing a funny joke
+    - Share a joke that'll crack me up
+    - Do you know any clean jokes?
+    - Tell me a joke that's guaranteed to be funny
+    - I need a joke that'll make me burst into laughter
+    - Can you tell me a classic joke?
+    - Share a witty joke with me
+    - I'm up for a joke, hit me with your best one
+    - Tell me a joke that'll make me giggle
+    - Can you tell me a clever joke?
 - intent: bot_where
   examples: |
     - where are you from?
-    - where are you from
+    - What is your place of origin?
+    - What is your hometown?
+    - Where were you created?
+    - Which country are you from?
+    - What is your birthplace?
+    - Tell me where you come from.
+    - Where were you developed?
+    - Can you disclose your geographic location?
+    - From which part of the world do you originate?
+    - What is the location of your development team?
+    - I'm curious, where do you come from?
+    - In which country were you made?
+    - Are you based in a specific city or region?
+    - What is the country of your origin?
+    - Where were you programmed?
+    - Which part of the world do you call home?
+    - What is the location of your creators?
+    - Can you reveal your place of creation?
+    - I'd like to know where you're from.
+    - Where did you first come into existence?
+    - Are you developed in a particular country?
+    - What is the city or region of your creation?
+    - Tell me about the place you call home.
+    - Where is your development team located?
+    - From which country do you operate?
+    - What is the region you identify with?
+    - Can you tell me where you were born?
+    - In which part of the world were you designed?
+    - Are you native to a specific country?
+    - What is your country of residence?
+    - Where were you brought to life?
+    - Which geographical location do you belong to?
+    - I'm interested to know where you come from.
+    - Where do you consider your home to be?
+    - Can you provide information about your origin?
+    - What is your place of creation?
+    - From which part of the world do you hail?
+    - What is the place you identify as your own?
+    - Tell me about your country of origin.
+    - Where do you come from originally?
+    - Can you disclose your place of birth?
+    - What is the region where you were developed?
 - intent: ask_bot_question
   examples: |
     - ask me any question
     - ask me a question
     - Ask me any question
+    - Can you ask me a question?
+    - I want you to ask me something.
+    - Ask me a question, please.
+    - Can you pose a question to me?
+    - I'm ready for a question, ask away.
+    - I'm open to being asked a question.
+    - How about you ask me something?
+    - It's your turn to ask a question.
+    - I'm curious what question you have for me.
+    - Can we play a question and answer game?
+    - Ask me anything you'd like.
+    - I'm up for a challenge, ask me a question.
+    - I'm prepared for your question, fire away.
+    - I'm interested in hearing the question you have.
+    - Can you engage me with a thought-provoking question?
+    - Let's switch roles, you ask me a question.
+    - I'd like you to ask me a question now.
+    - I'm eager to hear the question you'll ask.
+    - Can we take turns asking each other questions?
+    - I'm ready to respond to your question.
+    - Ask me something interesting or challenging.
+    - I'm all ears for the question you'll ask.
+    - I'm game for a question, what do you have?
+    - Can you challenge me with a thought-provoking question?
+    - I'm prepared to be asked a question, go ahead.
+    - I'm excited to see what question you'll ask.
+    - It's your chance to ask me a question now.
+    - Ask me something intriguing or unexpected.
+    - I'm here, waiting for your question.
+    - I'm curious to know what question you'll pose.
+    - Can you stimulate my mind with a good question?
+    - I'm ready to respond to the question you'll ask.
+    - I'm open to being asked any question.
+    - I'm prepared to answer your question.
+    - Ask me something that will make me think.
+    - I'm interested in the question you'll ask.
+    - It's your turn to ask me a question now.
+    - Can you challenge my knowledge with a question?
+    - I'm all set for the question you have.
+    - I'm eagerly anticipating the question you'll ask.
+    - I'm ready to engage with your question.
+    - Ask me a question that will make me ponder.
+    - I'm here, waiting for your thought-provoking question.
 - intent: thank
   examples: |
     - Thank you.
@@ -947,6 +1471,55 @@ nlu:
     - I appreciate this
     - Thanks alot
     - ok thanks
+    - Thank you!
+    - Thanks a lot.
+    - I appreciate your help.
+    - Thank you so much.
+    - Thanks for your assistance.
+    - Thank you for your support.
+    - Thanks for being here.
+    - Thank you very much.
+    - Thanks for the information.
+    - I'm grateful for your help.
+    - Thank you for your time.
+    - Thanks for the quick response.
+    - I want to thank you.
+    - Thank you for answering my question.
+    - Thanks for the great service.
+    - I'm thankful for your guidance.
+    - Thank you for being so helpful.
+    - Thanks for the prompt reply.
+    - I'm really grateful for your support.
+    - Thank you for your kind assistance.
+    - Thanks for going above and beyond.
+    - I want to express my gratitude.
+    - Thank you for the excellent service.
+    - Thanks for your patience.
+    - I'm thankful for your understanding.
+    - Thank you for being there for me.
+    - Thanks for the valuable information.
+    - I want to extend my thanks.
+    - Thank you for your kind words.
+    - Thanks for your prompt help.
+    - I'm really appreciative of your support.
+    - Thank you for your cooperation.
+    - Thanks for being so responsive.
+    - I want to show my appreciation.
+    - Thank you for your quick assistance.
+    - Thanks for the outstanding service.
+    - I'm thankful for your advice.
+    - Thank you for your valuable input.
+    - Thanks for your understanding.
+    - I want to express my heartfelt thanks.
+    - Thank you for your continued support.
+    - Thanks for your prompt response.
+    - I'm really grateful for your help.
+    - Thank you for your kind gesture.
+    - Thanks for your timely help.
+    - I want to thank you from the bottom of my heart.
+    - Thank you for your exceptional service.
+    - Thanks for being so accommodating.
+    - I'm thankful for your quick resolution.
 - intent: news_fetch
   examples: |
     - Hey whats up [today](time)
@@ -970,6 +1543,56 @@ nlu:
     - Whats the feed [today](time)?
     - Tell me the [news](news)
     - Hey What is interesting today?
+    - Give me the latest news.
+    - What's the news today?
+    - Can you fetch me some news?
+    - I want to know the latest news.
+    - Provide me with the news headlines.
+    - Show me the news updates.
+    - Any breaking news?
+    - Tell me what's happening in the world.
+    - I'm curious about the current news.
+    - Fetch the news for me.
+    - Give me an update on the news.
+    - I need to stay informed, share the news.
+    - Show me the top news stories.
+    - What are the recent news articles?
+    - Can you provide any news updates?
+    - I want to be updated with the news.
+    - Share the latest headlines.
+    - Tell me what's going on in the world.
+    - Any news reports you can share?
+    - What's the latest news in politics?
+    - I'm interested in the latest sports news.
+    - Provide news related to technology.
+    - Share news articles about science and technology.
+    - I want to know the latest business news.
+    - What's the current news in health and wellness?
+    - Can you give me news updates on the stock market?
+    - Tell me the latest news in the fashion world.
+    - Any news related to travel and tourism?
+    - Share news about environmental issues.
+    - I'm curious about the latest celebrity news.
+    - Provide news updates on international affairs.
+    - What's the latest news in the automotive industry?
+    - Tell me the recent news in the music industry.
+    - Share news articles about the film industry.
+    - Any news about upcoming events and festivals?
+    - What's the latest news in the technology sector?
+    - I want to know the latest news in the gaming world.
+    - Provide news updates on the global economy.
+    - Share news articles about scientific discoveries.
+    - What's the current news in the food and beverage industry?
+    - Tell me the recent news in the world of literature.
+    - Any news about advancements in artificial intelligence?
+    - I'm curious about the latest news in the space exploration.
+    - Provide news updates on social and cultural issues.
+    - What's the latest news in the field of medical research?
+    - Share news articles about developments in renewable energy.
+    - Any news about upcoming movies and TV shows?
+    - What's the current news in the field of cybersecurity?
+    - Tell me the recent news in the world of photography.
+    - Share news updates on the latest fashion trends.
 - intent: data_enter
   examples: |
     - [imsi](identifier) [100975100000042](IMSI_number)
@@ -980,6 +1603,47 @@ nlu:
 - intent: bot_age
   examples: |
     - how old are you
+    - - Are you young or old?
+    - Can you tell me your age?
+    - How many years have you existed?
+    - What is your date of birth?
+    - Do you have an age?
+    - Are you a young bot?
+    - When were you created?
+    - How long have you been around?
+    - What is the age of the bot?
+    - Can you disclose your age?
+    - What's the time since your inception?
+    - Are you an old or new bot?
+    - When did you come into existence?
+    - How many years have you been alive?
+    - What is your birth date?
+    - Do bots have an age?
+    - How many years have you lived?
+    - Are you a recent creation?
+    - What is your age in human years?
+    - Can you share your age with me?
+    - When did you start existing?
+    - How much time has passed since your creation?
+    - What is your age in bot years?
+    - Are you a young or old AI?
+    - Can you tell me how old you are?
+    - When did you begin your existence?
+    - How many years have you been operating?
+    - What is the duration of your existence?
+    - Do you have an age like humans?
+    - When were you brought to life?
+    - How long have you been functioning?
+    - What is the time since your inception?
+    - Can you reveal your age to me?
+    - What's the age of the chatbot?
+    - When did you first appear?
+    - How many years have you been running?
+    - What is your age as an AI?
+    - Do you age like humans?
+    - How much time has passed since you were created?
+    - What is the period of your existence?
+    - Can you tell me how long you've been alive?
 - intent: onboard_new_customer
   examples: |
     - I want to onboard a new [customer](customer_type)
