@@ -4,7 +4,9 @@ const cors = require('cors');
 const path = require('path');
 
 // Configuration
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/IOTA';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017';
+const MONGODB_DB = process.env.MONGODB_DB || 'IOTA';
+const MONGO_URI = `${MONGODB_URI}/${MONGODB_DB}`;
 const PORT = process.env.PORT || 3000;
 
 // Connect to MongoDB
