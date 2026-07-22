@@ -113,3 +113,7 @@ pipeline-trigger: ## Trigger the NLU training pipeline DAG
 pipeline-trigger-etl: ## Trigger the self-learning ETL pipeline DAG
 	docker compose --profile pipeline exec airflow-scheduler airflow dags unpause nlu_self_learning
 	docker compose --profile pipeline exec airflow-scheduler airflow dags trigger nlu_self_learning
+
+pipeline-trigger-train: ## Trigger Rasa auto-training DAG
+	docker compose --profile pipeline exec airflow-scheduler airflow dags unpause nlu_rasa_train
+	docker compose --profile pipeline exec airflow-scheduler airflow dags trigger nlu_rasa_train

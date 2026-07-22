@@ -1,5 +1,10 @@
 FROM apache/airflow:2.8.0-python3.10
 
+USER root
+RUN apt-get update && apt-get install -y docker.io && rm -rf /var/lib/apt/lists/* && \
+    groupadd -g 991 dockerhost || true && \
+    usermod -aG dockerhost airflow
+
 USER airflow
 
 RUN pip install --no-cache-dir \
@@ -14,6 +19,7 @@ RUN pip install --no-cache-dir \
     pymongo==4.6.1 \
     nlpaug==1.1.11 \
     transformers==4.36.2 \
+    requests==2.31.0 \
     torch==2.1.2 --extra-index-url https://download.pytorch.org/whl/cpu
 
 RUN python -m nltk.downloader punkt stopwords wordnet -d /home/airflow/nltk_data

@@ -10,6 +10,7 @@ services:
       - RASA_MODEL_PATH=/app/models
     volumes:
       - ./models:/app/models
+      - ./data:/app/data
       - ./endpoints.docker.yml:/app/endpoints.yml:ro
     depends_on:
       mongodb:
@@ -119,6 +120,8 @@ services:
       - PYTHONPATH=/opt/airflow
       - SKIP_CUSTOM_VALIDATION=${SKIP_CUSTOM_VALIDATION:-false}
       - RASA_CONFIDENCE_THRESHOLD=${RASA_CONFIDENCE_THRESHOLD:-0.85}
+      - ENABLE_AUTO_TRAIN=${ENABLE_AUTO_TRAIN:-false}
+      - RASA_SERVER_URL=http://rasa:5005
     command: scheduler
     volumes:
       - ./dags:/opt/airflow/dags
@@ -126,6 +129,9 @@ services:
       - ./Chatbot/NLU/data:/opt/airflow/data
       - ./data:/opt/airflow/rasa_data
       - ./pipeline_output:/opt/airflow/output
+      - ./models:/opt/airflow/models
+      - .:/opt/airflow/project
+      - /var/run/docker.sock:/var/run/docker.sock
       - airflow_logs:/opt/airflow/logs
     depends_on:
       postgres:
