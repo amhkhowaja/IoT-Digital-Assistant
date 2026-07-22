@@ -66,6 +66,12 @@ window.addEventListener('load', () => {
     $(".widget").toggle();
   });
 
+  // Minimize widget by clicking header
+  $(".chat_header_title").click(() => {
+    $(".profile_div").toggle();
+    $(".widget").toggle();
+  });
+
   // Clear chat
   $("#clear").click(() => {
     $(".chats").fadeOut("normal", () => {

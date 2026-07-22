@@ -16,6 +16,16 @@ setup: ## First-time setup: create .env from template
 	fi
 	@mkdir -p models
 
+start: setup download-model build up seed ## One command: setup + download model + build + start + seed
+	@echo ""
+	@echo "✅ All services running:"
+	@echo "   Frontend:      http://localhost:3000"
+	@echo "   Rasa API:      http://localhost:5005"
+	@echo "   Action Server: http://localhost:5055"
+	@echo "   MongoDB:       localhost:27017"
+	@echo ""
+	@echo "Open http://localhost:3000 in your browser."
+
 # ─── Docker ──────────────────────────────────────────────────────────
 
 build: ## Build all Docker images
