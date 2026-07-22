@@ -37,6 +37,7 @@ jobs:
 
       - name: Train model
         run: |
+          mkdir -p models && chmod 777 models
           docker run --rm \
             -v ${{ github.workspace }}/data:/app/data \
             -v ${{ github.workspace }}/config.yml:/app/config.yml \
