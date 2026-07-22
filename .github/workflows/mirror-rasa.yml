@@ -1,0 +1,25 @@
+name: Mirror Rasa Image
+
+on:
+  workflow_dispatch: # Manual trigger only (one-time use)
+
+jobs:
+  mirror:
+    name: Pull from Docker Hub → Push to GHCR
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    steps:
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Pull and push Rasa image
+        run: |
+          docker pull rasa/rasa:3.4.4-full
+          docker tag rasa/rasa:3.4.4-full ghcr.io/${{ github.repository_owner }}/rasa:3.4.4-full
+          docker push ghcr.io/${{ github.repository_owner }}/rasa:3.4.4-full
+          echo "Done. Image available at: ghcr.io/${{ github.repository_owner }}/rasa:3.4.4-full"
