@@ -18,16 +18,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-          cache: 'pip'
-
-      - name: Install Rasa
-        run: pip install rasa==3.4.4
-
       - name: Validate NLU data
-        run: rasa data validate
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/data:/app/data \
+            -v ${{ github.workspace }}/config.yml:/app/config.yml \
+            -v ${{ github.workspace }}/domain.yml:/app/domain.yml \
+            rasa/rasa:3.4.4-full \
+            data validate
         continue-on-error: true
 
   train:
@@ -37,19 +35,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-          cache: 'pip'
-
-      - name: Install Rasa
-        run: pip install rasa==3.4.4
-
       - name: Train model
-        run: rasa train --fixed-model-name latest
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/data:/app/data \
+            -v ${{ github.workspace }}/config.yml:/app/config.yml \
+            -v ${{ github.workspace }}/domain.yml:/app/domain.yml \
+            -v ${{ github.workspace }}/models:/app/models \
+            rasa/rasa:3.4.4-full \
+            train --fixed-model-name latest
 
       - name: Run tests
-        run: rasa test --no-errors
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/data:/app/data \
+            -v ${{ github.workspace }}/config.yml:/app/config.yml \
+            -v ${{ github.workspace }}/domain.yml:/app/domain.yml \
+            -v ${{ github.workspace }}/models:/app/models \
+            -v ${{ github.workspace }}/tests:/app/tests \
+            rasa/rasa:3.4.4-full \
+            test --no-errors
         continue-on-error: true
 
       - name: Upload model artifact
