@@ -65,6 +65,15 @@ jobs:
           path: models/latest.tar.gz
           retention-days: 90
 
+      - name: Publish model to release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release delete model-latest --yes 2>/dev/null || true
+          gh release create model-latest models/latest.tar.gz \
+            --title "Latest Trained Model" \
+            --notes "Auto-trained on $(date -u +%Y-%m-%d). Download: \`curl -LO https://github.com/${{ github.repository }}/releases/download/model-latest/latest.tar.gz\`"
+
   push-images:
     name: Build & Push Images
     runs-on: ubuntu-latest
