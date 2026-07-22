@@ -1,3 +1,68 @@
-.rasa
-models
-actions/__pycache__
+# ─── Rasa ─────────────────────────────────────────────────────────────
+.rasa/
+models/
+*.tar.gz
+
+# ─── Python ──────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+venv/
+.venv/
+env/
+.env
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ─── IDE ─────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# ─── OS ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+
+# ─── Docker ──────────────────────────────────────────────────────────
+mongo-volume/
+mongo_data/
+pipeline_output/
+
+# ─── Secrets & Config ────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.p12
+
+# ─── Logs ────────────────────────────────────────────────────────────
+*.log
+logs/
+rasa.log
+
+# ─── Data artifacts ──────────────────────────────────────────────────
+results/
+*.png
+*.jpg
+
+# ─── Misc ────────────────────────────────────────────────────────────
+node_modules/
+.cache/
+*.sqlite3
+*.db
+graph.html
+story_graph.dot

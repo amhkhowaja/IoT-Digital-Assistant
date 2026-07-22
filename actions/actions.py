@@ -1,7 +1,5 @@
 from typing import Any, Text, Dict, List, Union
 from rasa_sdk import Action, Tracker
-# from rasa.core.actions.form_validation import FormValidationAction
-from rasa_sdk import Tracker
 from rasa_sdk.forms import FormValidationAction
 from rasa_sdk.events import SlotSet, FollowupAction
 from rasa_sdk.executor import CollectingDispatcher
@@ -9,14 +7,24 @@ from rasa_sdk.types import DomainDict
 import pymongo
 from pymongo import MongoClient
 from pymongo.errors import WriteError
-import cx_Oracle
 import requests
 import json
 import random
 import re
+import os
 import pandas as pd
-import json
-import people_also_ask as paa
+from datetime import datetime
+
+# Configuration from environment variables
+MONGODB_URI = os.environ.get("MONGODB_URI", "mongodb://localhost:27017")
+MONGODB_DB = os.environ.get("MONGODB_DB", "IOTA")
+NEWS_API_KEY = os.environ.get("NEWS_API_KEY", "")
+
+
+def get_db():
+    """Get MongoDB database connection."""
+    client = MongoClient(MONGODB_URI, serverSelectionTimeoutMS=5000)
+    return client[MONGODB_DB]
 #Actions
 
 class ActionCPIlink(Action):
@@ -29,22 +37,35 @@ class ActionCPIlink(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         prediction = tracker.latest_message
-        query = prediction["text"]
-        if 'IOT' not in query.upper():
-            query = query + "in IoT"
-        
-        response = paa.get_answer(query)
-        msg=""
-        buttons=[]
-        if response["has_answer"] == False and len(response["related_questions"])>0:
-            msg="Could you please rephrase it? Below are the related questions."
-            buttons = [{"title":button, "payload":"/"+button} for button in response["related_questions"]]
-        elif response["has_answer"] == False and len(response["related_questions"])==0:
-            msg="I am really sorry, I cannot answer this kind of question. Please ask relavant questions."
-        else :
-            msg=response["response"]
-        dispatcher.utter_message(text=msg, buttons=buttons)
-        
+        log_prediction(tracker)
+
+
+        db = get_db()
+        CPI_links = db["CPI"]
+
+        try:
+            intent_1 = prediction['intent'].get('name')
+            current_entity_1 = prediction['entities'][0]['entity']
+        except IndexError:
+            current_entity_1 = None
+
+        if current_entity_1 is None:
+            msg=f"Sorry I couldn't get it. Could you please rephrase?"
+            dispatcher.utter_message(text=msg)
+            return []
+
+        entity_value = next(tracker.get_latest_entity_values(current_entity_1), None)
+        document = CPI_links.find({'$and':[{'intent':intent_1},{'sub_entities':entity_value}]})
+        link = document[0].get('enterprise_links')
+
+        if link is None:
+#            dispatcher.utter_message(text=current_entity)
+            msg=f"The detected Entity is {current_entity_1} but unfortunately no CPI link exists for {entity_value}. Please rephrase the query."
+            dispatcher.utter_message(text=msg)
+            return []
+
+        msg=f"Please follow the below link for detailed information:"
+        dispatcher.utter_message(text=msg)
 
 
 #        data2 = {
@@ -85,13 +106,13 @@ class ActionIMSIStats(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         prediction = tracker.latest_message
+        log_prediction(tracker)
         slot_value = tracker.get_slot("IMSI_number")
         default_entity_value="IMSI_number"
         try:
-            client = MongoClient("mongodb://mongo:27017")
-            db = client["IOTA"]
+            db = get_db()
             subscription_details = db["subscription_details"]
-        except:
+        except Exception:
             dispatcher.utter_message(text="Sorry! we can not build the connection with the database")
             return []
         try:
@@ -134,10 +155,11 @@ class ActionNewsFetch(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) ->List[Dict[Text, Any]]:
         prediction = tracker.latest_message
+        log_prediction(tracker)
         query_params = {
             "source": "bbc-news",
             "sortBy": "top",
-            "apiKey": "4dbc17e007ab436fb66416009dfb59a8"
+            "apiKey": NEWS_API_KEY
             }
         main_url = " https://newsapi.org/v1/articles"
         # fetching data in json format
@@ -245,14 +267,14 @@ class ActionFetchInventory(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         prediction = tracker.latest_message
+        log_prediction(tracker)
         # slot_value = tracker.get_slot("IMSI_number")
         attributes = ["msisdn","plan_name", "connectivity_lock", "network_connectivity", "in_session", "billing_state", "monthly_data", "data_trend"]
 
         try:
-            client = MongoClient("mongodb://mongo:27017")
-            db = client["IOTA"]
+            db = get_db()
             inventory = db["inventory"]
-        except:
+        except Exception:
             dispatcher.utter_message(text="Sorry! we can not build the connection with the database.")
             return []
         # Fetching all the data from the inventory database
@@ -294,10 +316,9 @@ class SubmitOnboardingForm(Action):
         
         #connecting to mongodb
         try:
-            client = MongoClient("mongodb://mongo:27017")
-            db = client["IOTA"]
+            db = get_db()
             customers = db["customers"]
-        except:
+        except Exception:
             dispatcher.utter_message(text="Sorry! we can not build the connection with the database.")
             return []
         
@@ -308,6 +329,9 @@ class SubmitOnboardingForm(Action):
         except WriteError as e:
             dispatcher.utter_message(text = "There is unexpected uploading error coming up. Could you please try onboarding after some time.")
             return []
+
+        dispatcher.utter_message(text="Customer onboarded successfully!")
+        return []
 class ActionUpdateInventory(Action):
     def name(self) -> Text:
         return "action_update_inventory"
@@ -316,13 +340,13 @@ class ActionUpdateInventory(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         prediction = tracker.latest_message
+        log_prediction(tracker)
         print(prediction)
         attributes = ["msisdn","plan_name", "connectivity_lock", "network_connectivity", "in_session", "billing_state", "monthly_data", "data_trend"]
         try:
-            client = MongoClient("mongodb://mongo:27017")
-            db = client["IOTA"]
+            db = get_db()
             inventory = db["inventory"]
-        except:
+        except Exception:
             dispatcher.utter_message(text="Sorry! we can not build the connection with the database.")
             return []
         # extracted entities names:
@@ -385,3 +409,38 @@ class ActionUpdateInventory(Action):
         # considering the example as above and format of nlu :
             # change the [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock", role:"update_attribute"} of [msisdn]{"entity": "inventory_attribute", "value": "msisdn", "role": "fetch_attribute"} [23123123123]{"entity": "msisdn", "value": "23123123123", "role": "fetch_value"} to [locked]{"entity": "connectivity_lock", "value": "locked", "role":"update_value"}
         # update the package [monthly limit]{"entity": "inventory_attribute", "value": "monthly_data"} from [10gb]{"entity": "monthly_data", "role": "fetch_value", "value": "10 GB"} to [20gb]{"entity": "plan_name", "role": "update_value", "value": "20 GB"} of [mobile number]{"entity": "inventory_attribute", "value": "msisdn"} [12345678901]{"entity": "msisdn", "role": "fetch_value"}
+
+
+def log_prediction(tracker: Tracker):
+    """Log user message prediction to MongoDB for the self-learning pipeline."""
+    prediction = tracker.latest_message
+    if not prediction or not prediction.get("text"):
+        return
+    try:
+        db = get_db()
+        db["predictions"].insert_one({
+            "text": prediction["text"],
+            "sender_id": tracker.sender_id,
+            "timestamp": datetime.utcnow(),
+            "rasa_prediction": {
+                "intent": prediction["intent"]["name"],
+                "intent_confidence": prediction["intent"]["confidence"],
+                "entities": prediction.get("entities", []),
+            },
+            "processed": False,
+        })
+    except Exception:
+        pass  # Don't break the conversation if logging fails
+
+
+class ActionLogPrediction(Action):
+    """Standalone action to log predictions. Can be triggered via rule."""
+
+    def name(self) -> Text:
+        return "action_log_prediction"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        log_prediction(tracker)
+        return []

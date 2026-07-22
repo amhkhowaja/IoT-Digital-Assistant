@@ -1,0 +1,111 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # 1st of every month at 02:00 UTC
+    - cron: '0 2 1 * *'
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  validate:
+    name: Validate Training Data
+    runs-on: ubuntu-latest
+    if: github.event_name != 'schedule'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate NLU data
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/data:/app/data \
+            -v ${{ github.workspace }}/config.yml:/app/config.yml \
+            -v ${{ github.workspace }}/domain.yml:/app/domain.yml \
+            rasa/rasa:3.4.4-full \
+            data validate
+        continue-on-error: true
+
+  train:
+    name: Train & Test Model
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Train model
+        run: |
+          mkdir -p models && chmod 777 models
+          docker run --rm \
+            -v ${{ github.workspace }}/data:/app/data \
+            -v ${{ github.workspace }}/config.yml:/app/config.yml \
+            -v ${{ github.workspace }}/domain.yml:/app/domain.yml \
+            -v ${{ github.workspace }}/models:/app/models \
+            rasa/rasa:3.4.4-full \
+            train --fixed-model-name latest
+
+      - name: Run tests
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/data:/app/data \
+            -v ${{ github.workspace }}/config.yml:/app/config.yml \
+            -v ${{ github.workspace }}/domain.yml:/app/domain.yml \
+            -v ${{ github.workspace }}/models:/app/models \
+            -v ${{ github.workspace }}/tests:/app/tests \
+            rasa/rasa:3.4.4-full \
+            test --no-errors
+        continue-on-error: true
+
+      - name: Upload model artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rasa-model-${{ github.run_number }}
+          path: models/latest.tar.gz
+          retention-days: 90
+
+      - name: Publish model to release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release delete model-latest --yes 2>/dev/null || true
+          gh release create model-latest models/latest.tar.gz \
+            --title "Latest Trained Model" \
+            --notes "Auto-trained on $(date -u +%Y-%m-%d). Download: \`curl -LO https://github.com/${{ github.repository }}/releases/download/model-latest/latest.tar.gz\`"
+
+  push-images:
+    name: Build & Push Images
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    needs: train
+    permissions:
+      packages: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build & push action server
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: Dockerfile.actions
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/iot-action-server:latest
+
+      - name: Build & push airflow pipeline
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: Dockerfile.airflow
+          push: true
+          tags: ghcr.io/${{ github.repository_owner }}/iot-airflow-pipeline:latest

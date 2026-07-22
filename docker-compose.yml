@@ -1,98 +1,162 @@
-version: '3.8'
-
 services:
-# MONGO
-
-  mongo:
-    restart: always
-    build:
-      context: .
-      dockerfile: Dockerfile.mongodb
-    container_name: mongo
-    ports:
-      - "27017:27017"
-    volumes:
-      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
-      - ./mongo-volume:/data/db
-    networks:
-    - rasa-network
-
-
-# RASA Actions Server
-  rasa_actions:
-    build:
-      context: .
-      dockerfile: Dockerfile.actions
-    container_name: rasa_actions
-    ports:
-      - 5055:5055
-    volumes:
-      - ./actions:/app/actions
-    depends_on:
-      - mongo
-    environment:
-      RASA_ACTION_ENDPOINT: http://localhost:5055/webhook
-    command: ["rasa","run", "actions"]
-    networks:
-      - rasa-network
-# NODE
-  node:
-    restart: always
-    # image: node:20.0.0
-    # image: node:latest
-    container_name: node
-    working_dir: /usr/src/app 
-    build:
-      context: .
-      dockerfile: Dockerfile.node
-    ports:
-      - 3000:3000
-    volumes:
-      - ./Chatbot-Widget-main:/app/Chatbot-Widget-main/static/js
-    # links: 
-    #   - mongo
-    depends_on:
-      - mongo
-    environment:
-      MONGO_URI: mongodb://mongo:27017/IOTA
-    networks:
-      - rasa-network
-# RASA Server
+  # Rasa NLU + Dialogue Server
   rasa:
-    restart: always
     build:
       context: .
       dockerfile: Dockerfile.rasa
-    container_name: rasa
     ports:
-      - 5005:5005
-    command: ["rasa", "run", "--enable-api", "--cors", "*"]
-    depends_on:
-      - rasa_actions
-      - mongo
+      - "5005:5005"
+    environment:
+      - RASA_MODEL_PATH=/app/models
     volumes:
-      - ./data:/app/data
       - ./models:/app/models
-      - ./config.yml:/app/config.yml
-      - ./domain.yml:/app/domain.yml
-      - ./endpoints_for_container.yml:/app/endpoints.yml
-    networks:
-      - rasa-network
-# NGINX
-  # nginx:
-  #   image: nginx:latest
-  #   container_name: nginx
-  #   ports:
-  #     - 80:80
-  #   volumes:
-  #     - ./nginx.conf:/etc/nginx/nginx.conf
-  #     - ./html:/usr/share/nginx/html
-  #   networks:
-  #     - rasa-network
+      - ./data:/app/data
+      - ./endpoints.docker.yml:/app/endpoints.yml:ro
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      action-server:
+        condition: service_started
+    restart: unless-stopped
 
+  # Custom Action Server
+  action-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.actions
+    ports:
+      - "5055:5055"
+    env_file:
+      - .env
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017
+      - MONGODB_DB=${MONGODB_DB:-IOTA}
+      - NEWS_API_KEY=${NEWS_API_KEY:-}
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # MongoDB
+  mongodb:
+    image: mongo:7.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.runCommand('ping').ok", "--quiet"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+  # === AIRFLOW (NLU Training Pipeline) ===
+  airflow-init:
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+      - AIRFLOW__CORE__FERNET_KEY=46BKJoQYlPPOexq0OhDZnIlNepKFf87WFwLbfzqDDho=
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+    entrypoint: >
+      bash -c "
+        airflow db migrate &&
+        airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com || true
+      "
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./pipeline:/opt/airflow/pipeline
+    depends_on:
+      postgres:
+        condition: service_healthy
+    profiles: ["pipeline"]
+
+  airflow-webserver:
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
+    ports:
+      - "8080:8080"
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+      - AIRFLOW__CORE__FERNET_KEY=46BKJoQYlPPOexq0OhDZnIlNepKFf87WFwLbfzqDDho=
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__WEBSERVER__EXPOSE_CONFIG=True
+      - PIPELINE_DATA_DIR=/opt/airflow/data
+      - PIPELINE_OUTPUT_DIR=/opt/airflow/output
+      - PYTHONPATH=/opt/airflow
+    command: webserver
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./pipeline:/opt/airflow/pipeline
+      - ./Chatbot/NLU/data:/opt/airflow/data
+      - ./data:/opt/airflow/rasa_data
+      - ./pipeline_output:/opt/airflow/output
+      - airflow_logs:/opt/airflow/logs
+    depends_on:
+      postgres:
+        condition: service_healthy
+      airflow-init:
+        condition: service_completed_successfully
+    restart: unless-stopped
+    profiles: ["pipeline"]
+
+  airflow-scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+      - AIRFLOW__CORE__FERNET_KEY=46BKJoQYlPPOexq0OhDZnIlNepKFf87WFwLbfzqDDho=
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - PIPELINE_DATA_DIR=/opt/airflow/data
+      - PIPELINE_OUTPUT_DIR=/opt/airflow/output
+      - PYTHONPATH=/opt/airflow
+      - SKIP_CUSTOM_VALIDATION=${SKIP_CUSTOM_VALIDATION:-false}
+      - RASA_CONFIDENCE_THRESHOLD=${RASA_CONFIDENCE_THRESHOLD:-0.85}
+      - ENABLE_AUTO_TRAIN=${ENABLE_AUTO_TRAIN:-false}
+      - RASA_SERVER_URL=http://rasa:5005
+    command: scheduler
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./pipeline:/opt/airflow/pipeline
+      - ./Chatbot/NLU/data:/opt/airflow/data
+      - ./data:/opt/airflow/rasa_data
+      - ./pipeline_output:/opt/airflow/output
+      - ./models:/opt/airflow/models
+      - .:/opt/airflow/project
+      - /var/run/docker.sock:/var/run/docker.sock
+      - airflow_logs:/opt/airflow/logs
+    depends_on:
+      postgres:
+        condition: service_healthy
+      airflow-init:
+        condition: service_completed_successfully
+    restart: unless-stopped
+    profiles: ["pipeline"]
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U airflow"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    profiles: ["pipeline"]
 
 volumes:
-  db_data: 
-
-networks:
-  rasa-network:
+  mongo_data:
+  postgres_data:
+  airflow_logs:

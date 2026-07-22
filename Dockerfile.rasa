@@ -1,34 +1,19 @@
-FROM python:3.9.12
-
-# Update and install necessary packages
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    libssl-dev \
-    libffi-dev \
-    libxml2-dev \
-    libxslt1-dev \
-    zlib1g-dev
-
-RUN pip install --upgrade pip==22.3.1
-
-RUN pip install spacy==3.5
-
-RUN python -m spacy download en_core_web_sm
-RUN python -m spacy download en_core_web_md
-RUN python -m spacy download en_core_web_lg
-# Install Rasa using pip
-
-
-# Copy your requirements file
-COPY req.txt /app/req.txt
-
-# Install additional requirements
-RUN pip install --no-cache-dir -r /app/req.txt
+FROM rasa/rasa:3.4.4-full
 
 WORKDIR /app
 
-# Copy your Rasa project files
-# COPY . /app
+# Copy training data and config
+COPY config.yml .
+COPY domain.yml .
+COPY data/ ./data/
+COPY credentials.yml .
+COPY endpoints.yml .
 
-# CMD ["rasa", "run", "--enable-api", "cors", "*"]
-USER 1000
+# Copy pre-trained model if available
+COPY models/ ./models/
+
+# Port
+EXPOSE 5005
+
+# Run Rasa server
+CMD ["run", "--enable-api", "--cors", "*", "--port", "5005"]
