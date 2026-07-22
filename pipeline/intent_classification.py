@@ -9,7 +9,7 @@ import json
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import confusion_matrix, classification_report
+from sklearn.metrics import classification_report
 from tensorflow.keras import models, layers, callbacks
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
@@ -91,15 +91,19 @@ def evaluate_model(model, x_test, y_test, label_encoder):
     y_pred_probs = model.predict(x_test)
     y_pred = np.argmax(y_pred_probs, axis=1)
 
-    cm = confusion_matrix(y_test, y_pred)
-    report = classification_report(y_test, y_pred,
-                                   target_names=label_encoder.classes_,
-                                   output_dict=True)
+    # Only include labels that appear in test set
+    present_labels = sorted(set(y_test) | set(y_pred))
+    target_names = [label_encoder.classes_[i] for i in present_labels]
 
-    accuracy = report["accuracy"]
+    report = classification_report(y_test, y_pred,
+                                   labels=present_labels,
+                                   target_names=target_names,
+                                   output_dict=True,
+                                   zero_division=0)
+
+    accuracy = report.get("accuracy", 0)
     return {
         "accuracy": accuracy,
-        "confusion_matrix": cm.tolist(),
         "classification_report": report,
         "predictions": y_pred.tolist(),
     }

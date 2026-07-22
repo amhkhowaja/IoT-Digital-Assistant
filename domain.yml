@@ -281,6 +281,7 @@ responses:
   utter_submit:
   - text: '"Hurrah! You have successfully onboarded {enterprise_name} enterprise with agreement number {enterprise_agreement_number} and parent organization as {enterprise_parent_organization}"'
 actions:
+- action_log_prediction
 - utter_greet
 - action_update_inventory
 - utter_cheer_up

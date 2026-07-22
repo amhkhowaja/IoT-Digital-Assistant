@@ -1,0 +1,35 @@
+version: "3.1"
+nlu:
+- intent: Learn
+  examples: |
+    - I want to learn about [billing](billing_state)
+    - I want to learn about [active](billing_state)
+    - I want to learn about [active](billing_state)
+    - I want to learn about [suspended](billing_state)
+    - probably want to learn about you
+
+- intent: fetch
+  examples: |
+    - show me [connectivity](network_connectivity) of msisdn [55512349876](msisdn)
+    - what is the status of IMSI [234150999999999](IMSI_number)
+    - show billing state of all a[ctive ](billing_state)devices
+    - show me [enabled](network_connectivity) of msisdn [55512349876](msisdn)
+    - show me [enabled](network_connectivity) of msisdn [55512349876](msisdn)
+    - show me [disabled](network_connectivity) of msisdn [55512349876](msisdn)
+    - show me copy of pin 55512349876
+    - what is the status of IMSI [807179161072752](IMSI_number)
+    - what is the status of IMSI [459224493596211](IMSI_number)
+    - what is the status of IMSI [772750986961748](IMSI_number)
+    - this is the status with imsi 234150999999999
+    - show billing state of all a[suspended](billing_state)devices
+    - show billing state of all a[inactive](billing_state)devices
+    - show billing state of all a[inactive](billing_state)devices
+    - show safe state of users active devices
+
+- intent: update_inventory
+  examples: |
+    - [unlock](connectivity_lock) the connectivity of msisdn [12345678901](msisdn)
+    - [locked](connectivity_lock) the connectivity of msisdn [90231219067](msisdn)
+    - [unlocked](connectivity_lock) the connectivity of msisdn [98829108815](msisdn)
+    - [locked](connectivity_lock) the connectivity of msisdn [91166270252](msisdn)
+    - unlock the connectivity of systems also

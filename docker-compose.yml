@@ -94,6 +94,7 @@ services:
       - ./dags:/opt/airflow/dags
       - ./pipeline:/opt/airflow/pipeline
       - ./Chatbot/NLU/data:/opt/airflow/data
+      - ./data:/opt/airflow/rasa_data
       - ./pipeline_output:/opt/airflow/output
       - airflow_logs:/opt/airflow/logs
     depends_on:
@@ -116,11 +117,14 @@ services:
       - PIPELINE_DATA_DIR=/opt/airflow/data
       - PIPELINE_OUTPUT_DIR=/opt/airflow/output
       - PYTHONPATH=/opt/airflow
+      - SKIP_CUSTOM_VALIDATION=${SKIP_CUSTOM_VALIDATION:-false}
+      - RASA_CONFIDENCE_THRESHOLD=${RASA_CONFIDENCE_THRESHOLD:-0.85}
     command: scheduler
     volumes:
       - ./dags:/opt/airflow/dags
       - ./pipeline:/opt/airflow/pipeline
       - ./Chatbot/NLU/data:/opt/airflow/data
+      - ./data:/opt/airflow/rasa_data
       - ./pipeline_output:/opt/airflow/output
       - airflow_logs:/opt/airflow/logs
     depends_on:

@@ -13,6 +13,7 @@ import random
 import re
 import os
 import pandas as pd
+from datetime import datetime
 
 # Configuration from environment variables
 MONGODB_URI = os.environ.get("MONGODB_URI", "mongodb://localhost:27017")
@@ -36,6 +37,7 @@ class ActionCPIlink(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         prediction = tracker.latest_message
+        log_prediction(tracker)
 
 
         db = get_db()
@@ -104,6 +106,7 @@ class ActionIMSIStats(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         prediction = tracker.latest_message
+        log_prediction(tracker)
         slot_value = tracker.get_slot("IMSI_number")
         default_entity_value="IMSI_number"
         try:
@@ -152,6 +155,7 @@ class ActionNewsFetch(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) ->List[Dict[Text, Any]]:
         prediction = tracker.latest_message
+        log_prediction(tracker)
         query_params = {
             "source": "bbc-news",
             "sortBy": "top",
@@ -263,6 +267,7 @@ class ActionFetchInventory(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         prediction = tracker.latest_message
+        log_prediction(tracker)
         # slot_value = tracker.get_slot("IMSI_number")
         attributes = ["msisdn","plan_name", "connectivity_lock", "network_connectivity", "in_session", "billing_state", "monthly_data", "data_trend"]
 
@@ -335,6 +340,7 @@ class ActionUpdateInventory(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         prediction = tracker.latest_message
+        log_prediction(tracker)
         print(prediction)
         attributes = ["msisdn","plan_name", "connectivity_lock", "network_connectivity", "in_session", "billing_state", "monthly_data", "data_trend"]
         try:
@@ -403,3 +409,38 @@ class ActionUpdateInventory(Action):
         # considering the example as above and format of nlu :
             # change the [connectivity lock]{"entity": "inventory_attribute", "value": "connectivity_lock", role:"update_attribute"} of [msisdn]{"entity": "inventory_attribute", "value": "msisdn", "role": "fetch_attribute"} [23123123123]{"entity": "msisdn", "value": "23123123123", "role": "fetch_value"} to [locked]{"entity": "connectivity_lock", "value": "locked", "role":"update_value"}
         # update the package [monthly limit]{"entity": "inventory_attribute", "value": "monthly_data"} from [10gb]{"entity": "monthly_data", "role": "fetch_value", "value": "10 GB"} to [20gb]{"entity": "plan_name", "role": "update_value", "value": "20 GB"} of [mobile number]{"entity": "inventory_attribute", "value": "msisdn"} [12345678901]{"entity": "msisdn", "role": "fetch_value"}
+
+
+def log_prediction(tracker: Tracker):
+    """Log user message prediction to MongoDB for the self-learning pipeline."""
+    prediction = tracker.latest_message
+    if not prediction or not prediction.get("text"):
+        return
+    try:
+        db = get_db()
+        db["predictions"].insert_one({
+            "text": prediction["text"],
+            "sender_id": tracker.sender_id,
+            "timestamp": datetime.utcnow(),
+            "rasa_prediction": {
+                "intent": prediction["intent"]["name"],
+                "intent_confidence": prediction["intent"]["confidence"],
+                "entities": prediction.get("entities", []),
+            },
+            "processed": False,
+        })
+    except Exception:
+        pass  # Don't break the conversation if logging fails
+
+
+class ActionLogPrediction(Action):
+    """Standalone action to log predictions. Can be triggered via rule."""
+
+    def name(self) -> Text:
+        return "action_log_prediction"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        log_prediction(tracker)
+        return []
