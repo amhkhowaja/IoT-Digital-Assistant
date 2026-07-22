@@ -281,6 +281,26 @@ pipeline_output/
 └── data.json, data.yaml, ques_int.csv
 ```
 
+### Self-Learning Pipeline
+
+The bot automatically learns from user interactions. Every message prediction is logged to MongoDB, then periodically processed:
+
+1. Predictions are re-validated (dual-model or Rasa-only confidence)
+2. High-confidence examples are augmented (entity substitution + BERT)
+3. Results are written to `data/nlu_generated.yml` — automatically used by `rasa train`
+
+```bash
+# Trigger self-learning ETL manually
+make pipeline-trigger-etl
+```
+
+Configure in `.env`:
+```bash
+# Skip custom model validation (use Rasa confidence only)
+SKIP_CUSTOM_VALIDATION=true
+RASA_CONFIDENCE_THRESHOLD=0.85
+```
+
 ---
 
 ## Project Structure
